@@ -41,7 +41,9 @@ class Auth extends BaseController
                         'nisn' => $data['nisn'],
                         'logged_in' => true
                     ];
+                    $session->setFlashdata('msg', 'Selamat Datang !!');
                     $session->set($session_data);
+                    return redirect()->to('/home');
                 } else {
                     $session->setFlashdata('msg', 'Password yang anda masukan salah');
                     return redirect()->to('/auth');
@@ -75,6 +77,7 @@ class Auth extends BaseController
                         'logged_in' => true
                     ];
                     $session->set($session_data);
+                    return redirect()->to('/home');
                 } else {
                     $session->setFlashdata('msg', 'Password yang anda masukan salah');
                     return redirect()->to('/auth');
