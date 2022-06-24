@@ -36,6 +36,11 @@ class TbNilai extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
+            'nilai_1_4' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'nilai_2_1' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
@@ -47,6 +52,11 @@ class TbNilai extends Migration
                 'unsigned'       => true,
             ],
             'nilai_2_3' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
+            'nilai_2_4' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -66,6 +76,11 @@ class TbNilai extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
+            'nilai_3_4' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'nilai_4_1' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
@@ -81,6 +96,11 @@ class TbNilai extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
+            'nilai_4_4' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'nilai_5_1' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
@@ -92,6 +112,11 @@ class TbNilai extends Migration
                 'unsigned'       => true,
             ],
             'nilai_5_3' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
+            'nilai_5_4' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -126,6 +151,11 @@ class TbNilai extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
+            'nilai_7_4' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'nilai_8_1' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
@@ -137,6 +167,11 @@ class TbNilai extends Migration
                 'unsigned'       => true,
             ],
             'nilai_8_3' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
+            'nilai_8_4' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -156,7 +191,11 @@ class TbNilai extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
-
+            'nilai_9_4' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
         ]);
         // membuat index key
         $this->forge->addKey('no_kelas');
