@@ -12,7 +12,7 @@ class Auth extends BaseController
         $data = [
             'title' => 'SDN 2 Kersanagara'
         ];
-        return view('pages/login', $data);
+        return view('pages/login_user', $data);
     }
 
     public function admin()
@@ -20,7 +20,7 @@ class Auth extends BaseController
         $data = [
             'title' => 'Admin Login'
         ];
-        return view('pages/admin_login', $data);
+        return view('pages/login_admin', $data);
     }
 
     public function auth_login()
@@ -39,11 +39,13 @@ class Auth extends BaseController
                 if ($verify_pass) {
                     $session_data = [
                         'nisn' => $data['nisn'],
+                        'sidebar' => 'user',
                         'logged_in' => true
                     ];
                     $session->setFlashdata('msg', 'Selamat Datang !!');
                     $session->set($session_data);
-                    return redirect()->to('/home');
+                    //echo $session->get('sidebar');
+                    return redirect()->to('/user');
                 } else {
                     $session->setFlashdata('msg', 'Password yang anda masukan salah');
                     return redirect()->to('/auth');
@@ -72,23 +74,24 @@ class Auth extends BaseController
                 $verify_pass = password_verify($password, $pass);
                 if ($verify_pass) {
                     $session_data = [
-                        'nisn' => $data['nisn'],
+                        'nip' => $data['nip'],
                         'role' => $data['role'],
-                        'logged_in' => true
+                        'logged_in' => true,
+                        'sidebar' => 'admin'
                     ];
                     $session->set($session_data);
-                    return redirect()->to('/home');
+                    return redirect()->to('/admin');
                 } else {
                     $session->setFlashdata('msg', 'Password yang anda masukan salah');
-                    return redirect()->to('/auth');
+                    return redirect()->to('/admin_login');
                 }
             } else {
                 $session->setFlashdata('msg', 'Akun tidak aktif');
-                return redirect()->to('/auth');
+                return redirect()->to('/admin_login');
             }
         } else {
             $session->setFlashdata('msg', 'Akun tidak di temukan');
-            return redirect()->to('/auth');
+            return redirect()->to('/admin_login');
         }
     }
 
