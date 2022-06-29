@@ -200,11 +200,20 @@ class TbNilai extends Migration
         // membuat index key
         $this->forge->addKey('no_kelas');
 
+        //merelasikan antara table
+        $this->forge->addForeignKey('no_kelas', 'tb_kelas', 'no_kelas');
+
         // membuat index key
         $this->forge->addKey('no_mapel');
 
+        //merelasikan antara table
+        $this->forge->addForeignKey('no_mapel', 'tb_mapel', 'no_mapel');
+
         // membuat index key
         $this->forge->addKey('nisn');
+
+        //merelasikan antara table
+        $this->forge->addForeignKey('nisn', 'tb_siswa', 'nisn');
 
         // membuat tb_nilai
         $this->forge->createTable('tb_nilai');

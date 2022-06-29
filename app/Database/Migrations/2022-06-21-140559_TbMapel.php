@@ -25,7 +25,6 @@ class TbMapel extends Migration
             'aspek' => [
                 'type'           => 'ENUM',
                 'constraint'     => ['Keterampilan', 'Pengetahuan'],
-                'default'        => 'Keterampilan',
             ],
         ]);
         // membuat primary key

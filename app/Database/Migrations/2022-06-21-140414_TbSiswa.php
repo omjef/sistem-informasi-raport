@@ -28,6 +28,10 @@ class TbSiswa extends Migration
             'tanggal_lahir' => [
                 'type' => 'DATE'
             ],
+            'jenis_kelamin' => [
+                'type'           => 'ENUM',
+                'constraint'     => ['Laki-laki', 'Perempuan'],
+            ],
             'agama' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',

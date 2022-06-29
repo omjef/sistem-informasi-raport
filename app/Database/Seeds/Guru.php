@@ -4,14 +4,15 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 
-class AkunSiswa extends Seeder
+class Guru extends Seeder
 {
     public function run()
     {
         $data = [
-            'nisn' => 1,
+            'nip' => '1',
             'username'    => 'user',
             'password'    => password_hash(123, PASSWORD_DEFAULT),
+            'role' => 'guru',
             'is_aktif'    => 1,
         ];
 
@@ -19,6 +20,6 @@ class AkunSiswa extends Seeder
         //$this->db->query('INSERT INTO users (username, email) VALUES(:username:, :email:)', $data);
 
         // Using Query Builder
-        $this->db->table('tb_akun_siswa')->insert($data);
+        $this->db->table('tb_guru')->insert($data);
     }
 }

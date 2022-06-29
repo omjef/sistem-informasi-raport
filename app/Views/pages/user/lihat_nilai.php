@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <div class="card">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold">Nilai Siswa</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Nilai Siswa</h6>
     </div>
     <div class="card-body shadow">
         <div class="note note-default mb-2">
@@ -32,7 +32,7 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group mt-2 text-center">
+            <div class="col-md-6 mb-3">
                 <input class="btn btn-primary" type="button" value="Lihat Data">
             </div>
         </div>

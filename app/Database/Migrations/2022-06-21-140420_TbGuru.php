@@ -11,74 +11,71 @@ class TbGuru extends Migration
         $this->forge->addField([
             'nip' => [
                 'type'           => 'VARCHAR',
-                'constraint'     => '255'
+                'constraint'     => '255',
+            ],
+            'nuptk' => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '255',
             ],
             'nama' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '255'
-            ],
-            'nama' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255'
+                'constraint' => '255',
             ],
             'tempat_lahir' => [
                 'type' => 'VARCHAR',
-                'constraint' => '255'
+                'constraint' => '255',
             ],
             'tanggal_lahir' => [
-                'type' => 'DATE'
+                'type' => 'DATE',
+            ],
+            'jenis_kelamin' => [
+                'type'           => 'ENUM',
+                'constraint'     => ['Laki-laki', 'Perempuan'],
             ],
             'agama' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'pendidikan_sebelumnya' => [
+            'ijazah' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'alamat_siswa' => [
-                'type' => 'TEXT',
-                'null' => TRUE,
-            ],
-            'nama_ayah' => [
+            'tahun_ijazah' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'nama_ibu' => [
+            'jenis_guru' => [
+                'type'           => 'ENUM',
+                'constraint'     => ['Kepala Sekolah', 'Guru Kelas', 'Guru PAI', 'Guru PJOK'],
+            ],
+            'tanggal_angkatan' => [
+                'type' => 'DATE',
+            ],
+            'mulai_bekerja_disekolah' => [
+                'type' => 'DATE',
+            ],
+            'tmt_masa_pensiun' => [
+                'type' => 'DATE',
+            ],
+            'mengajar_dikelas' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'nama_orang_tua_wali' => [
+            'jumlah_jam_mengajar' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'Pekerjaan_ayah' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'pekerjaan_ibu' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'pekerjaan_orang_tua_wali' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'alamat_orang_tua' => [
-                'type' => 'TEXT',
-                'null' => TRUE,
-            ],
-            'alamat_orang_tua' => [
-                'type' => 'TEXT',
-                'null' => TRUE,
-            ],
-            'foto_siswa' => [
+            'foto_guru' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
         ]);
         // membuat primary key
         $this->forge->addKey('nip', true);
+
+        // membuat index key
+        $this->forge->addKey('nuptk');
+
 
         // membuat table tb_siswa
         $this->forge->createTable('tb_guru');

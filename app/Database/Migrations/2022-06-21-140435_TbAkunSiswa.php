@@ -30,6 +30,9 @@ class TbAkunSiswa extends Migration
         // membuat index key
         $this->forge->addKey('nisn');
 
+        //merelasikan antara table
+        $this->forge->addForeignKey('nisn', 'tb_siswa', 'nisn');
+
         // membuat tb_akun_siswa
         $this->forge->createTable('tb_akun_siswa');
     }

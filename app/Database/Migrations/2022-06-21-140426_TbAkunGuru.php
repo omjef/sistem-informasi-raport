@@ -34,6 +34,9 @@ class TbAkunGuru extends Migration
         // membuat index key
         $this->forge->addKey('nip');
 
+        //merelasikan antara table
+        $this->forge->addForeignKey('nip', 'tb_guru', 'nip');
+
         // membuat tb_akun_guru
         $this->forge->createTable('tb_akun_guru');
     }
