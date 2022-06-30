@@ -7,7 +7,7 @@ class User extends BaseController
     public function index()
     {
         $data = [
-            'sidebar' => 'user'
+            'title' => 'Dashboard'
         ];
         return view('pages/user/dashboard', $data);
     }
