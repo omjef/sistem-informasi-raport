@@ -76,6 +76,10 @@ class TbSiswa extends Migration
                 'type' => 'TEXT',
                 'null' => TRUE,
             ],
+            'status_siswa' => [
+                'type'           => 'ENUM',
+                'constraint'     => ['Aktif', 'Lulus', 'Pindah', 'Keluar'],
+            ],
             'foto_siswa' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',

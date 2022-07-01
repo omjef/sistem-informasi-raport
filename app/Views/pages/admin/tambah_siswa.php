@@ -3,8 +3,8 @@
 <?= $this->section('content'); ?>
 
 <div class="card">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold">Tambah Siswa Baru</h6>
+    <div class="card-header py-3 d-sm-flex justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Tambah Siswa Baru</h6>
     </div>
     <div class="card-body">
         <div class="row">
