@@ -40,7 +40,7 @@ class Auth extends BaseController
                     $session_data = [
                         'nisn' => $data['nisn'],
                         'sidebar' => 'user',
-                        'logged_in' => true
+                        'logged_in' => 'user'
                     ];
                     $session->setFlashdata('msg', 'Selamat Datang !!');
                     $session->set($session_data);
@@ -76,7 +76,7 @@ class Auth extends BaseController
                     $session_data = [
                         'nip' => $data['nip'],
                         'role' => $data['role'],
-                        'logged_in' => true,
+                        'logged_in' => 'admin',
                         'sidebar' => 'admin'
                     ];
                     $session->set($session_data);
@@ -105,5 +105,8 @@ class Auth extends BaseController
 
     public function logout()
     {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/auth');
     }
 }
