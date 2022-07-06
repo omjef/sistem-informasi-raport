@@ -7,8 +7,12 @@ class User extends BaseController
     public function index()
     {
         if (session()->get('logged_in') == 'user') {
+            $siswa = $this->SiswaModel;
+            $nisn = session()->get('nisn');
+            $data = $siswa->where('nisn', $nisn)->first();
             $data = [
-                'title' => 'Dashboard'
+                'title' => 'Dashboard',
+                'nama' => $data['nama']
             ];
             return view('pages/user/dashboard', $data);
         } else {

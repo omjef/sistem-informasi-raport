@@ -10,7 +10,9 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item <?php if ($title == 'Dashboard') {
+                                    echo 'active';
+                                } ?>">
                 <a class="nav-link" href="/user">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -21,22 +23,30 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Siswa
             </div>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <!-- Nilai Siswa -->
+            <li class="nav-item <?php if ($title == 'Nilai Siswa') {
+                                    echo 'active';
+                                } ?>">
                 <a class="nav-link" href="/user/nilai">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Nilai Siswa</span></a>
             </li>
+            <!-- Tutup Nilai Siswa -->
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <!-- Absensi Siswa -->
+            <li class="nav-item <?php if ($title == 'Absensi Siswa') {
+                                    echo 'active';
+                                } ?>">
                 <a class="nav-link" href="/user/absensi">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Absensi Siswa</span></a>
             </li>
+            <!-- Tutup Absensi Siswa -->
+
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

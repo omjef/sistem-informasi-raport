@@ -48,5 +48,13 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        $this->AkunGuruModel = new \App\Models\AkunGuruModel();
+        $this->AkunSiswaModel = new \App\Models\AkunSiswaModel();
+        $this->GuruModel = new \App\Models\GuruModel();
+        $this->SiswaModel = new \App\Models\SiswaModel();
+        $this->KelasModel = new \App\Models\KelasModel();
+        $this->MapelModel = new \App\Models\MapelModel();
+        $this->NilaiModel = new \App\Models\NilaiModel();
+        $this->SekolahModel = new \App\Models\SekolahModel();
     }
 }
