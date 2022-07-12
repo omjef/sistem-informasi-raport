@@ -9,7 +9,7 @@ class AkunGuru extends Seeder
     public function run()
     {
         $data = [
-            'nip' => '1',
+            'nip' => 1231,
             'username'    => 'user',
             'password'    => password_hash(123, PASSWORD_DEFAULT),
             'role' => 'guru',

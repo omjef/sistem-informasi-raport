@@ -4,15 +4,21 @@ namespace App\Controllers;
 
 class User extends BaseController
 {
+    private function query($db)
+    {
+        $siswa = $this->SiswaModel;
+        $nisn = session()->get('nisn');
+        $query = $siswa->where('nisn', $nisn)->first();
+        return $query[$db];
+    }
     public function index()
     {
         if (session()->get('logged_in') == 'user') {
-            $siswa = $this->SiswaModel;
-            $nisn = session()->get('nisn');
-            $data = $siswa->where('nisn', $nisn)->first();
+
             $data = [
                 'title' => 'Dashboard',
-                'nama' => $data['nama']
+                'nama' => $this->query('nama'),
+                'foto' => $this->query('foto_siswa')
             ];
             return view('pages/user/dashboard', $data);
         } else {
@@ -24,7 +30,9 @@ class User extends BaseController
     {
         if (session()->get('logged_in') == 'user') {
             $data = [
-                'title' => 'Nilai Siswa'
+                'title' => 'Nilai Siswa',
+                'nama' => $this->query('nama'),
+                'foto' => $this->query('foto_siswa')
             ];
             return view('pages/user/lihat_nilai', $data);
         } else {
@@ -36,7 +44,9 @@ class User extends BaseController
     {
         if (session()->get('logged_in') == 'user') {
             $data = [
-                'title' => 'Absensi Siswa'
+                'title' => 'Absensi Siswa',
+                'nama' => $this->query('nama'),
+                'foto' => $this->query('foto_siswa')
             ];
             return view('pages/user/absensi', $data);
         } else {
