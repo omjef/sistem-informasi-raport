@@ -18,7 +18,12 @@
                                     <h1 class="h4 text-gray-900 mb-2">SDN 2 Kersanagara 2</h1>
                                     <img class="mb-4" src="<?= base_url('img/tuturi-handayani.png'); ?>" alt="" width="40%">
                                     <?php if (session()->getFlashdata('msg')) : ?>
-                                        <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <?= session()->getFlashData('msg') ?>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
                                     <?php endif; ?>
                                 </div>
                                 <form class="user" action="<?= base_url('/auth/auth_login'); ?>" method="post">

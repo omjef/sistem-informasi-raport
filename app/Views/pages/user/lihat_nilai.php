@@ -29,8 +29,8 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Masukan Semester</label>
                         <select class="form-control" name="semester" id="semester">
-                            <option>Semester Ganjil</option>
-                            <option>Semester Genap</option>
+                            <option>Ganjil</option>
+                            <option>Genap</option>
                         </select>
                     </div>
                 </div>

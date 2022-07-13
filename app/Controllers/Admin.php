@@ -10,7 +10,7 @@ class Admin extends BaseController
             $data = [
                 'title' => 'Dashboard'
             ];
-            return view('pages/admin/dashboard');
+            return view('pages/admin/dashboard', $data);
         } else {
             return redirect()->to('/auth');
         }
