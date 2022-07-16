@@ -17,6 +17,7 @@ class User extends BaseController
 
             $data = [
                 'title' => 'Dashboard',
+                'nisn' => session()->get('nisn'),
                 'nama' => $this->query('nama'),
                 'foto' => $this->query('foto_siswa')
             ];
@@ -31,6 +32,7 @@ class User extends BaseController
         if (session()->get('logged_in') == 'user') {
             $data = [
                 'title' => 'Nilai Siswa',
+                'nisn' => session()->get('nisn'),
                 'nama' => $this->query('nama'),
                 'foto' => $this->query('foto_siswa')
             ];
@@ -45,8 +47,12 @@ class User extends BaseController
         if (session()->get('logged_in') == 'user') {
             $data = [
                 'title' => 'Absensi Siswa',
+                'nisn' => session()->get('nisn'),
                 'nama' => $this->query('nama'),
-                'foto' => $this->query('foto_siswa')
+                'foto' => $this->query('foto_siswa'),
+                'absensi' => $this->AbsensiModel,
+                'kelas' => $this->KelasModel,
+                'guru' => $this->GuruModel
             ];
             return view('pages/user/absensi', $data);
         } else {

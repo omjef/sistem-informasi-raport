@@ -40,14 +40,14 @@
             </div>
         </form>
         <?php
-        if (isset($_GET['lihat_nilai'])) {
+        if (isset($_GET['lihat_nilai'])) :
         ?>
             <!--Data Siswa-->
             <table class="table table-hover mt-2" width="100%" cellspacing="0">
                 <tr>
                     <td style="width: 25%;">Nama</td>
                     <td style="width: 3%;">:</td>
-                    <td>Reka Rachmadi</td>
+                    <td><?= $nama; ?></td>
                 </tr>
                 <tr>
                     <td>Kelas</td>
@@ -109,10 +109,7 @@
                 </table>
             </div>
         <?php
-            if ($_GET['kelas'] == 1) {
-                echo "Tampil";
-            }
-        }
+        endif
         ?>
     </div>
 </div>

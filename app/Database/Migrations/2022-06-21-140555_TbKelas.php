@@ -22,10 +22,6 @@ class TbKelas extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'tahun_ajaran' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
             'nip' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
