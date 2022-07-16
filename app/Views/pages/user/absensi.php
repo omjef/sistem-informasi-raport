@@ -35,8 +35,6 @@
                     </div>
                 </div>
             </div>
-
-
             <input class="btn btn-primary btn-user btn-block" type="Submit" name="lihat_nilai" value="Lihat Nilai">
         </form>
     </div>

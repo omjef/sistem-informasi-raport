@@ -4,21 +4,23 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 
-class AkunSiswa extends Seeder
+class AkunGuru extends Seeder
 {
     public function run()
     {
         $data = [
             [
-                'nisn' => '3116385475',
-                'username' => 'aal',
+                'nip' => '196911191992082001',
+                'username' => 'cucu',
                 'password' => password_hash(123, PASSWORD_DEFAULT),
+                'role' => 'Guru',
                 'is_aktif' => 1
             ],
             [
-                'nisn' => '0088120116',
+                'nip' => '196306161983052011',
                 'username' => 'azni',
                 'password' => password_hash(123, PASSWORD_DEFAULT),
+                'role' => 'Guru',
                 'is_aktif' => 1
             ],
         ];

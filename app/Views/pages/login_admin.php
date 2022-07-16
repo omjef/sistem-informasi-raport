@@ -16,7 +16,7 @@
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900">Admin Login</h1>
-                                    <h1 class="h4 text-gray-900 mb-4">SDN 2 Kersanagara 2</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">SDN 2 Kersanagara</h1>
                                     <?php if (session()->getFlashdata('msg')) : ?>
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                             <?= session()->getFlashData('msg') ?>

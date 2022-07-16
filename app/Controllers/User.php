@@ -34,7 +34,11 @@ class User extends BaseController
                 'title' => 'Nilai Siswa',
                 'nisn' => session()->get('nisn'),
                 'nama' => $this->query('nama'),
-                'foto' => $this->query('foto_siswa')
+                'foto' => $this->query('foto_siswa'),
+                'kelas' => $this->KelasModel,
+                'guru' => $this->GuruModel,
+                'mapel' => $this->MapelModel,
+                'nilai' => $this->NilaiModel
             ];
             return view('pages/user/lihat_nilai', $data);
         } else {
