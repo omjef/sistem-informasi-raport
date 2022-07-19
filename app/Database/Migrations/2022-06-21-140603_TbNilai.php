@@ -21,6 +21,11 @@ class TbNilai extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'Tahun_ajaran' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'nilai_1_1' => [
                 'type'           => 'INT',
                 'constraint'     => 11,

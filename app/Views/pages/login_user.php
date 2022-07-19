@@ -15,8 +15,7 @@
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-2">SDN 2 Kersanagara 2</h1>
-                                    <img class="mb-4" src="<?= base_url('img/tuturi-handayani.png'); ?>" alt="" width="40%">
+                                    <h1 class="h4 text-gray-900 mb-4">SDN 2 Kersanagara 2</h1>
                                     <?php if (session()->getFlashdata('msg')) : ?>
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                             <?= session()->getFlashData('msg') ?>
