@@ -63,4 +63,20 @@ class User extends BaseController
             return redirect()->to('/auth');
         }
     }
+
+    public function profil()
+    {
+        if (session()->get('logged_in') == 'user') {
+            $data = [
+                'title' => 'Profil Siswa',
+                'nisn' => session()->get('nisn'),
+                'nama' => $this->query('nama'),
+                'foto' => $this->query('foto_siswa'),
+                'siswa' => $this->SiswaModel
+            ];
+            return view('pages/user/profil', $data);
+        } else {
+            return redirect()->to('/auth');
+        }
+    }
 }
