@@ -6,15 +6,16 @@
 
 $data = $siswa->where('nisn', $nisn)->first();
 ?>
+<div class="card border-left-primary shadow h-100 py-2 pl-2 mb-2">
+    <h1 class="h4">Catatan :</h1>
+    Jika ada kesalahan data bisa hubungi guru kelas.
+</div>
+
 <div class="card mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Profil Siswa</h6>
     </div>
     <div class="card-body">
-        <div class="card border-left-primary shadow h-100 py-2 pl-2 mb-2">
-            <h1 class="h4">Catatan :</h1>
-            Jika ada kesalahan data bisa hubungi guru kelas.
-        </div>
         <div class="text-center">
             <div class="row">
                 <div class="col-md-10 ml-5">
