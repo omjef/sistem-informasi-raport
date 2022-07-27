@@ -21,95 +21,83 @@
 </head>
 
 <body id="page-top">
-
-    <!-- Page Wrapper -->
+    <!-- Page Pembungkus -->
     <div id="wrapper">
-
-        <!--Sidebar-->
-        <?php if (session()->get('sidebar') == 'user') : ?>
+        <!-- Tampil Sidebar -->
+        <?php if (session()->get('logged_in') == 'user') : ?>
             <?= $this->include('layout/navbar_user'); ?>
-        <?php elseif (session()->get('sidebar') == 'admin') : ?>
+        <?php elseif (session()->get('logged_in') == 'admin') : ?>
             <?= $this->include('layout/navbar_admin'); ?>
         <?php endif ?>
+        <!-- Akhir Sidebar -->
 
-        <!-- Content Wrapper -->
+        <!-- Konten Pembungkus -->
         <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
+            <!-- Konten -->
             <div id="content">
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <!-- Profil -->
-                        <?php if (session()->get('sidebar') == 'user') : ?>
+                        <?php if (session()->get('logged_in') == 'user') : ?>
                             <?php $profil = base_url('/user/profil'); ?>
-                        <?php elseif (session()->get('sidebar') == 'admin') : ?>
+                        <?php elseif (session()->get('logged_in') == 'admin') : ?>
                             <?php $profil = base_url('/admin/profil'); ?>
                         <?php endif ?>
-                        <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $nama; ?></span>
                                 <img class="img-profile rounded-circle" src="<?= base_url('/img/default.jpg'); ?>">
                             </a>
-                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="<?= $profil; ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>
+
+                            <!-- Alert Logout -->
+                            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin mau keluar?</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Pilih "Keluar" di bawah jika Anda siap untuk mengakhiri sesi Anda saat ini.</div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                            <a class="btn btn-primary" href="<?= base_url('/auth/logout'); ?>">Keluar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Alert Logout -->
                         </li>
-
                     </ul>
-
                 </nav>
-                <!-- End of Topbar -->
+                <!-- Akhir Topbar -->
 
-                <?= $this->renderSection('content'); ?>
+                <!-- Tampil Konten -->
+                <div class="container-fluid">
+                    <?= $this->renderSection('content'); ?>
+                </div>
+                <!-- Akhir Tampil Konten -->
 
             </div>
-            <!-- End of Main Content -->
-
+            <!-- Akhir Konten -->
         </div>
-        <!-- End of Content Wrapper -->
-
+        <!-- AKhir Konten Pembungkus -->
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin mau keluar?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Pilih "Keluar" di bawah jika Anda siap untuk mengakhiri sesi Anda saat ini.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                    <a class="btn btn-primary" href="<?= base_url('/auth/logout'); ?>">Keluar</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Akhir Page Pembungkus -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url(); ?>/vendor/jquery/jquery.min.js"></script>

@@ -39,7 +39,6 @@ class Auth extends BaseController
                 if ($verify_pass) {
                     $session_data = [
                         'nisn' => $data['nisn'],
-                        'sidebar' => 'user',
                         'logged_in' => 'user'
                     ];
                     $session->setFlashdata('msg', 'Selamat Datang !!');
@@ -75,9 +74,7 @@ class Auth extends BaseController
                 if ($verify_pass) {
                     $session_data = [
                         'nip' => $data['nip'],
-                        'role' => $data['role'],
-                        'logged_in' => 'admin',
-                        'sidebar' => 'admin'
+                        'logged_in' => 'admin'
                     ];
                     $session->set($session_data);
                     return redirect()->to('/admin');
