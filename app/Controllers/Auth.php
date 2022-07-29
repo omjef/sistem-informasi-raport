@@ -43,7 +43,6 @@ class Auth extends BaseController
                     ];
                     $session->setFlashdata('msg', 'Selamat Datang !!');
                     $session->set($session_data);
-                    //echo $session->get('sidebar');
                     return redirect()->to('/user');
                 } else {
                     $session->setFlashdata('msg', 'Password yang anda masukan salah');
@@ -103,7 +102,12 @@ class Auth extends BaseController
     public function logout()
     {
         $session = session();
-        $session->destroy();
-        return redirect()->to('/auth');
+        if ($session->logged_in == 'user') {
+            $session->destroy();
+            return redirect()->to('/auth');
+        } else if ($session->logged_in == 'admin') {
+            $session->destroy();
+            return redirect()->to('/admin_login');
+        }
     }
 }

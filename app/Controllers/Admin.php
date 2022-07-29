@@ -4,11 +4,20 @@ namespace App\Controllers;
 
 class Admin extends BaseController
 {
+    function guru($value)
+    {
+        $nip = session()->nip;
+
+        $guru = $this->GuruModel->where('nip', $nip)->first();
+        return $guru[$value];
+    }
+
     public function index()
     {
         if (session()->get('logged_in') == 'admin') {
             $data = [
-                'title' => 'Dashboard'
+                'title' => 'Dashboard',
+                'nama' => $this->guru('nama')
             ];
             return view('pages/admin/dashboard', $data);
         } else {
@@ -16,108 +25,55 @@ class Admin extends BaseController
         }
     }
 
-    //siswa
-    public function akun_siswa()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Dashboard'
-            ];
-            return view('pages/admin/akun_siswa');
-        } else {
-            return redirect()->to('/auth');
-        }
-    }
-
-    public function tambah_akun_siswa()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Dashboard'
-            ];
-            return view('pages/admin/tambah_akun_siswa');
-        } else {
-            return redirect()->to('/auth');
-        }
-    }
-
-    public function tambah_siswa()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Dashboard'
-            ];
-            return view('pages/admin/tambah_siswa');
-        } else {
-            return redirect()->to('/auth');
-        }
-    }
-
-    public function data_siswa()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Dashboard'
-            ];
-            return view('pages/admin/data_siswa');
-        } else {
-            return redirect()->to('/auth');
-        }
-    }
-
-    //Validasi Data Siswa
-
-    //guru
-    public function akun_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Dashboard'
-            ];
-            return view('pages/admin/akun_guru');
-        } else {
-            return redirect()->to('/auth');
-        }
-    }
-
+    //Akun Guru dan Siswa
     public function tambah_akun_guru()
     {
         if (session()->get('logged_in') == 'admin') {
             $data = [
-                'title' => 'Dashboard'
+                'title' => 'Tambah Akun Guru',
+                'nama' => $this->guru('nama')
             ];
-            return view('pages/admin/tambah_akun_guru');
+            return view('pages/admin/tambah_akun_guru', $data);
         } else {
-            return redirect()->to('/auth');
+            return redirect()->to('/admin_login');
         }
     }
 
-    public function tambah_guru()
+    public function lihat_akun_guru()
     {
         if (session()->get('logged_in') == 'admin') {
             $data = [
-                'title' => 'Dashboard'
+                'title' => 'Lihat Akun Guru',
+                'nama' => $this->guru('nama'),
+                'akun' => $this->AkunGuruModel
             ];
-            return view('pages/admin/tambah_guru');
+            return view('pages/admin/lihat_akun_guru', $data);
         } else {
-            return redirect()->to('/auth');
+            return redirect()->to('/admin_login');
         }
     }
 
-    public function data_guru()
+    public function validasi_tambah_akun_guru()
     {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Dashboard'
-            ];
-            return view('pages/admin/data_guru');
+        $nip = $this->request->getVar('nip');
+        $username = $this->request->getVar('username');
+        $password = $this->request->getVar('password');
+        $akun = $this->GuruModel->where('nip', $nip)->first();
+        $data = $this->AkunGuruModel->where('nip', $nip)->first();
+        if ($akun) {
+            if ($data) {
+                echo "Gagal di tambah";
+            } else {
+                $data = [
+                    'nip' => $nip,
+                    'username' => $username,
+                    'password' => password_hash($password, PASSWORD_DEFAULT),
+                    'is_aktif' => 1
+                ];
+                $this->AkunGuruModel->insert($data);
+            }
         } else {
-            return redirect()->to('/auth');
+            echo "Nip tidak ditemukan";
         }
-    }
-
-    //validasi data Guru
-    public function val_tambah_guru()
-    {
     }
 }
