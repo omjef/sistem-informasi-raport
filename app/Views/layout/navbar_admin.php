@@ -24,19 +24,19 @@
 
     <!-- Heading Akun -->
     <div class="sidebar-heading">
-        Akun Guru Dan Siswa
+        Guru Dan Siswa
     </div>
 
-    <!-- Akun -->
+    <!-- Data -->
     <li class="nav-item <?php if ($title == 'Tambah Akun Guru' || $title == 'Lihat Akun Guru') echo 'active'; ?>">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#akun_guru" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Akun Guru</span>
+            <span>Guru</span>
         </a>
-        <div id="akun_guru" class="collapse <?php if ($title == 'Tambah Akun Guru' || $title == 'Lihat Akun Guru') echo 'show'; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="akun_guru" class="collapse <?php if ($title == 'Lihat Data Guru' || $title == 'Lihat Akun Guru') echo 'show'; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item <?php if ($title == 'Tambah Akun Guru') echo 'active'; ?>" href="<?= base_url('/admin/tambah_akun_guru') ?>">Tambah Akun Guru</a>
                 <a class="collapse-item <?php if ($title == 'Lihat Akun Guru') echo 'active'; ?>" href="<?= base_url('/admin/lihat_akun_guru') ?>">Lihat Akun Guru</a>
+                <a class="collapse-item <?php if ($title == 'Lihat Data Guru') echo 'active'; ?>" href="<?= base_url('/admin/lihat_data_guru') ?>">Lihat Data Guru</a>
             </div>
         </div>
     </li>
@@ -44,7 +44,7 @@
     <li class="nav-item <?php if ($title == 'Tambah Akun Siswa' || $title == 'Lihat Akun Siswa') echo 'active'; ?>">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#akun_siswa" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Akun Siswa</span>
+            <span>Siswa</span>
         </a>
         <div id="akun_siswa" class="collapse <?php if ($title == 'Tambah Akun Siswa' || $title == 'Lihat Akun Siswa') echo 'show'; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">

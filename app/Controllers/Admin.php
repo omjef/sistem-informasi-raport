@@ -62,7 +62,8 @@ class Admin extends BaseController
         $data = $this->AkunGuruModel->where('nip', $nip)->first();
         if ($akun) {
             if ($data) {
-                echo "Gagal di tambah";
+                session()->setFlashdata('gagal', 'Nip sudah pernah di tambah');
+                return redirect()->to('/admin/lihat_akun_guru');
             } else {
                 $data = [
                     'nip' => $nip,
@@ -71,9 +72,48 @@ class Admin extends BaseController
                     'is_aktif' => 1
                 ];
                 $this->AkunGuruModel->insert($data);
+                session()->setFlashdata('berhasil', 'Data berhasil di tambah');
+                return redirect()->to('/admin/lihat_akun_guru');
             }
         } else {
-            echo "Nip tidak ditemukan";
+            session()->setFlashdata('gagal', 'Nip tidak ditemukan');
+            return redirect()->to('/admin/lihat_akun_guru');
+        }
+    }
+
+    public function edit_akun_guru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            if ($this->request->getVar('id') != NULL) {
+                $data = [
+                    'title' => 'Edit Akun Guru',
+                    'nama' => $this->guru('nama'),
+                    'akun' => $this->AkunGuruModel
+                ];
+                return view('pages/admin/edit_akun_guru', $data);
+            } else {
+                return redirect()->to('/admin/lihat_akun_guru');
+            }
+        } else {
+            return redirect()->to('/admin_login');
+        }
+    }
+
+    public function hapus_akun_guru()
+    {
+    }
+
+    public function lihat_data_guru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $data = [
+                'title' => 'Lihat Data Guru',
+                'nama' => $this->guru('nama'),
+                'akun' => $this->GuruModel
+            ];
+            return view('pages/admin/lihat_data_guru', $data);
+        } else {
+            return redirect()->to('/admin_login');
         }
     }
 }
