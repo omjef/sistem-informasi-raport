@@ -8,7 +8,7 @@
     </div>
     <div class="card-body">
         <?php $data = $akun->where(['id' => $_GET['id'], 'nip' => $_GET['nip']])->first(); ?>
-        <form action="<?= base_url('/admin/validasi_tambah_akun_guru') ?>" method="post">
+        <form action="<?= base_url('/admin/validasi_edit_akun_guru') ?>" method="post">
             <!-- Id -->
             <input type="text" class="form-control" name="id" id="id" placeholder="Masukan nip" value="<?= $data['id'] ?>" hidden>
 
@@ -39,6 +39,24 @@
                 </div>
             </div>
 
+            <!-- Status Guru -->
+            <div class="form-group">
+                <label for="jenis_kelamin">Status Akun</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="is_aktif" id="1" value="1" <?php if ($data['is_aktif'] == 1) {
+                                                                                                        echo "checked";
+                                                                                                    } ?>>
+                    <label class="form-check-label" for="1">
+                        Aktif
+                    </label>
+                    <input class="form-check-input ml-4" type="radio" name="is_aktif" id="0" value="0" <?php if ($data['is_aktif'] == 0) {
+                                                                                                            echo "checked";
+                                                                                                        } ?>>
+                    <label class="form-check-label ml-5" for="0">
+                        Tidak Aktif
+                    </label>
+                </div>
+            </div>
             <input type="submit" class="btn btn-primary btn-block mt-4" value="Simpan Data">
         </form>
     </div>

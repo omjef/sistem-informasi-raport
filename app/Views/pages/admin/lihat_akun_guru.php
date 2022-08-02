@@ -68,7 +68,7 @@
                                     echo "<span class='text-danger'>Tidak Aktif</span>";
                                 }
                                 ?></td>
-                            <td class="text-center"><a href="<?= base_url('admin/edit_akun_guru') . "?id=$data[id]&nip=$data[nip]" ?>" class="fa fa-edit mr-3"></a> <a href="<?= base_url('admin/hapus_akun_guru?') . "id=$data[id]&nip=$data[nip]" ?>" class="fa fa-trash"></a></td>
+                            <td class="text-center"><a href="<?= base_url('admin/edit_akun_guru') . "?id=$data[id]&nip=$data[nip]" ?>" class="fa fa-edit mr-3"></a> <a class="fa fa-trash" href="<?= base_url('admin/hapus_akun_guru') . "?id=$data[id]&nip=$data[nip]" ?>"></a></td>
                         </tr>
                     <?php
                     endforeach;
@@ -79,6 +79,8 @@
     </div>
 </div>
 <!-- Akhir card -->
+
+<!-- Tambah akun guru -->
 <div class="modal fade" id="akunGuru" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -116,6 +118,5 @@
         </div>
     </div>
 </div>
-<!-- Tambah akun guru -->
 <!-- Akhir tambah akun guru -->
 <?= $this->endSection(''); ?>

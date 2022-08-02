@@ -99,8 +99,44 @@ class Admin extends BaseController
         }
     }
 
+    public function validasi_edit_akun_guru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id = $this->request->getVar('id');
+            $nip = $this->request->getVar('nip');
+            $username = $this->request->getVar('username');
+            $password = $this->request->getVar('password');
+            $is_aktif = $this->request->getVar('is_aktif');
+
+            if ($password != null) {
+                $data = [
+                    'nip' => $nip,
+                    'username' => $username,
+                    'password' => password_hash($password, PASSWORD_DEFAULT),
+                    'is_aktif' => $is_aktif
+                ];
+            } else {
+                $data = [
+                    'nip' => $nip,
+                    'username' => $username,
+                    'is_aktif' => $is_aktif
+                ];
+            }
+            $this->AkunGuruModel->update($id, $data);
+            session()->setFlashdata('berhasil', 'Data berhasil di update');
+            return redirect()->to('/admin/lihat_akun_guru');
+        } else {
+            return redirect()->to('/admin_login');
+        }
+    }
+
     public function hapus_akun_guru()
     {
+        $nip = $this->request->getVar('nip');
+        //Hapus akun guru berdasarkan NIP
+        $this->AkunGuruModel->where('nip', $nip)->delete();
+        session()->setFlashdata('berhasil', 'Data berhasil di hapus');
+        return redirect()->to('/admin/lihat_akun_guru');
     }
 
     public function lihat_data_guru()
