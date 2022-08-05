@@ -4,11 +4,17 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TbAkunGuru extends Migration
+class AkunGuru extends Migration
 {
     public function up()
     {
         $this->forge->addField([
+            'id' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+                'auto_increment' => true,
+            ],
             'nip' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
@@ -21,29 +27,25 @@ class TbAkunGuru extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'role' => [
+            'jenis_akun' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'is_aktif' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
+            'status_akun' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
             ],
         ]);
-        // membuat index key
+        $this->forge->addKey('id', true);
         $this->forge->addKey('nip');
 
-        //merelasikan antara table
-        $this->forge->addForeignKey('nip', 'tb_guru', 'nip');
+        $this->forge->addForeignKey('nip', 'guru', 'nip');
 
-        // membuat tb_akun_guru
-        $this->forge->createTable('tb_akun_guru');
+        $this->forge->createTable('akun_guru');
     }
 
     public function down()
     {
-        // menghapus tb_akun_guru
-        $this->forge->dropTable('tb_akun_guru');
+        $this->forge->dropTable('akun_guru');
     }
 }

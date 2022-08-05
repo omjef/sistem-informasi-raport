@@ -14,13 +14,13 @@
 
             <!-- Nip -->
             <div class="form-group">
-                <label for="nip">Nip</label>
+                <label for="nip">NIP</label>
                 <input type="text" class="form-control" name="nip" id="nip" placeholder="Masukan nip" value="<?= $data['nip'] ?>">
             </div>
 
             <!-- Username -->
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username">USERNAME</label>
                 <input type="text" class="form-control" name="username" id="username" placeholder="Masukan username" value="<?= $data['username'] ?>">
             </div>
 
@@ -28,12 +28,12 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="password">Password</label>
+                        <label for="password">PASSWORD</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password">
                         <small class="form-text text-muted">Jika password tidak akan diganti, kosongkan aja!</small>
                     </div>
                     <div class="col-md-6">
-                        <label for="password">Konfirmasi Password</label>
+                        <label for="password">KONFIRMASI PASSWORD</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Masukan konfirmasi password">
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 
             <!-- Status Guru -->
             <div class="form-group">
-                <label for="jenis_kelamin">Status Akun</label>
+                <label for="jenis_kelamin">STATUS AKUN</label>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="is_aktif" id="1" value="1" <?php if ($data['is_aktif'] == 1) {
                                                                                                         echo "checked";

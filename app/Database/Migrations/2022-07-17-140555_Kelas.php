@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TbKelas extends Migration
+class Kelas extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'no_kelas' => [
+            'id_kelas' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -27,22 +27,16 @@ class TbKelas extends Migration
                 'constraint' => '255',
             ],
         ]);
-        // membuat primary key
-        $this->forge->addKey('no_kelas', true);
-
-        // membuat index key
+        $this->forge->addKey('id_kelas', true);
         $this->forge->addKey('nip');
 
-        //merelasikan antara table
-        $this->forge->addForeignKey('nip', 'tb_guru', 'nip');
+        $this->forge->addForeignKey('nip', 'guru', 'nip');
 
-        // membuat tb_kelas
-        $this->forge->createTable('tb_kelas');
+        $this->forge->createTable('kelas');
     }
 
     public function down()
     {
-        // menghapus tb_kelas
-        $this->forge->dropTable('tb_kelas');
+        $this->forge->dropTable('kelas');
     }
 }

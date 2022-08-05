@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TbSekolah extends Migration
+class Sekolah extends Migration
 {
     public function up()
     {
@@ -17,11 +17,11 @@ class TbSekolah extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'nama_sekolah' => [
+            'nama' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'alamat_sekolah' => [
+            'alamat' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -50,16 +50,14 @@ class TbSekolah extends Migration
                 'constraint' => '255',
             ],
         ]);
-        // membuat primary key
         $this->forge->addKey('nss', true);
+        $this->forge->addKey('npsn');
 
-        //menambah tb_sekolah
-        $this->forge->createTable('tb_sekolah');
+        $this->forge->createTable('sekolah');
     }
 
     public function down()
     {
-        // menghapus tb_sekolah
-        $this->forge->dropTable('tb_sekolah');
+        $this->forge->dropTable('sekolah');
     }
 }

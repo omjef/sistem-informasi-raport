@@ -95,10 +95,7 @@
                             <td class="text-center">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="<?= base_url('admin/edit_akun_guru?') . "nip=$data[nip]" ?>" class="fa fa-edit"></a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a href="" class="fa fa-trash"></a>
+                                        <a href="<?= base_url('admin/edit_data_guru') . "?nip=$data[nip]" ?>" class="fa fa-edit"></a>
                                     </div>
                                 </div>
                             </td>
@@ -124,7 +121,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('/admin/validasi_tambah_akun_guru') ?>" method="post">
+                <form action="<?= base_url('/admin/validasi_tambah_data_guru') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">
                             <!-- NIP -->
@@ -187,7 +184,7 @@
                             <!-- TAHUN IJAZAH -->
                             <div class="form-group">
                                 <label for="tahun_ijazah">TAHUN IJAZAH</label>
-                                <input type="date" class="form-control" name="tahun_ijazah" id="tahun_ijazah">
+                                <input type="text" class="form-control" name="tahun_ijazah" id="tahun_ijazah" placeholder="Masukan tahun ijazah">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -239,7 +236,7 @@
                             <!-- JUMLAH JAM MENGAJAR -->
                             <div class="form-group">
                                 <label for="nama">JUMLAH JAM MENGAJAR</label>
-                                <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan nama guru">
+                                <input type="text" class="form-control" name="jumlah_jam_mengajar" id="jumlah_jam_mengajar" placeholder="Masukan jumlah jam mengajar">
                             </div>
 
                             <!-- FOTO -->

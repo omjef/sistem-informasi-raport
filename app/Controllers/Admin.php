@@ -152,4 +152,100 @@ class Admin extends BaseController
             return redirect()->to('/admin_login');
         }
     }
+
+    public function validasi_tambah_data_guru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            //Ambil gambar
+            $fileFoto = $this->request->getFile('foto_guru');
+
+            //Apakah tidak ada foto di upload
+            if ($fileFoto->getError() == 4) {
+                $namaFoto = "Default.jpg";
+            } else {
+                $fileFoto->move('img');
+                $namaFoto = $fileFoto->getName();
+            }
+
+            //Tambah Ke database
+            $data = [
+                'nip' => $this->request->getVar('nip'),
+                'nuptk' => $this->request->getVar('nuptk'),
+                'nama' => $this->request->getVar('nama'),
+                'tempat_lahir' => $this->request->getVar('tempat_lahir'),
+                'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
+                'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+                'agama' => $this->request->getVar('agama'),
+                'ijazah' => $this->request->getVar('ijazah'),
+                'tahun_ijazah' => $this->request->getVar('tahun_ijazah'),
+                'jenis_guru' => $this->request->getVar('jenis_guru'),
+                'tanggal_angkatan' => $this->request->getVar('tanggal_angkatan'),
+                'mulai_bekerja_disekolah' => $this->request->getVar('mulai_bekerja_disekolah'),
+                'tmt_masa_pensiun' => $this->request->getVar('tmt_masa_pensiun'),
+                'mengajar_dikelas' => $this->request->getVar('mengajar_dikelas'),
+                'jumlah_jam_mengajar' => $this->request->getVar('jumlah_jam_mengajar'),
+                'foto_guru' => $namaFoto
+            ];
+
+            $this->GuruModel->insert($data);
+            session()->setFlashdata('berhasil', 'Data berhasil di tambah');
+            return redirect()->to('/admin/lihat_data_guru');
+        } else {
+            return redirect()->to('/admin_login');
+        }
+    }
+
+    public function edit_data_guru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $data = [
+                'title' => 'Edit Akun Guru',
+                'nama' => $this->guru('nama'),
+                'guru' => $this->GuruModel
+            ];
+            return view('pages/admin/edit_data_guru', $data);
+        } else {
+            return redirect()->to('/admin_login');
+        }
+    }
+
+    public function validasi_edit_data_guru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            //Ambil gambar
+            $fotoGuru = $this->request->getFile('foto_guru');
+
+            //Mengambil data guru
+            $guru = $this->GuruModel->where('nip', $this->request->getVar('nip'))->first();
+
+            if ($fotoGuru->getName() == NULL) {
+                $nip = $this->request->getVar('nip');
+                $data = [
+                    'nuptk' => $this->request->getVar('nuptk'),
+                    'nama' => $this->request->getVar('nama'),
+                    'tempat_lahir' => $this->request->getVar('tempat_lahir'),
+                    'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
+                    'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+                    'agama' => $this->request->getVar('agama'),
+                    'ijazah' => $this->request->getVar('ijazah'),
+                    'tahun_ijazah' => $this->request->getVar('tahun_ijazah'),
+                    'jenis_guru' => $this->request->getVar('jenis_guru'),
+                    'tanggal_angkatan' => $this->request->getVar('tanggal_angkatan'),
+                    'mulai_bekerja_disekolah' => $this->request->getVar('mulai_bekerja_disekolah'),
+                    'tmt_masa_pensiun' => $this->request->getVar('tmt_masa_pensiun'),
+                    'mengajar_dikelas' => $this->request->getVar('mengajar_dikelas'),
+                    'jumlah_jam_mengajar' => $this->request->getVar('jumlah_jam_mengajar')
+                ];
+                $this->GuruModel->update($nip, $data);
+                session()->setFlashdata('berhasil', 'Data berhasil di ubah');
+                return redirect()->to('/admin/lihat_data_guru');
+            } else {
+                unlink("./img/" . $guru['foto_guru']);
+
+                $fotoGuru->move('img');
+            }
+        } else {
+            return redirect()->to('/admin_login');
+        }
+    }
 }

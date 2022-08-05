@@ -114,6 +114,23 @@
     <!-- Page level custom scripts -->
     <script src="<?= basename(''); ?>/js/demo/datatables-demo.js"></script>
 
+    <script>
+        function previewImg() {
+            const image = document.querySelector('#image');
+            const imageLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imageLabel.textContent = image.file[0].name;
+
+            const fileImage = new FileReader();
+
+            fileImage.readAsDataURL(image.file[0]);
+
+            fileImage.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
 
 </body>
 

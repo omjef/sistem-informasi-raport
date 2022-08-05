@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TbGuru extends Migration
+class Guru extends Migration
 {
     public function up()
     {
@@ -48,20 +48,20 @@ class TbGuru extends Migration
                 'type'           => 'ENUM',
                 'constraint'     => ['Kepala Sekolah', 'Guru Kelas', 'Guru PAI', 'Guru PJOK'],
             ],
-            'tanggal_angkatan' => [
+            'tanggal_diangkat' => [
                 'type' => 'DATE',
             ],
-            'mulai_bekerja_disekolah' => [
+            'tanggal_bekerja' => [
                 'type' => 'DATE',
             ],
-            'tmt_masa_pensiun' => [
+            'tanggal_pensiun' => [
                 'type' => 'DATE',
             ],
-            'mengajar_dikelas' => [
+            'kelas_diampu' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'jumlah_jam_mengajar' => [
+            'jam_mengajar' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -70,20 +70,14 @@ class TbGuru extends Migration
                 'constraint' => '255',
             ],
         ]);
-        // membuat primary key
         $this->forge->addKey('nip', true);
-
-        // membuat index key
         $this->forge->addKey('nuptk');
 
-
-        // membuat table tb_siswa
-        $this->forge->createTable('tb_guru');
+        $this->forge->createTable('guru');
     }
 
     public function down()
     {
-        // menghapus tabel tb_siswa
-        $this->forge->dropTable('tb_guru');
+        $this->forge->dropTable('guru');
     }
 }

@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TbMapel extends Migration
+class Mapel extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'no_mapel' => [
+            'id_mapel' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -27,16 +27,13 @@ class TbMapel extends Migration
                 'constraint'     => ['Keterampilan', 'Pengetahuan'],
             ],
         ]);
-        // membuat primary key
-        $this->forge->addKey('no_mapel', true);
+        $this->forge->addKey('id_mapel', true);
 
-        // membuat tb_mapel
-        $this->forge->createTable('tb_mapel');
+        $this->forge->createTable('mapel');
     }
 
     public function down()
     {
-        // menghapus tb_mapel
-        $this->forge->dropTable('tb_mapel');
+        $this->forge->dropTable('mapel');
     }
 }

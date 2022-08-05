@@ -23,10 +23,6 @@ class AkunSiswa extends Seeder
             ],
         ];
 
-        // Simple Queries
-        //$this->db->query('INSERT INTO users (username, email) VALUES(:username:, :email:)', $data);
-
-        // Using Query Builder
-        $this->db->table('tb_akun_siswa')->insertBatch($data);
+        $this->db->table('akun_siswa')->insertBatch($data);
     }
 }

@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TbSiswa extends Migration
+class Siswa extends Migration
 {
     public function up()
     {
@@ -36,11 +36,11 @@ class TbSiswa extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'pendidikan_sebelumnya' => [
+            'pendidikan_sebelum' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'alamat_siswa' => [
+            'alamat' => [
                 'type' => 'TEXT',
                 'null' => TRUE,
             ],
@@ -52,10 +52,6 @@ class TbSiswa extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'nama_orang_tua_wali' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
             'Pekerjaan_ayah' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
@@ -63,14 +59,6 @@ class TbSiswa extends Migration
             'pekerjaan_ibu' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
-            ],
-            'pekerjaan_orang_tua_wali' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'alamat_orang_tua' => [
-                'type' => 'TEXT',
-                'null' => TRUE,
             ],
             'alamat_orang_tua' => [
                 'type' => 'TEXT',
@@ -85,16 +73,14 @@ class TbSiswa extends Migration
                 'constraint' => '255',
             ],
         ]);
-        // membuat primary key
         $this->forge->addKey('nisn', true);
+        $this->forge->addKey('nis');
 
-        // membuat table tb_siswa
-        $this->forge->createTable('tb_siswa');
+        $this->forge->createTable('siswa');
     }
 
     public function down()
     {
-        // menghapus tabel tb_siswa
-        $this->forge->dropTable('tb_siswa');
+        $this->forge->dropTable('siswa');
     }
 }
