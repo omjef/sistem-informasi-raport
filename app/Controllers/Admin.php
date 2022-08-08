@@ -276,11 +276,182 @@ class Admin extends BaseController
     }
 
     //--------------------------------Data-------------------------------------------
+    public function data_sekolah()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Sekolah',
+                'nama' => $dataGuru['nama']
+            ];
+            return view('pages/admin/dataSekolah', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
 
+    public function edit_datasekolah()
+    {
+        if (session()->get('logged_in') == 'admin') {
 
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
 
+    public function val_edit_datasekolah()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $nss = $this->request->getVar('nss');
+            $npsn = $this->request->getVar('npsn');
+            $nama = $this->request->getVar('nama');
+            $alamat = $this->request->getVar('alamat');
+            $kelurahan = $this->request->getVar('kelurahan');
+            $kecamatan = $this->request->getVar('kecamatan');
+            $kota = $this->request->getVar('kota');
+            $provinsi = $this->request->getVar('provinsi');
+            $website = $this->request->getVar('website');
+            $email = $this->request->getVar('email');
 
+            $data = [
+                'nss' => $nss,
+                'npsn' => $npsn,
+                'nama' => $nama,
+                'alamat' => $alamat,
+                'kelurahan' => $kelurahan,
+                'kecamatan' => $kecamatan,
+                'kota' => $kota,
+                'provinsi' => $provinsi,
+                'website' => $website,
+                'email' => $email
+            ];
 
+            $this->SekolahModel->update($nss, $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function data_guru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function tambah_dataguru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_tambah_dataguru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function edit_dataguru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_edit_dataguru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function hapus_dataguru()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function data_siswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function tambah_datasiswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_tambah_datasiswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function edit_datasiswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_edit_datasiswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function hapus_datasiswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+
+            return redirect()->to('/admin/akun_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
 
 
 
