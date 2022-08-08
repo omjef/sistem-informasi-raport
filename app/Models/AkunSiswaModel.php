@@ -6,6 +6,8 @@ use CodeIgniter\Model;
 
 class AkunSiswaModel extends Model
 {
-    protected $table = 'tb_akun_siswa';
-    protected $allowedFields = ['nisn', 'username', 'password', 'is_aktif'];
+    protected $table = 'akun_siswa';
+    protected $primaryKey = 'id';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = ['nisn', 'username', 'password', 'status_akun'];
 }

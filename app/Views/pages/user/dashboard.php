@@ -33,7 +33,7 @@
                             <div class="h4 mb-0 font-weight-bold text-gray-800">Aktif</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-user fa-2x text-gray-300"></i>
+                            <i class="fas fa-user fa-2x text-gray-300 "></i>
                         </div>
                     </div>
                 </div>

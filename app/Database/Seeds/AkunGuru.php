@@ -10,16 +10,25 @@ class AkunGuru extends Seeder
     {
         $data = [
             [
-                'nip' => '196911191992082001',
-                'username' => 'cucu',
+                'nip' => 196305081983052007,
+                'username' => 'heni',
                 'password' => password_hash(123, PASSWORD_DEFAULT),
-                'is_aktif' => 1
+                'jenis_akun' => 'Kepala Sekolah',
+                'status_akun' => 'Aktif'
             ],
             [
                 'nip' => '196306161983052011',
-                'username' => 'azni',
+                'username' => 'lilis',
                 'password' => password_hash(123, PASSWORD_DEFAULT),
-                'is_aktif' => 1
+                'jenis_akun' => 'Guru',
+                'status_akun' => 'Aktif'
+            ],
+            [
+                'nip' => '196911191992082001',
+                'username' => 'cucu',
+                'password' => password_hash(123, PASSWORD_DEFAULT),
+                'jenis_akun' => 'Operator',
+                'status_akun' => 'Aktif'
             ],
         ];
 

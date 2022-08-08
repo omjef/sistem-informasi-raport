@@ -6,12 +6,8 @@ use CodeIgniter\Model;
 
 class NilaiModel extends Model
 {
-    protected $table = 'tb_nilai';
-    protected $allowedFields = [
-        'no_kelas', 'no_mapel', 'nisn', 'nilai_1_1', 'nilai_1_2', 'nilai_1_3', 'nilai_1_4',
-        'nilai_2_1', 'nilai_2_2', 'nilai_2_3', 'nilai_2_4', 'nilai_3_1', 'nilai_3_2', 'nilai_3_3', 'nilai_3_4',
-        'nilai_4_1', 'nilai_4_2', 'nilai_4_3', 'nilai_4_4', 'nilai_5_1', 'nilai_5_2', 'nilai_5_3', 'nilai_5_4',
-        'nilai_6_1', 'nilai_6_2', 'nilai_6_3', 'nilai_6_4', 'nilai_7_1', 'nilai_7_2', 'nilai_7_3', 'nilai_7_4',
-        'nilai_8_1', 'nilai_8_2', 'nilai_8_3', 'nilai_8_4', 'nilai_9_1', 'nilai_9_2', 'nilai_9_3', 'nilai_9_4'
-    ];
+    protected $table = 'nilai';
+    protected $primaryKey = 'id';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = ['id_kelas', 'id_mapel', 'nisn', 'id_tahun_ajaran', 'nilai_1', 'nilai_2', 'nilai_3', 'nilai_4', 'nilai_5', 'nilai_6', 'nilai_7', 'nilai_8', 'nilai_9', 'nilai_10', 'nilai_11', 'nilai_12', 'nilai_13', 'nilai_14', 'nilai_15', 'nilai_16', 'pts', 'pas'];
 }

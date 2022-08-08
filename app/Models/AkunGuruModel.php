@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class AkunGuruModel extends Model
 {
-    protected $table = 'tb_akun_guru';
+    protected $table = 'akun_guru';
     protected $primaryKey = 'id';
-    protected $useAutoIncrement     = true;
-    protected $allowedFields = ['nip', 'username', 'password', 'role', 'is_aktif'];
+    protected $useAutoIncrement = true;
+    protected $allowedFields = ['nip', 'username', 'password', 'jenis_akun', 'status_akun'];
 }

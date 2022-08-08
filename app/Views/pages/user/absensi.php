@@ -16,12 +16,24 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Masukan Kelas</label>
                         <select class="form-control" name="kelas" id="kelas">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '1') ? 'Selected' : '';
+                                    } ?>>1</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '2') ? 'Selected' : '';
+                                    } ?>>2</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '3') ? 'Selected' : '';
+                                    } ?>>3</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '4') ? 'Selected' : '';
+                                    } ?>>4</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '5') ? 'Selected' : '';
+                                    } ?>>5</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '6') ? 'Selected' : '';
+                                    } ?>>6</option>
                         </select>
                     </div>
                 </div>
@@ -29,8 +41,12 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Masukan Semester</label>
                         <select class="form-control" name="semester" id="semester">
-                            <option>Ganjil</option>
-                            <option>Genap</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['semester'] == 'Ganjil') ? 'Selected' : '';
+                                    } ?>>Ganjil</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['semester'] == 'Genap') ? 'Selected' : '';
+                                    } ?>>Genap</option>
                         </select>
                     </div>
                 </div>
@@ -42,22 +58,28 @@
 
 <?php
 if (isset($_POST['lihat_nilai'])) :
-    $kelas1 = $_POST['kelas'];
+    $kls = $_POST['kelas'];
     $semester = $_POST['semester'];
 
-    $kls = $kelas->where(array('kelas' => $kelas1, 'semester' => $semester))->first();
-    $data = $absensi->where(array('no_kelas' => $kls['no_kelas'], 'nisn' => $nisn))->first();
+    $data_kelas = $kelas->where([
+        'kelas' => $kls,
+        'semester' => $semester
+    ])->first();
 
-    //Cari nama guru
-    $gru = $guru->where('nip', $kls['nip'])->first();
-    if ($data == NULL) {
+    $data_absensi = $absensi->where([
+        'nisn' => $nisn,
+        'id_kelas' => $data_kelas['id_kelas']
+    ])->first();
+    if ($data_absensi == NULL) {
 ?>
         <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert"> Data Tidak Ditemukan
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-    <?php } else { ?>
+    <?php } else {
+        $data_guru = $guru->where('nip', $data_kelas['nip'])->first();
+    ?>
         <div class="card mt-4 mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary text-center">Data Siswa Dan Absensi Siswa</h6>
@@ -72,7 +94,7 @@ if (isset($_POST['lihat_nilai'])) :
                     <tr>
                         <td>Kelas</td>
                         <td>:</td>
-                        <td><?= $kelas1; ?></td>
+                        <td><?= $kls; ?></td>
                     </tr>
                     <tr>
                         <td>Semester</td>
@@ -82,7 +104,7 @@ if (isset($_POST['lihat_nilai'])) :
                     <tr>
                         <td>Wali Kelas</td>
                         <td>:</td>
-                        <td><?= $gru['nama'] ?></td>
+                        <td><?= $data_guru['nama'] ?></td>
                     </tr>
                 </table>
 
@@ -97,9 +119,9 @@ if (isset($_POST['lihat_nilai'])) :
                         </thead>
                         <tbody>
                             <tr>
-                                <td><?= $data['sakit'] ?></td>
-                                <td><?= $data['izin'] ?></td>
-                                <td><?= $data['tanpa_keterangan'] ?></td>
+                                <td><?= $data_absensi['sakit'] ?></td>
+                                <td><?= $data_absensi['izin'] ?></td>
+                                <td><?= $data_absensi['tanpa_keterangan'] ?></td>
                             </tr>
                         </tbody>
                     </table>

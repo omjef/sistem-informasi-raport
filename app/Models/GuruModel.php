@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class GuruModel extends Model
 {
-    protected $table = 'tb_guru';
+    protected $table = 'guru';
     protected $primaryKey = 'nip';
-    protected $allowedFields = ['nuptk', 'nama', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'ijazah', 'tahun_ijazah', 'jenis_guru', 'tanggal_angkatan', 'mulai_bekerja_disini', 'tmt_masa_pensiun', 'mengajar_dikelas', 'jumlah_jam_mengajar', 'foto_guru'];
+    protected $allowedFields = ['nuptk', 'nama', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'ijazah', 'tahun_ijazah', 'jenis_guru', 'tanggal_diangkat', 'tanggal_bekerja', 'tanggal_pensiun', 'kelas_diampu', 'jam_mengajar', 'foto_guru'];
 }

@@ -60,5 +60,6 @@ abstract class BaseController extends Controller
         $this->NilaiEskulModel = new \App\Models\NilaiEskulModel();
         $this->SikapModel = new \App\Models\SikapModel();
         $this->AbsensiModel = new \App\Models\AbsensiModel();
+        $this->TahunAjaranModel = new \App\Models\TahunAjaranModel();
     }
 }

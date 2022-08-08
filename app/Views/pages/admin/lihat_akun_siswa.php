@@ -84,7 +84,7 @@
                     <!-- Username -->
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Masukan username">
+                        <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Masukan username" autofocus>
                     </div>
 
                     <!-- Password -->

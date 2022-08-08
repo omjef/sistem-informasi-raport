@@ -42,21 +42,15 @@ class Absensi extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
-            'nip' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->addKey('nisn');
         $this->forge->addKey('id_kelas');
         $this->forge->addKey('id_tahun_ajaran');
-        $this->forge->addKey('nip');
 
         $this->forge->addForeignKey('nisn', 'siswa', 'nisn');
         $this->forge->addForeignKey('id_kelas', 'kelas', 'id_kelas');
         $this->forge->addForeignKey('id_tahun_ajaran', 'tahun_ajaran', 'id_tahun_ajaran');
-        $this->forge->addForeignKey('nip', 'guru', 'nip');
 
         $this->forge->createTable('absensi');
     }

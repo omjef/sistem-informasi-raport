@@ -1,23 +1,17 @@
 <?= $this->extend('layout/template_table'); ?>
 
 <?= $this->section('content'); ?>
-<!-- Menampilkan Card -->
 <div class="card">
-    <!-- Bagian Card Header -->
     <div class="card-header">
         <div class="row">
             <div class="col-md-6">
                 <h5 class="text-primary font-weight-bold m-0 mt-2">AKUN GURU</h5>
             </div>
             <div class="col-md-6">
-                <a href="#" data-toggle="modal" class="btn btn-primary float-right" data-target="#akunGuru">
-                    <i class="fa fa-plus"></i>
-                </a>
+                <button data-toggle="modal" class="btn btn-primary float-right active" data-target="#akunGuru"><i class="fa fa-plus"></i></button>
             </div>
         </div>
     </div>
-
-    <!-- Bagian Card Body -->
     <div class="card-body">
         <?php if (session()->getFlashdata('berhasil')) : ?>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -59,7 +53,7 @@
 
                 <body>
                     <?php
-                    $data = $akun->find();
+                    $data = $akunGuru->find();
                     foreach ($data as $data) :
                     ?>
                         <tr>
@@ -68,7 +62,7 @@
                             <td><?= $data['username'] ?></td>
                             <td><?= $data['jenis_akun'] ?></td>
                             <td><?= ($data['status_akun'] == 'Aktif') ? "<span class='text-success'>$data[status_akun]</span>" : "<span class='text-danger'>$data[status_akun]</span>"; ?></td>
-                            <td class="text-center"><a href="<?= base_url('admin/edit_akun_guru') . "?id=$data[id]&nip=$data[nip]" ?>" class="fa fa-edit mr-3"></a> <a class="fa fa-trash" href="<?= base_url('admin/hapus_akun_guru') . "?id=$data[id]&nip=$data[nip]" ?>"></a></td>
+                            <td class="text-center"><a href="<?= base_url('admin/edit_akunguru') . "?nip=$data[nip]" ?>" class="fa fa-edit mr-3"></a> <a class="fa fa-trash" href="<?= base_url('admin/hapus_akunguru') . "?nip=$data[nip]" ?>" onclick="return confirm('Yakin data mau dihapus?')"></a></td>
                         </tr>
                     <?php
                     endforeach;
@@ -80,7 +74,7 @@
 </div>
 
 <!-- MODAL TAMPIL AKUN GURU -->
-<div class="modal" id="akunGuru" aria-hidden="true">
+<div class="modal fade" id="akunGuru" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -89,21 +83,22 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form action="<?= base_url('/admin/validasi_tambah_akun_guru') ?>" method="post">
+            <form action="<?= base_url('/admin/val_takunguru') ?>" method="post">
                 <div class="modal-body">
-                    <!-- Nip -->
                     <div class="form-group">
                         <label for="nip">NIP</label>
-                        <input type="text" class="form-control" name="nip" id="nip" placeholder="Masukan nip">
+                        <select class="form-control" name="nip" id="nip">
+                            <?php foreach ($dataGuru->find() as $inpGuru) : ?>
+                                <option value="<?= $inpGuru['nip'] ?>"><?= $inpGuru['nip'] . " - " . $inpGuru['nama'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
-                    <!-- Username -->
                     <div class="form-group">
                         <label for="username">USERNAME</label>
                         <input type="text" class="form-control" name="username" id="username" placeholder="Masukan username">
                     </div>
 
-                    <!-- Password -->
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
@@ -115,6 +110,14 @@
                                 <input type="password" class="form-control" name="konfirmasi_password" id="konfirmasi_password" placeholder="Masukan konfirmasi password">
                             </div>
                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aspek">JENIS AKUN</label>
+                        <select class="form-control" name="jenis_akun" id="jenis_akun">
+                            <option value="Kepala Sekolah">Kepala Sekolah</option>
+                            <option value="Guru Kelas">Guru Kelas</option>
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">

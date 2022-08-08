@@ -11,15 +11,33 @@ class AkunSiswa extends Seeder
         $data = [
             [
                 'nisn' => '3116385475',
-                'username' => 'aal',
+                'username' => 'aalsyam',
                 'password' => password_hash(123, PASSWORD_DEFAULT),
-                'is_aktif' => 1
+                'status_akun' => 'Aktif'
             ],
             [
-                'nisn' => '0088120116',
+                'nisn' => '3121317973',
+                'username' => 'dewi',
+                'password' => password_hash(123, PASSWORD_DEFAULT),
+                'status_akun' => 'Aktif'
+            ],
+            [
+                'nisn' => '75949679',
+                'username' => 'azzam',
+                'password' => password_hash(123, PASSWORD_DEFAULT),
+                'status_akun' => 'Aktif'
+            ],
+            [
+                'nisn' => '79897231',
+                'username' => 'dzia',
+                'password' => password_hash(123, PASSWORD_DEFAULT),
+                'status_akun' => 'Aktif'
+            ],
+            [
+                'nisn' => '88120116',
                 'username' => 'azni',
                 'password' => password_hash(123, PASSWORD_DEFAULT),
-                'is_aktif' => 1
+                'status_akun' => 'Aktif'
             ],
         ];
 

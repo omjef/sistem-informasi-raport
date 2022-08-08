@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class SekolahModel extends Model
 {
-    protected $table = 'tb_sekolah';
-    protected $allowedFields = ['nss', 'npsn', 'nama_sekolah', 'alamat_Sekolah', 'kelurahan', 'kecamatan', 'kota', 'provinsi', 'website', 'email'];
+    protected $table = 'sekolah';
+    protected $primaryKey = 'nss';
+    protected $allowedFields = ['npsn', 'nama', 'alamat', 'keluarahan', 'kecamatan', 'kota', 'provinsi', 'website', 'email'];
 }

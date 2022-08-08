@@ -27,10 +27,6 @@ class AkunSiswa extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'jenis_akun' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
             'status_akun' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',

@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class EskulModel extends Model
 {
-    protected $table = 'tb_eskul';
-    protected $allowedFields = ['no_eskul', 'nama_eskul'];
+    protected $table = 'eskul';
+    protected $primaryKey = 'id_eskul';
+    protected $allowedFields = ['id_eskul', 'nama_eskul'];
 }

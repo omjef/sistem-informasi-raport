@@ -4,22 +4,14 @@ namespace App\Controllers;
 
 class User extends BaseController
 {
-    private function query($db)
-    {
-        $siswa = $this->SiswaModel;
-        $nisn = session()->get('nisn');
-        $query = $siswa->where('nisn', $nisn)->first();
-        return $query[$db];
-    }
     public function index()
     {
         if (session()->get('logged_in') == 'user') {
+            $siswa = $this->SiswaModel->where('nisn', session()->get('nisn'))->first();
 
             $data = [
                 'title' => 'Dashboard',
-                'nisn' => session()->get('nisn'),
-                'nama' => $this->query('nama'),
-                'foto' => $this->query('foto_siswa')
+                'nama' => $siswa['nama']
             ];
             return view('pages/user/dashboard', $data);
         } else {
@@ -30,15 +22,23 @@ class User extends BaseController
     public function nilai()
     {
         if (session()->get('logged_in') == 'user') {
+            $siswa = $this->SiswaModel->where('nisn', session()->get('nisn'))->first();
+            $kelas = $this->KelasModel;
+            $ta = $this->TahunAjaranModel;
+            $guru = $this->GuruModel;
+            $mapel = $this->MapelModel;
+            $nilai = $this->NilaiModel;
+
             $data = [
                 'title' => 'Nilai Siswa',
-                'nisn' => session()->get('nisn'),
-                'nama' => $this->query('nama'),
-                'foto' => $this->query('foto_siswa'),
-                'kelas' => $this->KelasModel,
-                'guru' => $this->GuruModel,
-                'mapel' => $this->MapelModel,
-                'nilai' => $this->NilaiModel
+                'nisn' => $siswa['nisn'],
+                'nama' => $siswa['nama'],
+                'foto' => $siswa['foto_siswa'],
+                'kelas' => $kelas,
+                'guru' => $guru,
+                'mapel' => $mapel,
+                'nilai' => $nilai,
+                'ta' => $ta
             ];
             return view('pages/user/lihat_nilai', $data);
         } else {
@@ -49,14 +49,18 @@ class User extends BaseController
     public function absensi()
     {
         if (session()->get('logged_in') == 'user') {
+            $siswa = $this->SiswaModel->where('nisn', session()->get('nisn'))->first();
+            $kelas = $this->KelasModel;
+            $absensi = $this->AbsensiModel;
+            $guru = $this->GuruModel;
             $data = [
                 'title' => 'Absensi Siswa',
-                'nisn' => session()->get('nisn'),
-                'nama' => $this->query('nama'),
-                'foto' => $this->query('foto_siswa'),
-                'absensi' => $this->AbsensiModel,
-                'kelas' => $this->KelasModel,
-                'guru' => $this->GuruModel
+                'nisn' => $siswa['nisn'],
+                'nama' => $siswa['nama'],
+                'foto' => $siswa['foto_siswa'],
+                'absensi' => $absensi,
+                'kelas' => $kelas,
+                'guru' => $guru
             ];
             return view('pages/user/absensi', $data);
         } else {

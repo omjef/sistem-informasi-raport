@@ -1,23 +1,15 @@
 <?= $this->extend('layout/template_table'); ?>
 
 <?= $this->section('content'); ?>
-<!-- Menampilkan Card -->
 <div class="card">
-    <!-- Bagian Card Header -->
     <div class="card-header">
         <div class="row">
             <div class="col-md-6">
-                <h5 class="text-primary font-weight-bold m-0 mt-2">AKUN GURU</h5>
+                <h5 class="text-primary font-weight-bold m-0">AKUN SISWA</h5>
             </div>
-            <div class="col-md-6">
-                <a href="#" data-toggle="modal" class="btn btn-primary float-right" data-target="#akunGuru">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            <div class="col-md-6"><button data-toggle="modal" class="btn btn-primary float-right active" data-target="#akunSiswa"><i class="fa fa-plus"></i></button></div>
         </div>
     </div>
-
-    <!-- Bagian Card Body -->
     <div class="card-body">
         <?php if (session()->getFlashdata('berhasil')) : ?>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -39,9 +31,8 @@
                 <thead class="text-center">
                     <tr>
                         <th>NO</th>
-                        <th>NIP</th>
+                        <th>NISN</th>
                         <th>USERNAME</th>
-                        <th>JENIS AKUN</th>
                         <th>STATUS AKUN</th>
                         <th>#</th>
                     </tr>
@@ -49,9 +40,8 @@
                 <tfoot class="text-center">
                     <tr>
                         <th>NO</th>
-                        <th>NIP</th>
+                        <th>NISN</th>
                         <th>USERNAME</th>
-                        <th>JENIS AKUN</th>
                         <th>STATUS AKUN</th>
                         <th>#</th>
                     </tr>
@@ -59,16 +49,15 @@
 
                 <body>
                     <?php
-                    $data = $akun->find();
+                    $data = $akunSiswa->find();
                     foreach ($data as $data) :
                     ?>
                         <tr>
                             <td><?= $data['id'] ?></td>
-                            <td><?= $data['nip'] ?></td>
+                            <td><?= $data['nisn'] ?></td>
                             <td><?= $data['username'] ?></td>
-                            <td><?= $data['jenis_akun'] ?></td>
                             <td><?= ($data['status_akun'] == 'Aktif') ? "<span class='text-success'>$data[status_akun]</span>" : "<span class='text-danger'>$data[status_akun]</span>"; ?></td>
-                            <td class="text-center"><a href="<?= base_url('admin/edit_akun_guru') . "?id=$data[id]&nip=$data[nip]" ?>" class="fa fa-edit mr-3"></a> <a class="fa fa-trash" href="<?= base_url('admin/hapus_akun_guru') . "?id=$data[id]&nip=$data[nip]" ?>"></a></td>
+                            <td class="text-center"><a href="<?= base_url('admin/edit_akunsiswa') . "?nisn=$data[nisn]" ?>" class="fa fa-edit mr-3"></a> <a class="fa fa-trash" href="<?= base_url('admin/hapus_akunsiswa') . "?nisn=$data[nisn]" ?>" onclick="return confirm('Yakin data mau dihapus?')"></a></td>
                         </tr>
                     <?php
                     endforeach;
@@ -80,30 +69,31 @@
 </div>
 
 <!-- MODAL TAMPIL AKUN GURU -->
-<div class="modal" id="akunGuru" aria-hidden="true">
+<div class="modal fade" id="akunSiswa" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">TAMBAH AKUN GURU</h5>
+                <h5 class="modal-title">TAMBAH AKUN SISWA</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form action="<?= base_url('/admin/validasi_tambah_akun_guru') ?>" method="post">
+            <form action="<?= base_url('/admin/val_takunsiswa') ?>" method="post">
                 <div class="modal-body">
-                    <!-- Nip -->
                     <div class="form-group">
-                        <label for="nip">NIP</label>
-                        <input type="text" class="form-control" name="nip" id="nip" placeholder="Masukan nip">
+                        <label for="nip">NISN</label>
+                        <select class="form-control" name="nisn" id="nisn">
+                            <?php foreach ($dataSiswa->find() as $inpSiswa) : ?>
+                                <option value="<?= $inpSiswa['nisn'] ?>"><?= $inpSiswa['nisn'] . " - " . $inpSiswa['nama'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
-                    <!-- Username -->
                     <div class="form-group">
                         <label for="username">USERNAME</label>
                         <input type="text" class="form-control" name="username" id="username" placeholder="Masukan username">
                     </div>
 
-                    <!-- Password -->
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">

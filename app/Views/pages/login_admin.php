@@ -28,10 +28,12 @@
                                 </div>
                                 <form class="user" action="<?= base_url('/auth/auth_admin'); ?>" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="username" name="username" aria-describedby="emailHelp" placeholder="Masukan username...">
+                                        <input type="text" class="form-control form-control-user <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" id="username" name="username" placeholder="Masukan username" value="<?= old('username') ?>">
+                                        <small class="form-text text-danger"><?= $validation->getError('username'); ?></small>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Masukan password...">
+                                        <input type="password" class="form-control form-control-user <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" id="password" name="password" placeholder="Masukan password" value="<?= old('password') ?>">
+                                        <small class=" form-text text-danger"><?= $validation->getError('password'); ?></small>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">

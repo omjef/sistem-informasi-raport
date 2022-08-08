@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class SiswaModel extends Model
 {
-    protected $table = 'tb_siswa';
-    protected $allowedFields = ['nisn', 'nis', 'nama', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'pendidikan_sebelumnya', 'alamat_siswa', 'nama_ayah', 'nama_ibu', 'nama_orang_tua_wali', 'Pekerjaan_ayah', 'pekerjaan_ibu', 'pekerjaan_orang_tua_wali', 'alamat_orang_tua', 'foto_siswa'];
+    protected $table = 'siswa';
+    protected $primaryKey = 'nisn';
+    protected $allowedFields = ['nis', 'nama', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'pendidikan_sebelum', 'alamat', 'nama_ayah', 'nama_ibu', 'Pekerjaan_ayah', 'pekerjaan_ibu', 'alamat_orang_tua', 'status_siswa', 'foto_siswa'];
 }

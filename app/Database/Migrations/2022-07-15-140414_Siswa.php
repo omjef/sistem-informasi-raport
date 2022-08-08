@@ -64,6 +64,10 @@ class Siswa extends Migration
                 'type' => 'TEXT',
                 'null' => TRUE,
             ],
+            'tahun_mendaftar' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'status_siswa' => [
                 'type'           => 'ENUM',
                 'constraint'     => ['Aktif', 'Lulus', 'Pindah', 'Keluar'],

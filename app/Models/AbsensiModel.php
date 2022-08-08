@@ -6,6 +6,8 @@ use CodeIgniter\Model;
 
 class AbsensiModel extends Model
 {
-    protected $table = 'tb_absensi';
-    protected $allowedFields = ['nisn', 'nip', 'no_kelas', 'sakit', 'izin', 'tanpa_keterangan'];
+    protected $table = 'absensi';
+    protected $primaryKey = 'id';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = ['nisn', 'id_kelas', 'id_tahun_ajaran', 'sakit', 'izin', 'tanpa_keterangan'];
 }

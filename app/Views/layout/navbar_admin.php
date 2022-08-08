@@ -22,34 +22,55 @@
     <!-- Sidebar pembagi -->
     <hr class="sidebar-divider">
 
-    <!-- Heading Akun -->
     <div class="sidebar-heading">
-        Guru Dan Siswa
+        FITUR ADMINISTRATOR
     </div>
 
-    <!-- Data -->
-    <li class="nav-item <?php if ($title == 'Tambah Akun Guru' || $title == 'Lihat Akun Guru') echo 'active'; ?>">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#akun_guru" aria-expanded="true" aria-controls="collapseTwo">
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#akun" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Guru</span>
+            <span>Akun</span>
         </a>
-        <div id="akun_guru" class="collapse <?php if ($title == 'Lihat Data Guru' || $title == 'Lihat Akun Guru') echo 'show'; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="akun" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item <?php if ($title == 'Lihat Akun Guru') echo 'active'; ?>" href="<?= base_url('/admin/lihat_akun_guru') ?>">Lihat Akun Guru</a>
-                <a class="collapse-item <?php if ($title == 'Lihat Data Guru') echo 'active'; ?>" href="<?= base_url('/admin/lihat_data_guru') ?>">Lihat Data Guru</a>
+                <a class="collapse-item" href="<?= base_url('/admin/akun_guru') ?>">Akun Guru</a>
+                <a class="collapse-item" href="<?= base_url('/admin/akun_siswa') ?>">Akun Siswa</a>
             </div>
         </div>
     </li>
 
-    <li class="nav-item <?php if ($title == 'Tambah Akun Siswa' || $title == 'Lihat Akun Siswa') echo 'active'; ?>">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#akun_siswa" aria-expanded="true" aria-controls="collapseTwo">
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#data" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Siswa</span>
+            <span>Data</span>
         </a>
-        <div id="akun_siswa" class="collapse <?php if ($title == 'Tambah Akun Siswa' || $title == 'Lihat Akun Siswa') echo 'show'; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="data" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item <?php if ($title == 'Tambah Akun Siswa') echo 'active'; ?>" href="<?= base_url('/admin/tambah_akun_siswa') ?>">Tambah Akun Siswa</a>
-                <a class="collapse-item <?php if ($title == 'Lihat Akun Siswa') echo 'active'; ?>" href="<?= base_url('/admin/lihat_akun_siswa') ?>">Lihat Akun Siswa</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Sekolah</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Siswa</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Guru</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Tahun Ajaran</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Mata Pelajaran</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Kelas</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Ekstrakulikuler</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#aktifitas_sekolah" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Aktifitas Sekolah</span>
+        </a>
+        <div id="aktifitas_sekolah" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= base_url('') ?>">Tahun Ajaran</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Tambah Siswa Kekelas</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Guru</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Tahun Ajaran</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Mata Pelajaran</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Kelas</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Ekstrakulikuler</a>
             </div>
         </div>
     </li>
@@ -59,7 +80,7 @@
 
     <!-- Heading Akun -->
     <div class="sidebar-heading">
-        Data Guru Dan Siswa
+        FITUR GURU
     </div>
 
     <!-- Data -->

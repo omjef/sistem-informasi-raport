@@ -9,105 +9,165 @@ class Auth extends BaseController
 {
     public function index()
     {
-        $data = [
-            'title' => 'SDN 2 Kersanagara'
-        ];
-        return view('pages/login_user', $data);
+        if (session()->get('logged_in') == 'admin') {
+            return redirect()->to('/admin');
+        } elseif (session()->get('logged_in') == 'user') {
+            return redirect()->to('/user');
+        } else {
+            $data = [
+                'title' => 'SDN 2 Kersanagara',
+                'validation' => \Config\Services::validation()
+            ];
+            return view('pages/login_user', $data);
+        }
+    }
+
+    public function auth_user()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            return redirect()->to('/admin');
+        } elseif (session()->get('logged_in') == 'user') {
+            return redirect()->to('/user');
+        } else {
+            if (!$this->validate([
+                'username' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => '{field} harus di isi'
+                    ]
+                ],
+                'password' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => '{field} harus di isi'
+                    ]
+                ],
+            ])) {
+                $validation = \Config\Services::validation();
+                return redirect()->to('/auth')->withInput()->withInput('validation', $validation);
+            }
+            $username = $this->request->getVar('username');
+            $password = $this->request->getVar('password');
+
+            $user = $this->AkunSiswaModel->where('username', $username)->first();
+            if ($user) {
+                if ($user['status_akun'] == 'Aktif') {
+                    $password_match = password_verify($password, $user['password']);
+                    if ($password_match) {
+                        $data_session = [
+                            'nisn' => $user['nisn'],
+                            'logged_in' => 'user'
+                        ];
+                        session()->set($data_session);
+                        return redirect()->to('/user');
+                    } else {
+                        session()->setFlashdata('msg', 'Password yang anda masukan salah!');
+                        return redirect()->to('/auth');
+                    }
+                } else {
+                    session()->setFlashdata('msg', 'Akun sudah tidak aktif!');
+                    return redirect()->to('/auth');
+                }
+            } else {
+                session()->setFlashdata('msg', 'Akun tidak ditemukan!');
+                return redirect()->to('/auth');
+            }
+        }
     }
 
     public function admin()
     {
-        $data = [
-            'title' => 'Admin Login'
-        ];
-        return view('pages/login_admin', $data);
-    }
-
-    public function auth_login()
-    {
-        $session = session();
-        $AkunSiswaModel = new AkunSiswaModel();
-        $username = $this->request->getVar('username');
-        $password = $this->request->getVar('password');
-
-        $data = $AkunSiswaModel->where('username', $username)->first();
-        if ($data) {
-            $is_aktif = $data['is_aktif'];
-            if ($is_aktif == 1) {
-                $pass = $data['password'];
-                $verify_pass = password_verify($password, $pass);
-                if ($verify_pass) {
-                    $session_data = [
-                        'nisn' => $data['nisn'],
-                        'logged_in' => 'user'
-                    ];
-                    $session->setFlashdata('msg', 'Selamat Datang !!');
-                    $session->set($session_data);
-                    return redirect()->to('/user');
-                } else {
-                    $session->setFlashdata('msg', 'Password yang anda masukan salah');
-                    return redirect()->to('/auth');
-                }
-            } else {
-                $session->setFlashdata('msg', 'Akun tidak aktif');
-                return redirect()->to('/auth');
-            }
+        if (session()->get('logged_in') == 'admin') {
+            return redirect()->to('/admin');
+        } elseif (session()->get('logged_in') == 'user') {
+            return redirect()->to('/user');
         } else {
-            $session->setFlashdata('msg', 'Akun tidak di temukan');
-            return redirect()->to('/auth');
+            $data = [
+                'title' => 'Admin SDN 2 Kersanagara',
+                'validation' => \Config\Services::validation()
+            ];
+            return view('pages/login_admin', $data);
         }
     }
 
     public function auth_admin()
     {
-        $session = session();
-        $AkunGuruModel = new AkunGuruModel();
-        $username = $this->request->getVar('username');
-        $password = $this->request->getVar('password');
-        $data = $AkunGuruModel->where('username', $username)->first();
-        if ($data) {
-            $is_aktif = $data['is_aktif'];
-            if ($is_aktif == 1) {
-                $pass = $data['password'];
-                $verify_pass = password_verify($password, $pass);
-                if ($verify_pass) {
-                    $session_data = [
-                        'nip' => $data['nip'],
-                        'logged_in' => 'admin'
-                    ];
-                    $session->set($session_data);
-                    return redirect()->to('/admin');
+        if (session()->get('logged_in') == 'admin') {
+            return redirect()->to('/admin');
+        } elseif (session()->get('logged_in') == 'user') {
+            return redirect()->to('/user');
+        } else {
+            if (!$this->validate([
+                'username' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => '{field} harus di isi'
+                    ]
+                ],
+                'password' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => '{field} harus di isi'
+                    ]
+                ],
+            ])) {
+                $validation = \Config\Services::validation();
+                return redirect()->to('/auth/admin')->withInput()->withInput('validation', $validation);
+            }
+            $username = $this->request->getVar('username');
+            $password = $this->request->getVar('password');
+
+            $admin = $this->AkunGuruModel->where('username', $username)->first();
+            if ($admin) {
+                if ($admin['status_akun'] == 'Aktif') {
+                    $password_match = password_verify($password, $admin['password']);
+                    if ($password_match) {
+                        $data_session = [
+                            'nip' => $admin['nip'],
+                            'logged_in' => 'admin'
+                        ];
+                        session()->set($data_session);
+                        return redirect()->to('/admin');
+                    } else {
+                        session()->setFlashdata('msg', 'Password yang anda masukan salah!');
+                        return redirect()->to('/auth/admin');
+                    }
                 } else {
-                    $session->setFlashdata('msg', 'Password yang anda masukan salah');
-                    return redirect()->to('/admin_login');
+                    session()->setFlashdata('msg', 'Akun sudah tidak aktif!');
+                    return redirect()->to('/auth/admin');
                 }
             } else {
-                $session->setFlashdata('msg', 'Akun tidak aktif');
-                return redirect()->to('/admin_login');
+                session()->setFlashdata('msg', 'Akun tidak ditemukan!');
+                return redirect()->to('/auth/admin');
             }
-        } else {
-            $session->setFlashdata('msg', 'Akun tidak di temukan');
-            return redirect()->to('/admin_login');
         }
     }
 
     public function lupa_akun()
     {
-        $data = [
-            'title' => 'Lupa Akun'
-        ];
-        return view('pages/lupa_akun', $data);
+        if (session()->get('logged_in') == 'admin') {
+            return redirect()->to('/admin');
+        } elseif (session()->get('logged_in') == 'user') {
+            return redirect()->to('/user');
+        } else {
+            $data = [
+                'title' => 'Lupa Akun'
+            ];
+            return view('pages/lupa_akun', $data);
+        }
     }
 
     public function logout()
     {
-        $session = session();
-        if ($session->logged_in == 'user') {
-            $session->destroy();
+        if (session()->get('logged_in') == 'admin') :
+            session()->destroy();
+            return redirect()->to('/auth/admin');
+        elseif (session()->get('logged_in') == 'user') :
+            session()->destroy();
             return redirect()->to('/auth');
-        } else if ($session->logged_in == 'admin') {
-            $session->destroy();
-            return redirect()->to('/admin_login');
-        }
+        else :
+            session()->destroy();
+            return redirect()->to('/auth');
+        endif;
     }
 }

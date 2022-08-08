@@ -1,0 +1,136 @@
+<?php
+
+namespace App\Database\Seeds;
+
+use CodeIgniter\Database\Seeder;
+
+class Nilai extends Seeder
+{
+    public function run()
+    {
+        $data = [
+            [
+                'id_kelas' => 'K31',
+                'id_mapel' => 'K3_1',
+                'nisn' => '3121317973',
+                'id_tahun_ajaran' => 'TA-K31-2022',
+                'nilai_1' => '90',
+                'nilai_2' => '90',
+                'nilai_3' => '90',
+                'nilai_4' => '90',
+                'nilai_5' => '85',
+                'nilai_6' => '90',
+                'nilai_7' => '90',
+                'nilai_8' => '90',
+                'nilai_9' => '90',
+                'nilai_10' => '90',
+                'nilai_11' => '90',
+                'nilai_12' => '90',
+                'nilai_13' => '90',
+                'nilai_14' => '90',
+                'nilai_15' => '90',
+                'nilai_16' => '90',
+                'pts' => '90',
+                'pas' => '90'
+            ],
+            [
+                'id_kelas' => 'K32',
+                'id_mapel' => 'K3_1',
+                'nisn' => '3121317973',
+                'id_tahun_ajaran' => 'TA-K32-2022',
+                'nilai_1' => '90',
+                'nilai_2' => '90',
+                'nilai_3' => '90',
+                'nilai_4' => '90',
+                'nilai_5' => '90',
+                'nilai_6' => '90',
+                'nilai_7' => '90',
+                'nilai_8' => '90',
+                'nilai_9' => '90',
+                'nilai_10' => '90',
+                'nilai_11' => '90',
+                'nilai_12' => '90',
+                'nilai_13' => '90',
+                'nilai_14' => '90',
+                'nilai_15' => '90',
+                'nilai_16' => '90',
+                'pts' => '90',
+                'pas' => '90'
+            ],
+            [
+                'id_kelas' => 'K21',
+                'id_mapel' => 'K2_1',
+                'nisn' => '3121317973',
+                'id_tahun_ajaran' => 'TA-K21-2022',
+                'nilai_1' => '90',
+                'nilai_2' => '90',
+                'nilai_3' => '90',
+                'nilai_4' => '90',
+                'nilai_5' => '90',
+                'nilai_6' => '90',
+                'nilai_7' => '90',
+                'nilai_8' => '90',
+                'nilai_9' => '90',
+                'nilai_10' => '90',
+                'nilai_11' => '90',
+                'nilai_12' => '90',
+                'nilai_13' => '90',
+                'nilai_14' => '90',
+                'nilai_15' => '90',
+                'nilai_16' => '90',
+                'pts' => '90',
+                'pas' => '90'
+            ],
+            [
+                'id_kelas' => 'K61',
+                'id_mapel' => 'K6_1',
+                'nisn' => '3121317973',
+                'id_tahun_ajaran' => 'TA-K61-2022',
+                'nilai_1' => '90',
+                'nilai_2' => '90',
+                'nilai_3' => '90',
+                'nilai_4' => '90',
+                'nilai_5' => '90',
+                'nilai_6' => '90',
+                'nilai_7' => '90',
+                'nilai_8' => '90',
+                'nilai_9' => '90',
+                'nilai_10' => '90',
+                'nilai_11' => '90',
+                'nilai_12' => '90',
+                'nilai_13' => '90',
+                'nilai_14' => '90',
+                'nilai_15' => '90',
+                'nilai_16' => '0',
+                'pts' => '90',
+                'pas' => '90'
+            ],
+            [
+                'id_kelas' => 'K62',
+                'id_mapel' => 'K6_1',
+                'nisn' => '3121317973',
+                'id_tahun_ajaran' => 'TA-K62-2022',
+                'nilai_1' => '90',
+                'nilai_2' => '90',
+                'nilai_3' => '90',
+                'nilai_4' => '90',
+                'nilai_5' => '90',
+                'nilai_6' => '90',
+                'nilai_7' => '90',
+                'nilai_8' => '90',
+                'nilai_9' => '90',
+                'nilai_10' => '90',
+                'nilai_11' => '90',
+                'nilai_12' => '95',
+                'nilai_13' => '0',
+                'nilai_14' => '0',
+                'nilai_15' => '0',
+                'nilai_16' => '0',
+                'pts' => '90',
+                'pas' => '90'
+            ],
+        ];
+
+        $this->db->table('nilai')->insertBatch($data);
+    }
+}

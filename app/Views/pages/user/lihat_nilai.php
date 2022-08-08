@@ -16,12 +16,24 @@
                     <div class="form-group">
                         <label for="semester">Masukan Kelas</label>
                         <select class="form-control" name="kelas" id="kelas">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '1') ? 'Selected' : '';
+                                    } ?>>1</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '2') ? 'Selected' : '';
+                                    } ?>>2</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '3') ? 'Selected' : '';
+                                    } ?>>3</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '4') ? 'Selected' : '';
+                                    } ?>>4</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '5') ? 'Selected' : '';
+                                    } ?>>5</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['kelas'] == '6') ? 'Selected' : '';
+                                    } ?>>6</option>
                         </select>
                     </div>
                 </div>
@@ -29,8 +41,12 @@
                     <div class="form-group">
                         <label for="semester">Masukan Semester</label>
                         <select class="form-control" name="semester" id="semester">
-                            <option>Ganjil</option>
-                            <option>Genap</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['semester'] == 'Ganjil') ? 'Selected' : '';
+                                    } ?>>Ganjil</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['semester'] == 'Genap') ? 'Selected' : '';
+                                    } ?>>Genap</option>
                         </select>
                     </div>
                 </div>
@@ -38,8 +54,12 @@
                     <div class="form-group">
                         <label for="aspek">Aspek</label>
                         <select class="form-control" name="aspek" id="aspek">
-                            <option>Keterampilan</option>
-                            <option>Pengetahuan</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['aspek'] == 'Keterampilan') ? 'Selected' : '';
+                                    } ?>>Keterampilan</option>
+                            <option <?php if (isset($_POST['lihat_nilai'])) {
+                                        echo ($_POST['aspek'] == 'Pengetahuan') ? 'Selected' : '';
+                                    } ?>>Pengetahuan</option>
                         </select>
                     </div>
                 </div>
@@ -52,20 +72,33 @@
 <?php
 //Eksekusi
 if (isset($_POST['lihat_nilai'])) :
-    $kelas1 = $_POST['kelas'];
+    //Tampung Data Sementara
+    $kls = $_POST['kelas'];
     $semester = $_POST['semester'];
     $aspek = $_POST['aspek'];
 
-    //Data Siswa
-    $kls = $kelas->where(array('kelas' => $kelas1, 'semester' => $semester))->first();
-    //Nilai Siswa
-    $tampil_nilai = $nilai->select('*')->join('tb_mapel', 'tb_nilai.no_mapel = tb_mapel.no_mapel', 'inner')->where(array('no_kelas' => $kls['no_kelas'], 'aspek' => $aspek, 'nisn' => $nisn))->find();
-    //Tahun Ajaran
-    $tahun_ajaran = $nilai->select('*')->join('tb_mapel', 'tb_nilai.no_mapel = tb_mapel.no_mapel', 'inner')->where(array('no_kelas' => $kls['no_kelas'], 'aspek' => $aspek, 'nisn' => $nisn))->first();
-    //Data Guru
-    $gru = $guru->where('nip', $kls['nip'])->first();
-    //Jika data tidak ditemukan
-    if ($tampil_nilai == NULL) {
+    //Ambil Data
+    $data_kelas = $kelas->where([
+        'kelas' => $kls,
+        'semester' => $semester,
+    ])->first();
+
+    $data_guru = $guru->where([
+        'nip' => $data_kelas['nip']
+    ])->first();
+
+    //Tampil Data
+    $temp_data = $nilai->join('mapel', 'nilai.id_mapel = mapel.id_mapel', 'inner')->where([
+        'nisn' => $nisn,
+        'id_kelas' => $data_kelas['id_kelas'],
+        'aspek' => $aspek
+    ])->first();
+    $data_nilai = $nilai->join('mapel', 'nilai.id_mapel = mapel.id_mapel', 'inner')->where([
+        'nisn' => $nisn,
+        'id_kelas' => $data_kelas['id_kelas'],
+        'aspek' => $aspek
+    ])->find();
+    if ($data_nilai == NULL) {
 ?>
         <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert"> Data Tidak Ditemukan
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -74,6 +107,7 @@ if (isset($_POST['lihat_nilai'])) :
         </div>
     <?php
     } else {
+        $data_ta = $ta->where('id_tahun_ajaran', $temp_data['id_tahun_ajaran'])->first();
     ?>
         <div class="card mt-4 mb-4">
             <div class="card-header py-3">
@@ -89,7 +123,7 @@ if (isset($_POST['lihat_nilai'])) :
                     <tr>
                         <td>Kelas</td>
                         <td>:</td>
-                        <td><?= $kelas1; ?></td>
+                        <td><?= $kls; ?></td>
                     </tr>
                     <tr>
                         <td>Semester</td>
@@ -99,7 +133,7 @@ if (isset($_POST['lihat_nilai'])) :
                     <tr>
                         <td>Tahun Ajaran</td>
                         <td>:</td>
-                        <td><?= $tahun_ajaran['tahun_ajaran'] . "/" . $tahun_ajaran['tahun_ajaran'] + 1; ?></td>
+                        <td><?= $data_ta['tahun_ajaran'] . "/" . $data_ta['tahun_ajaran'] + 1; ?></td>
                     </tr>
                     <tr>
                         <td>Aspek</td>
@@ -109,13 +143,13 @@ if (isset($_POST['lihat_nilai'])) :
                     <tr>
                         <td>Wali Kelas</td>
                         <td>:</td>
-                        <td><?= $gru['nama'] ?></td>
+                        <td><?= $data_guru['nama'] ?></td>
                     </tr>
                 </table>
 
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover text-center" width="100%" cellspacing="0">
-                        <?php if ($kelas1 <= '3' && $semester == 'Ganjil') : ?>
+                        <?php if ($kls <= '3' && $semester == 'Ganjil') : ?>
                             <thead>
                                 <tr>
                                     <th rowspan="2">MATA PELAJARAN</th>
@@ -147,7 +181,7 @@ if (isset($_POST['lihat_nilai'])) :
                                     <th>SUB TEMA-4.4</th>
                                 </tr>
                             </thead>
-                        <?php elseif ($kelas1 <= '3' && $semester == 'Genap') : ?>
+                        <?php elseif ($kls <= '3' && $semester == 'Genap') : ?>
                             <thead>
                                 <tr>
                                     <th rowspan="2">MATA PELAJARAN</th>
@@ -179,7 +213,7 @@ if (isset($_POST['lihat_nilai'])) :
                                     <th>SUB TEMA-8.4</th>
                                 </tr>
                             </thead>
-                        <?php elseif ($kelas1 >= '4' && $semester == 'Ganjil') : ?>
+                        <?php elseif ($kls >= '4' && $semester == 'Ganjil') : ?>
                             <thead>
                                 <tr>
                                     <th rowspan="2">MATA PELAJARAN</th>
@@ -211,7 +245,7 @@ if (isset($_POST['lihat_nilai'])) :
                                     <th>SUB TEMA-5.3</th>
                                 </tr>
                             </thead>
-                        <?php elseif ($kelas1 >= '4' && $semester == 'Genap') : ?>
+                        <?php elseif ($kls >= '4' && $semester == 'Genap') : ?>
                             <thead>
                                 <tr>
                                     <th rowspan="2">MATA PELAJARAN</th>
@@ -240,136 +274,136 @@ if (isset($_POST['lihat_nilai'])) :
                                 </tr>
                             </thead>
                         <?php endif; ?>
-                        <?php if ($kelas1 < 4 && $semester == 'Ganjil') : ?>
+                        <?php if ($kls < 4 && $semester == 'Ganjil') : ?>
                             <tbody>
                                 <?php
-                                foreach ($tampil_nilai as $tampil_nilai) :
+                                foreach ($data_nilai as $data_nilai) :
                                 ?>
                                     <tr>
-                                        <td><?= $tampil_nilai['nama_mapel'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_4'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_4'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_4'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_4'] ?></td>
+                                        <td><?= $data_nilai['nama_mapel'] ?></td>
+                                        <td><?= $data_nilai['nilai_1'] ?></td>
+                                        <td><?= $data_nilai['nilai_2'] ?></td>
+                                        <td><?= $data_nilai['nilai_3'] ?></td>
+                                        <td><?= $data_nilai['nilai_4'] ?></td>
+                                        <td><?= $data_nilai['nilai_5'] ?></td>
+                                        <td><?= $data_nilai['nilai_6'] ?></td>
+                                        <td><?= $data_nilai['nilai_7'] ?></td>
+                                        <td><?= $data_nilai['nilai_8'] ?></td>
+                                        <td><?= $data_nilai['nilai_9'] ?></td>
+                                        <td><?= $data_nilai['nilai_10'] ?></td>
+                                        <td><?= $data_nilai['nilai_11'] ?></td>
+                                        <td><?= $data_nilai['nilai_12'] ?></td>
+                                        <td><?= $data_nilai['nilai_13'] ?></td>
+                                        <td><?= $data_nilai['nilai_14'] ?></td>
+                                        <td><?= $data_nilai['nilai_15'] ?></td>
+                                        <td><?= $data_nilai['nilai_16'] ?></td>
                                         <?php
-                                        $temp = $tampil_nilai['nilai_1_1'] + $tampil_nilai['nilai_1_2'] + $tampil_nilai['nilai_1_3'] + $tampil_nilai['nilai_1_4'] + $tampil_nilai['nilai_2_1'] + $tampil_nilai['nilai_2_2'] + $tampil_nilai['nilai_2_3'] + $tampil_nilai['nilai_2_4'] + $tampil_nilai['nilai_3_1'] + $tampil_nilai['nilai_3_2'] + $tampil_nilai['nilai_3_3'] + $tampil_nilai['nilai_3_4'] + $tampil_nilai['nilai_4_1'] + $tampil_nilai['nilai_4_2'] + $tampil_nilai['nilai_4_3'] + $tampil_nilai['nilai_4_4'];
+                                        $temp = $data_nilai['nilai_1'] + $data_nilai['nilai_2'] + $data_nilai['nilai_3'] + $data_nilai['nilai_4'] + $data_nilai['nilai_5'] + $data_nilai['nilai_6'] + $data_nilai['nilai_7'] + $data_nilai['nilai_8'] + $data_nilai['nilai_9'] + $data_nilai['nilai_10'] + $data_nilai['nilai_11'] + $data_nilai['nilai_12'] + $data_nilai['nilai_13'] + $data_nilai['nilai_14'] + $data_nilai['nilai_15'] + $data_nilai['nilai_16'];
                                         ?>
                                         <td><?= $rerata = $temp / 16 ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_2'] ?></td>
-                                        <td><?= ($rerata + $rerata + $tampil_nilai['nilai_5_1'] + $tampil_nilai['nilai_5_2']) / 4; ?></td>
+                                        <td><?= $data_nilai['pts'] ?></td>
+                                        <td><?= $data_nilai['pas'] ?></td>
+                                        <td><?= ($rerata + $rerata + $data_nilai['pts'] + $data_nilai['pas']) / 4; ?></td>
                                     </tr>
                                 <?php
                                 endforeach
                                 ?>
                             </tbody>
-                        <?php elseif ($kelas1 < 3 && $semester == 'Genap') : ?>
+                        <?php elseif ($kls < 3 && $semester == 'Genap') : ?>
                             <tbody>
                                 <?php
-                                foreach ($tampil_nilai as $tampil_nilai) :
+                                foreach ($data_nilai as $data_nilai) :
                                 ?>
                                     <tr>
-                                        <td><?= $tampil_nilai['nama_mapel'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_4'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_4'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_4'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_4'] ?></td>
+                                        <td><?= $data_nilai['nama_mapel'] ?></td>
+                                        <td><?= $data_nilai['nilai_1'] ?></td>
+                                        <td><?= $data_nilai['nilai_2'] ?></td>
+                                        <td><?= $data_nilai['nilai_3'] ?></td>
+                                        <td><?= $data_nilai['nilai_4'] ?></td>
+                                        <td><?= $data_nilai['nilai_5'] ?></td>
+                                        <td><?= $data_nilai['nilai_6'] ?></td>
+                                        <td><?= $data_nilai['nilai_7'] ?></td>
+                                        <td><?= $data_nilai['nilai_8'] ?></td>
+                                        <td><?= $data_nilai['nilai_9'] ?></td>
+                                        <td><?= $data_nilai['nilai_10'] ?></td>
+                                        <td><?= $data_nilai['nilai_11'] ?></td>
+                                        <td><?= $data_nilai['nilai_12'] ?></td>
+                                        <td><?= $data_nilai['nilai_13'] ?></td>
+                                        <td><?= $data_nilai['nilai_14'] ?></td>
+                                        <td><?= $data_nilai['nilai_15'] ?></td>
+                                        <td><?= $data_nilai['nilai_16'] ?></td>
                                         <?php
-                                        $temp = $tampil_nilai['nilai_1_1'] + $tampil_nilai['nilai_1_2'] + $tampil_nilai['nilai_1_3'] + $tampil_nilai['nilai_1_4'] + $tampil_nilai['nilai_2_1'] + $tampil_nilai['nilai_2_2'] + $tampil_nilai['nilai_2_3'] + $tampil_nilai['nilai_2_4'] + $tampil_nilai['nilai_3_1'] + $tampil_nilai['nilai_3_2'] + $tampil_nilai['nilai_3_3'] + $tampil_nilai['nilai_3_4'] + $tampil_nilai['nilai_4_1'] + $tampil_nilai['nilai_4_2'] + $tampil_nilai['nilai_4_3'] + $tampil_nilai['nilai_4_4'];
+                                        $temp = $data_nilai['nilai_1'] + $data_nilai['nilai_2'] + $data_nilai['nilai_3'] + $data_nilai['nilai_4'] + $data_nilai['nilai_5'] + $data_nilai['nilai_6'] + $data_nilai['nilai_7'] + $data_nilai['nilai_8'] + $data_nilai['nilai_9'] + $data_nilai['nilai_10'] + $data_nilai['nilai_11'] + $data_nilai['nilai_12'] + $data_nilai['nilai_13'] + $data_nilai['nilai_14'] + $data_nilai['nilai_15'] + $data_nilai['nilai_16'];
                                         ?>
                                         <td><?= $rerata = $temp / 16 ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_2'] ?></td>
-                                        <td><?= ($rerata + $rerata + $tampil_nilai['nilai_5_1'] + $tampil_nilai['nilai_5_2']) / 4; ?></td>
+                                        <td><?= $data_nilai['pts'] ?></td>
+                                        <td><?= $data_nilai['pas'] ?></td>
+                                        <td><?= ($rerata + $rerata + $data_nilai['pts'] + $data_nilai['pas']) / 4; ?></td>
                                     </tr>
                                 <?php
                                 endforeach
                                 ?>
                             </tbody>
-                        <?php elseif ($kelas1 > 3 && $semester == 'Ganjil') : ?>
+                        <?php elseif ($kls > 3 && $semester == 'Ganjil') : ?>
                             <tbody>
                                 <?php
-                                foreach ($tampil_nilai as $tampil_nilai) :
+                                foreach ($data_nilai as $data_nilai) :
                                 ?>
                                     <tr>
-                                        <td><?= $tampil_nilai['nama_mapel'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_3'] ?></td>
+                                        <td><?= $data_nilai['nama_mapel'] ?></td>
+                                        <td><?= $data_nilai['nilai_1'] ?></td>
+                                        <td><?= $data_nilai['nilai_2'] ?></td>
+                                        <td><?= $data_nilai['nilai_3'] ?></td>
+                                        <td><?= $data_nilai['nilai_4'] ?></td>
+                                        <td><?= $data_nilai['nilai_5'] ?></td>
+                                        <td><?= $data_nilai['nilai_6'] ?></td>
+                                        <td><?= $data_nilai['nilai_7'] ?></td>
+                                        <td><?= $data_nilai['nilai_8'] ?></td>
+                                        <td><?= $data_nilai['nilai_9'] ?></td>
+                                        <td><?= $data_nilai['nilai_10'] ?></td>
+                                        <td><?= $data_nilai['nilai_11'] ?></td>
+                                        <td><?= $data_nilai['nilai_12'] ?></td>
+                                        <td><?= $data_nilai['nilai_13'] ?></td>
+                                        <td><?= $data_nilai['nilai_14'] ?></td>
+                                        <td><?= $data_nilai['nilai_15'] ?></td>
                                         <?php
-                                        $temp = $tampil_nilai['nilai_1_1'] + $tampil_nilai['nilai_1_2'] + $tampil_nilai['nilai_1_3'] + $tampil_nilai['nilai_1_4'] + $tampil_nilai['nilai_2_1'] + $tampil_nilai['nilai_2_2'] + $tampil_nilai['nilai_2_3'] + $tampil_nilai['nilai_2_4'] + $tampil_nilai['nilai_3_1'] + $tampil_nilai['nilai_3_2'] + $tampil_nilai['nilai_3_3'] + $tampil_nilai['nilai_3_4'] + $tampil_nilai['nilai_4_1'] + $tampil_nilai['nilai_4_2'] + $tampil_nilai['nilai_4_3'] + $tampil_nilai['nilai_4_4'];
+                                        $temp = $data_nilai['nilai_1'] + $data_nilai['nilai_2'] + $data_nilai['nilai_3'] + $data_nilai['nilai_4'] + $data_nilai['nilai_5'] + $data_nilai['nilai_6'] + $data_nilai['nilai_7'] + $data_nilai['nilai_8'] + $data_nilai['nilai_9'] + $data_nilai['nilai_10'] + $data_nilai['nilai_11'] + $data_nilai['nilai_12'] + $data_nilai['nilai_13'] + $data_nilai['nilai_14'] + $data_nilai['nilai_15'];
                                         ?>
-                                        <td><?= $rerata = $temp / 16 ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_2'] ?></td>
-                                        <td><?= ($rerata + $rerata + $tampil_nilai['nilai_5_1'] + $tampil_nilai['nilai_5_2']) / 4; ?></td>
+                                        <td><?= $rerata = $temp / 15 ?></td>
+                                        <td><?= $data_nilai['pts'] ?></td>
+                                        <td><?= $data_nilai['pas'] ?></td>
+                                        <td><?= ($rerata + $rerata + $data_nilai['pts'] + $data_nilai['pas']) / 4; ?></td>
                                     </tr>
                                 <?php
                                 endforeach
                                 ?>
                             </tbody>
-                        <?php elseif ($kelas1 > 3 && $semester == 'Genap') : ?>
+                        <?php elseif ($kls > 3 && $semester == 'Genap') : ?>
                             <tbody>
                                 <?php
-                                foreach ($tampil_nilai as $tampil_nilai) :
+                                foreach ($data_nilai as $data_nilai) :
                                 ?>
                                     <tr>
-                                        <td><?= $tampil_nilai['nama_mapel'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_1_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_2_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_3_3'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_2'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_4_3'] ?></td>
+                                        <td><?= $data_nilai['nama_mapel'] ?></td>
+                                        <td><?= $data_nilai['nilai_1'] ?></td>
+                                        <td><?= $data_nilai['nilai_2'] ?></td>
+                                        <td><?= $data_nilai['nilai_3'] ?></td>
+                                        <td><?= $data_nilai['nilai_4'] ?></td>
+                                        <td><?= $data_nilai['nilai_5'] ?></td>
+                                        <td><?= $data_nilai['nilai_6'] ?></td>
+                                        <td><?= $data_nilai['nilai_7'] ?></td>
+                                        <td><?= $data_nilai['nilai_8'] ?></td>
+                                        <td><?= $data_nilai['nilai_9'] ?></td>
+                                        <td><?= $data_nilai['nilai_10'] ?></td>
+                                        <td><?= $data_nilai['nilai_11'] ?></td>
+                                        <td><?= $data_nilai['nilai_12'] ?></td>
                                         <?php
-                                        $temp = $tampil_nilai['nilai_1_1'] + $tampil_nilai['nilai_1_2'] + $tampil_nilai['nilai_1_3'] + $tampil_nilai['nilai_2_1'] + $tampil_nilai['nilai_2_2'] + $tampil_nilai['nilai_2_3'] + $tampil_nilai['nilai_3_1'] + $tampil_nilai['nilai_3_2'] + $tampil_nilai['nilai_3_3'] + $tampil_nilai['nilai_4_1'] + $tampil_nilai['nilai_4_2'] + $tampil_nilai['nilai_4_3'];
+                                        $temp = $data_nilai['nilai_1'] + $data_nilai['nilai_2'] + $data_nilai['nilai_3'] + $data_nilai['nilai_4'] + $data_nilai['nilai_5'] + $data_nilai['nilai_6'] + $data_nilai['nilai_7'] + $data_nilai['nilai_8'] + $data_nilai['nilai_9'] + $data_nilai['nilai_10'] + $data_nilai['nilai_11'] + $data_nilai['nilai_12'];
                                         ?>
-                                        <td><?= $rerata = $temp / 16 ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_1'] ?></td>
-                                        <td><?= $tampil_nilai['nilai_5_2'] ?></td>
-                                        <td><?= ($rerata + $rerata + $tampil_nilai['nilai_5_1'] + $tampil_nilai['nilai_5_2']) / 4; ?></td>
+                                        <td><?= $rerata = $temp / 12 ?></td>
+                                        <td><?= $data_nilai['pts'] ?></td>
+                                        <td><?= $data_nilai['pas'] ?></td>
+                                        <td><?= ($rerata + $rerata + $data_nilai['pts'] + $data_nilai['pas']) / 4; ?></td>
                                     </tr>
                                 <?php
                                 endforeach
