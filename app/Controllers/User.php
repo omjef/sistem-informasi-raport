@@ -71,12 +71,12 @@ class User extends BaseController
     public function profil()
     {
         if (session()->get('logged_in') == 'user') {
+            $siswa = $this->SiswaModel->where('nisn', session()->get('nisn'))->first();
             $data = [
                 'title' => 'Profil Siswa',
-                'nisn' => session()->get('nisn'),
-                'nama' => $this->query('nama'),
-                'foto' => $this->query('foto_siswa'),
-                'siswa' => $this->SiswaModel
+                'nisn' => $siswa['nisn'],
+                'nama' => $siswa['nama'],
+                'dataSiswa' => $this->SiswaModel
             ];
             return view('pages/user/profil', $data);
         } else {

@@ -25,7 +25,7 @@ class Sekolah extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'keluarahan' => [
+            'kelurahan' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],

@@ -47,9 +47,8 @@
         <div id="data" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= base_url('') ?>">Sekolah</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Siswa</a>
                 <a class="collapse-item" href="<?= base_url('') ?>">Guru</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Tahun Ajaran</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Siswa</a>
                 <a class="collapse-item" href="<?= base_url('') ?>">Mata Pelajaran</a>
                 <a class="collapse-item" href="<?= base_url('') ?>">Kelas</a>
                 <a class="collapse-item" href="<?= base_url('') ?>">Ekstrakulikuler</a>
@@ -65,12 +64,8 @@
         <div id="aktifitas_sekolah" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= base_url('') ?>">Tahun Ajaran</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Tambah Siswa Kekelas</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Guru</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Tahun Ajaran</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Mata Pelajaran</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Kelas</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Ekstrakulikuler</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Siswa Kelas Dan Absensi</a>
+                <a class="collapse-item" href="<?= base_url('') ?>">Siswa Eskul</a>
             </div>
         </div>
     </li>

@@ -282,7 +282,8 @@ class Admin extends BaseController
             $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
             $data = [
                 'title' => 'Data Sekolah',
-                'nama' => $dataGuru['nama']
+                'nama' => $dataGuru['nama'],
+                'dataSekolah' => $this->SekolahModel
             ];
             return view('pages/admin/dataSekolah', $data);
         } else {
@@ -293,8 +294,13 @@ class Admin extends BaseController
     public function edit_datasekolah()
     {
         if (session()->get('logged_in') == 'admin') {
-
-            return redirect()->to('/admin/akun_siswa');
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Edit Data Sekolah',
+                'nama' => $dataGuru['nama'],
+                'dataSekolah' => $this->SekolahModel
+            ];
+            return view('pages/admin/edit_dataSekolah', $data);
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -326,8 +332,9 @@ class Admin extends BaseController
                 'website' => $website,
                 'email' => $email
             ];
-
             $this->SekolahModel->update($nss, $data);
+            session()->setFlashdata('berhasil', 'Data sekolah berhasil diupadate!');
+            return redirect()->to('/admin/data_sekolah');
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -336,8 +343,14 @@ class Admin extends BaseController
     public function data_guru()
     {
         if (session()->get('logged_in') == 'admin') {
-
-            return redirect()->to('/admin/akun_siswa');
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $guru = $this->GuruModel;
+            $data = [
+                'title' => 'Data Guru',
+                'nama' => $dataGuru['nama'],
+                'dataGuru' => $guru
+            ];
+            return view('pages/admin/dataGuru', $data);
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -346,8 +359,10 @@ class Admin extends BaseController
     public function tambah_dataguru()
     {
         if (session()->get('logged_in') == 'admin') {
-
-            return redirect()->to('/admin/akun_siswa');
+            $data = [
+                'title' => 'Tambah Data Guru'
+            ];
+            return view('pages/admin/tambah_dataguru', $data);
         } else {
             return redirect()->to('/auth/admin');
         }

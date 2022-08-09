@@ -1,152 +1,135 @@
 <?= $this->extend('layout/template_table'); ?>
 
 <?= $this->section('content'); ?>
-
-<?php
-
-$data = $siswa->where('nisn', $nisn)->first();
-?>
-<div class="card border-left-primary shadow h-100 py-2 pl-2 mb-2">
-    <h1 class="h4">Catatan :</h1>
-    Jika ada kesalahan data bisa hubungi guru kelas.
-</div>
-
-<div class="card mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Profil Siswa</h6>
+<div class="card">
+    <div class="card-header">
+        <h5 class="text-primary font-weight-bold text-center m-0">Data Siswa</h5>
     </div>
     <div class="card-body">
-        <div class="text-center">
-            <div class="row">
-                <div class="col-md-10 ml-5">
-                    <img src="<?= base_url('/img') . "/" . $data['foto_siswa']; ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                    <h5 class="my-3"><?= $data['nama']; ?></h5>
+        <!-- QUERY TAMPIL DATA -->
+        <?php
+        $dataSiswa = $dataSiswa->where('nisn', $nisn)->first();
+        ?>
+
+        <!-- FOTO DAN NAMA -->
+        <div class="form-group text-center">
+            <img src="<?= base_url('img/default.jpg') ?>" alt="" class="img-thumbnail rounded-circle">
+            <h5 class="font-weight-bold mt-2"><?= $dataSiswa['nama'] ?></h5>
+        </div>
+        <div class="form-group">
+            <h6 class="text-dark font-weight-bold">Data Siswa</h6>
+        </div>
+
+        <!-- NISN dan NIS -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>NISN</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['nisn'] ?>" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>NIS</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['nis'] ?>" readonly>
                 </div>
             </div>
         </div>
 
-        <!-- Data Diri -->
-        <h4 class="mb-2"><u>Data Diri</u></h4>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Nomor Induk Siswa Nasional</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['nisn']; ?></p>
-            </div>
+        <!-- NAMA -->
+        <div class="form-group">
+            <label for="NIS">NAMA</label>
+            <input type="text" class="form-control" value="<?= $dataSiswa['nama'] ?>" readonly>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Nomor Induk Siswa</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['nis']; ?></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Nama Lengkap</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['nama']; ?></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Tempat Tanggal Lahir</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['tempat_lahir'] . ", " . date("d-m-Y", strtotime($data['tanggal_lahir'])); ?></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Jenis Kelamin</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['jenis_kelamin']; ?></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Agama</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['agama']; ?></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Alamat Siswa</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['alamat_siswa']; ?></p>
-            </div>
-        </div>
-        <hr>
 
-        <!-- Data Orang Tua -->
-        <h4 class="mt-4 mb-2"><u>Data Orang Tua</u></h4>
+        <!-- TEMPAT DAN TANGGAL LAHIR -->
         <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Nama Ayah</p>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>TEMPAT LAHIR</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['tempat_lahir'] ?>" readonly>
+                </div>
             </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['nama_ayah']; ?></p>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>TANGGAL LAHIR</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['tanggal_lahir'] ?>" readonly>
+                </div>
             </div>
         </div>
-        <hr>
+
+        <!-- JENIS KELAMIN -->
+        <div class="form-group">
+            <label>JENIS KELAMIN</label>
+            <input type="text" class="form-control" value="<?= $dataSiswa['jenis_kelamin'] ?>" readonly>
+        </div>
+
+        <!-- AGAMA DAN PENDIDIKAN SEBELUMNYA -->
         <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Nama Ibu</p>
+            <div class="col-md-9">
+                <div class="form-group">
+                    <label>AGAMA</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['agama'] ?>" readonly>
+                </div>
             </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['nama_ibu']; ?></p>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>PENDIDIKAN SEBELUMNYA</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['pendidikan_sebelum'] ?>" readonly>
+                </div>
             </div>
         </div>
-        <hr>
+
+        <!-- ALAMAT -->
         <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Nama Orang Tua Wali</p>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>NAMA AYAH</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['nama_ayah'] ?>" readonly>
+                </div>
             </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['nama_orang_tua_wali']; ?></p>
+            <div class="col-md-6">
+                <div class="form--group">
+                    <label>PEKERJAAN AYAH</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['pekerjaan_ayah'] ?>" readonly>
+                </div>
             </div>
         </div>
-        <hr>
+
         <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Pekerjaan Ayah</p>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>NAMA IBU</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['nama_ibu'] ?>" readonly>
+                </div>
             </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['Pekerjaan_ayah']; ?></p>
+            <div class="col-md-6">
+                <div class="form--group">
+                    <label>PEKERJAAN IBU</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['pekerjaan_ibu'] ?>" readonly>
+                </div>
             </div>
         </div>
-        <hr>
+
+        <div class="form--group">
+            <label>ALAMAT ORANG TUA</label>
+            <textarea class="form-control" cols="30" rows="3" readonly><?= $dataSiswa['alamat_orang_tua'] ?></textarea>
+        </div>
+
         <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Pekerjaan Ibu</p>
+            <div class="col-md-4">
+                <div class="form--group">
+                    <label>TAHUN MENDAFTAR</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['tahun_mendaftar'] ?>" readonly>
+                </div>
             </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['pekerjaan_ibu']; ?></p>
+            <div class="col-md-8">
+                <div class="form--group">
+                    <label>STATUS SISWA</label>
+                    <input type="text" class="form-control" value="<?= $dataSiswa['status_siswa'] ?>" readonly>
+                </div>
             </div>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="mb-0">Alamat</p>
-            </div>
-            <div class="col-sm-9">
-                <p class="text-muted mb-0"><?= $data['alamat_orang_tua']; ?></p>
-            </div>
-        </div>
-        <hr>
     </div>
 </div>
 <?= $this->endSection(''); ?>
