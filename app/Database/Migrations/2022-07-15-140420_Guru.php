@@ -70,6 +70,7 @@ class Guru extends Migration
                 'constraint' => '255',
             ],
         ]);
+        $this->forge->addKey('id', true);
         $this->forge->addKey('nip', true);
         $this->forge->addKey('nuptk');
 

@@ -622,7 +622,7 @@ class Admin extends BaseController
             if ($foto_guru->getError() == 4) {
                 $nama_foto = "Default.jpg";
             } else {
-                $nama_foto = $nama . '.' . $foto_guru->getClientExtension();
+                $nama_foto = $nip . '-' . $nama . '.' . $foto_guru->getClientExtension();
                 $foto_guru->move(
                     'img',
                     $nama_foto
@@ -647,6 +647,7 @@ class Admin extends BaseController
                 'jam_mengajar' => $jam_mengajar,
                 'foto_guru' => $nama_foto
             ];
+
             $this->GuruModel->insert($data);
             session()->setFlashdata(
                 'berhasil',
@@ -799,6 +800,7 @@ class Admin extends BaseController
             }
 
             $data = [
+                'nip' => $nip,
                 'nuptk' => $nuptk,
                 'nama' => $nama,
                 'tempat_lahir' => $tempat_lahir,
@@ -1021,7 +1023,7 @@ class Admin extends BaseController
                 'status_siswa' => $status_siswa,
                 'foto_siswa' => $nama_foto
             ];
-            //dd($data);
+            //       dd($data);
             $this->SiswaModel->insert($data);
 
             session()->setFlashdata(

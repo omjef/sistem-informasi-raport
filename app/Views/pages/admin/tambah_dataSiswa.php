@@ -14,7 +14,7 @@
                             <div class="form-group">
                                 <label for="nisn">NISN</label>
                                 <input type="text" class="form-control <?= ($validation->hasError('nisn')) ? 'is-invalid' : ''; ?>" name="nisn" id="nisn" placeholder="Masukan nisn" value="<?= old('nisn') ?>">
-                                <small class=" form-text text-danger"><?= $validation->getError('nisn'); ?></small>
+                                <small class="form-text text-danger"><?= $validation->getError('nisn'); ?></small>
                             </div>
                         </div>
                         <div class="col-md-6">

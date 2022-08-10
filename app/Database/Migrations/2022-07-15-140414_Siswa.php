@@ -52,7 +52,7 @@ class Siswa extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'Pekerjaan_ayah' => [
+            'pekerjaan_ayah' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -77,6 +77,7 @@ class Siswa extends Migration
                 'constraint' => '255',
             ],
         ]);
+        $this->forge->addKey('id', true);
         $this->forge->addKey('nisn', true);
         $this->forge->addKey('nis');
 

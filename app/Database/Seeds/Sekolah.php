@@ -13,7 +13,7 @@ class Sekolah extends Seeder
             'npsn' => '20224387',
             'nama' => 'SDN 2 Kersanagara',
             'alamat' => 'Jalan Bantargedang 46196',
-            'keluarahan' => 'Kersanagara',
+            'kelurahan' => 'Kersanagara',
             'kecamatan' => 'Cibeureum',
             'kota' => 'Kota Tasikmalaya',
             'provinsi' => 'Jawa Barat',
