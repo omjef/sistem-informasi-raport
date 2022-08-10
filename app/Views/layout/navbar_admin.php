@@ -46,12 +46,12 @@
         </a>
         <div id="data" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= base_url('') ?>">Sekolah</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Guru</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Siswa</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Mata Pelajaran</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Kelas</a>
-                <a class="collapse-item" href="<?= base_url('') ?>">Ekstrakulikuler</a>
+                <a class="collapse-item" href="<?= base_url('/admin/data_sekolah') ?>">Sekolah</a>
+                <a class="collapse-item" href="<?= base_url('/admin/data_guru') ?>">Guru</a>
+                <a class="collapse-item" href="<?= base_url('/admin/data_siswa') ?>">Siswa</a>
+                <a class="collapse-item" href="<?= base_url('/admin/data_mapel') ?>">Mata Pelajaran</a>
+                <a class="collapse-item" href="<?= base_url('/admin/data_kelas') ?>">Kelas</a>
+                <a class="collapse-item" href="<?= base_url('/admin/data_eskul') ?>">Ekstrakulikuler</a>
             </div>
         </div>
     </li>

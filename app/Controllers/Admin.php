@@ -7,13 +7,19 @@ class Admin extends BaseController
     public function index()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $guru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
 
             $data = [
                 'title' => 'Dashboard',
                 'nama' => $guru['nama']
             ];
-            return view('pages/admin/dashboard', $data);
+            return view(
+                'pages/admin/dashboard',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -23,7 +29,10 @@ class Admin extends BaseController
     public function akun_guru()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $guru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $akunGuru = $this->AkunGuruModel;
             $dataGuru = $this->GuruModel;
 
@@ -34,7 +43,10 @@ class Admin extends BaseController
                 'dataGuru' => $dataGuru
             ];
 
-            return view('pages/admin/akunGuru', $data);
+            return view(
+                'pages/admin/akunGuru',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -50,24 +62,39 @@ class Admin extends BaseController
             $jenis_akun = $this->request->getVar('jenis_akun');
             $status_akun = 'Aktif';
 
-            $akunGuru = $this->AkunGuruModel->where('nip', $nip)->first();
+            $akunGuru = $this->AkunGuruModel->where(
+                'nip',
+                $nip
+            )->first();
             if ($akunGuru) {
-                session()->setFlashdata('gagal', 'NIP sudah digunakan!');
+                session()->setFlashdata(
+                    'gagal',
+                    'NIP sudah digunakan!'
+                );
                 return redirect()->to('/admin/akun_guru');
             } else {
                 if ($password == $konfirmasi_password) {
                     $data = [
                         'nip' => $nip,
                         'username' => $username,
-                        'password' => password_hash($password, PASSWORD_DEFAULT),
+                        'password' => password_hash(
+                            $password,
+                            PASSWORD_DEFAULT
+                        ),
                         'jenis_akun' => $jenis_akun,
                         'status_akun' => $status_akun
                     ];
                     $this->AkunGuruModel->insert($data);
-                    session()->setFlashdata('berhasil', 'Akun guru berhasil ditambah!');
+                    session()->setFlashdata(
+                        'berhasil',
+                        'Akun guru berhasil ditambah!'
+                    );
                     return redirect()->to('/admin/akun_guru');
                 } else {
-                    session()->setFlashdata('gagal', 'Password tidak sama!');
+                    session()->setFlashdata(
+                        'gagal',
+                        'Password tidak sama!'
+                    );
                     return redirect()->to('/admin/akun_guru');
                 }
             }
@@ -79,7 +106,10 @@ class Admin extends BaseController
     public function edit_akunguru()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $guru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $akunGuru = $this->AkunGuruModel;
             $dataGuru = $this->GuruModel;
 
@@ -90,7 +120,10 @@ class Admin extends BaseController
                 'dataGuru' => $dataGuru
             ];
 
-            return view('pages/admin/edit_akunGuru', $data);
+            return view(
+                'pages/admin/edit_akunGuru',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -108,19 +141,34 @@ class Admin extends BaseController
             $status_akun = $this->request->getVar('status_akun');
 
             if ($password != NULL) {
-                if (hash_equals($password, $konfirmasi_password)) {
+                if (hash_equals(
+                    $password,
+                    $konfirmasi_password
+                )) {
                     $data = [
                         'nip' => $nip,
                         'username' => $username,
-                        'password' => password_hash($password, PASSWORD_DEFAULT),
+                        'password' => password_hash(
+                            $password,
+                            PASSWORD_DEFAULT
+                        ),
                         'jenis_akun' => $jenis_akun,
                         'status_akun' => $status_akun
                     ];
-                    $this->AkunGuruModel->update($id, $data);
-                    session()->setFlashdata('berhasil', 'Data berhasil diupdate!');
+                    $this->AkunGuruModel->update(
+                        $id,
+                        $data
+                    );
+                    session()->setFlashdata(
+                        'berhasil',
+                        'Data berhasil diupdate!'
+                    );
                     return redirect()->to('/admin/akun_guru');
                 } else {
-                    session()->setFlashdata('gagal', 'Password dan konfirmasi password tidak sama!');
+                    session()->setFlashdata(
+                        'gagal',
+                        'Password dan konfirmasi password tidak sama!'
+                    );
                     return redirect()->to('/admin/edit_akunguru?nip=' . $nip);
                 }
             } else {
@@ -130,8 +178,14 @@ class Admin extends BaseController
                     'jenis_akun' => $jenis_akun,
                     'status_akun' => $status_akun
                 ];
-                $this->AkunGuruModel->update($id, $data);
-                session()->setFlashdata('berhasil', 'Data berhasil diupdate!');
+                $this->AkunGuruModel->update(
+                    $id,
+                    $data
+                );
+                session()->setFlashdata(
+                    'berhasil',
+                    'Data berhasil diupdate!'
+                );
                 return redirect()->to('/admin/akun_guru');
             }
         } else {
@@ -143,8 +197,14 @@ class Admin extends BaseController
     {
         if (session()->get('logged_in') == 'admin') {
             $nip = $this->request->getVar('nip');
-            $this->AkunGuruModel->where('nip', $nip)->delete();
-            session()->setFlashdata('berhasil', 'Data berhasil dihapus!');
+            $this->AkunGuruModel->where(
+                'nip',
+                $nip
+            )->delete();
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil dihapus!'
+            );
             return redirect()->to('/admin/akun_guru');
         } else {
             return redirect()->to('/auth/admin');
@@ -154,7 +214,10 @@ class Admin extends BaseController
     public function akun_siswa()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $guru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $akunSiswa = $this->AkunSiswaModel;
             $dataSiswa = $this->SiswaModel;
             $data = [
@@ -164,7 +227,10 @@ class Admin extends BaseController
                 'dataSiswa' => $dataSiswa
             ];
 
-            return view('/pages/admin/akunSiswa', $data);
+            return view(
+                '/pages/admin/akunSiswa',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -180,22 +246,37 @@ class Admin extends BaseController
             $status_akun = 'Aktif';
             if ($password != NULL) {
 
-                if (hash_equals($password, $konfirmasi_password)) {
+                if (hash_equals(
+                    $password,
+                    $konfirmasi_password
+                )) {
                     $data = [
                         'nisn' => $nisn,
                         'username' => $username,
-                        'password' => password_hash($password, PASSWORD_DEFAULT),
+                        'password' => password_hash(
+                            $password,
+                            PASSWORD_DEFAULT
+                        ),
                         'status_akun' => $status_akun
                     ];
                     $this->AkunSiswaModel->insert($data);
-                    session()->setFlashdata('berhasil', 'Password tidak sama!');
+                    session()->setFlashdata(
+                        'berhasil',
+                        'Password tidak sama!'
+                    );
                     return redirect()->to('/admin/akun_siswa');
                 } else {
-                    session()->setFlashdata('gagal', 'Password dan konfirmasi password tidak sama!');
+                    session()->setFlashdata(
+                        'gagal',
+                        'Password dan konfirmasi password tidak sama!'
+                    );
                     return redirect()->to('/admin/akun_siswa');
                 }
             } else {
-                session()->setFlashdata('gagal', 'Password jangan kosong!');
+                session()->setFlashdata(
+                    'gagal',
+                    'Password jangan kosong!'
+                );
                 return redirect()->to('/admin/akun_siswa');
             }
         } else {
@@ -206,7 +287,10 @@ class Admin extends BaseController
     public function edit_akunsiswa()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $guru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $dataSiswa = $this->SiswaModel;
             $akunSiswa = $this->AkunSiswaModel;
             $data = [
@@ -216,7 +300,10 @@ class Admin extends BaseController
                 'akunSiswa' => $akunSiswa,
                 'nisn' => $this->request->getVar('nisn')
             ];
-            return view('pages/admin/edit_akunSiswa', $data);
+            return view(
+                'pages/admin/edit_akunSiswa',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -231,21 +318,39 @@ class Admin extends BaseController
             $konfirmasi_password = $this->request->getVar('konfirmasi_password');
             $status_akun = $this->request->getVar('status_akun');
 
-            $tempAkunSiswa = $this->AkunSiswaModel->where('nisn', $nisn)->first();
+            $tempAkunSiswa = $this->AkunSiswaModel->where(
+                'nisn',
+                $nisn
+            )->first();
             $id = $tempAkunSiswa['id'];
             if ($password != NULL) {
-                if (hash_equals($password, $konfirmasi_password)) {
+                if (hash_equals(
+                    $password,
+                    $konfirmasi_password
+                )) {
                     $data = [
                         'nisn' => $nisn,
                         'username' => $username,
-                        'password' => password_hash($password, PASSWORD_DEFAULT),
+                        'password' => password_hash(
+                            $password,
+                            PASSWORD_DEFAULT
+                        ),
                         'status_akun' => $status_akun
                     ];
-                    $this->AkunSiswaModel->update($id, $data);
-                    session()->setFlashdata('berhasil', 'Data berhasil diupdate!');
+                    $this->AkunSiswaModel->update(
+                        $id,
+                        $data
+                    );
+                    session()->setFlashdata(
+                        'berhasil',
+                        'Data berhasil diupdate!'
+                    );
                     return redirect()->to('/admin/akun_siswa');
                 } else {
-                    session()->setFlashdata('gagal', 'Password jangan kosong!');
+                    session()->setFlashdata(
+                        'gagal',
+                        'Password jangan kosong!'
+                    );
                     return redirect()->to('/admin/edit_akunsiswa' . '?nisn=' . $nisn);
                 }
             } else {
@@ -254,8 +359,14 @@ class Admin extends BaseController
                     'username' => $username,
                     'status_akun' => $status_akun
                 ];
-                $this->AkunSiswaModel->update($id, $data);
-                session()->setFlashdata('berhasil', 'Data berhasil diupdate!');
+                $this->AkunSiswaModel->update(
+                    $id,
+                    $data
+                );
+                session()->setFlashdata(
+                    'berhasil',
+                    'Data berhasil diupdate!'
+                );
                 return redirect()->to('/admin/akun_siswa');
             }
         } else {
@@ -267,8 +378,14 @@ class Admin extends BaseController
     {
         if (session()->get('logged_in') == 'admin') {
             $nisn = $this->request->getVar('nisn');
-            $this->AkunSiswaModel->where('nisn', $nisn)->delete();
-            session()->setFlashdata('berhasil', 'Akun Berhasil dihapus!');
+            $this->AkunSiswaModel->where(
+                'nisn',
+                $nisn
+            )->delete();
+            session()->setFlashdata(
+                'berhasil',
+                'Akun Berhasil dihapus!'
+            );
             return redirect()->to('/admin/akun_siswa');
         } else {
             return redirect()->to('/auth/admin');
@@ -279,13 +396,19 @@ class Admin extends BaseController
     public function data_sekolah()
     {
         if (session()->get('logged_in') == 'admin') {
-            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $data = [
                 'title' => 'Data Sekolah',
                 'nama' => $dataGuru['nama'],
                 'dataSekolah' => $this->SekolahModel
             ];
-            return view('pages/admin/dataSekolah', $data);
+            return view(
+                'pages/admin/dataSekolah',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -294,13 +417,19 @@ class Admin extends BaseController
     public function edit_datasekolah()
     {
         if (session()->get('logged_in') == 'admin') {
-            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $data = [
                 'title' => 'Edit Data Sekolah',
                 'nama' => $dataGuru['nama'],
                 'dataSekolah' => $this->SekolahModel
             ];
-            return view('pages/admin/edit_dataSekolah', $data);
+            return view(
+                'pages/admin/edit_dataSekolah',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -332,8 +461,14 @@ class Admin extends BaseController
                 'website' => $website,
                 'email' => $email
             ];
-            $this->SekolahModel->update($nss, $data);
-            session()->setFlashdata('berhasil', 'Data sekolah berhasil diupadate!');
+            $this->SekolahModel->update(
+                $nss,
+                $data
+            );
+            session()->setFlashdata(
+                'berhasil',
+                'Data sekolah berhasil diupadate!'
+            );
             return redirect()->to('/admin/data_sekolah');
         } else {
             return redirect()->to('/auth/admin');
@@ -343,14 +478,20 @@ class Admin extends BaseController
     public function data_guru()
     {
         if (session()->get('logged_in') == 'admin') {
-            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $guru = $this->GuruModel;
             $data = [
                 'title' => 'Data Guru',
                 'nama' => $dataGuru['nama'],
                 'dataGuru' => $guru
             ];
-            return view('pages/admin/dataGuru', $data);
+            return view(
+                'pages/admin/dataGuru',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -359,10 +500,19 @@ class Admin extends BaseController
     public function tambah_dataguru()
     {
         if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
             $data = [
-                'title' => 'Tambah Data Guru'
+                'title' => 'Tambah Data Guru',
+                'nama' => $dataGuru['nama'],
+                'validation' => \Config\Services::validation()
             ];
-            return view('pages/admin/tambah_dataguru', $data);
+            return view(
+                'pages/admin/tambah_dataguru',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -371,8 +521,138 @@ class Admin extends BaseController
     public function val_tambah_dataguru()
     {
         if (session()->get('logged_in') == 'admin') {
+            if (!$this->validate([
+                'nip' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NIP harus di isi'
+                    ]
+                ],
+                'nuptk' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NUPTK harus di isi'
+                    ]
+                ],
+                'nama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama harus di isi'
+                    ]
+                ],
+                'tempat_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tempat lahir harus di isi'
+                    ]
+                ],
+                'tanggal_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal lahir harus di isi'
+                    ]
+                ],
+                'agama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Agama harus di isi'
+                    ]
+                ],
+                'ijazah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Ijazah harus di isi'
+                    ]
+                ],
+                'tahun_ijazah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tahun ijazah harus di isi'
+                    ]
+                ],
+                'tanggal_diangkat' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal diangkat harus di isi'
+                    ]
+                ],
+                'tanggal_bekerja' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal bekerja harus di isi'
+                    ]
+                ],
+                'tanggal_pensiun' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal pensiun harus di isi'
+                    ]
+                ],
+                'jam_mengajar' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Jumlah jam mengajar harus di isi'
+                    ]
+                ],
+            ])) {
+                $validation = \Config\Services::validation();
+                return redirect()->to('/admin/tambah_dataguru')->withInput()->withInput(
+                    'validation',
+                    $validation
+                );
+            }
 
-            return redirect()->to('/admin/akun_siswa');
+            $nip = $this->request->getVar('nip');
+            $nuptk = $this->request->getVar('nuptk');
+            $nama = $this->request->getVar('nama');
+            $tempat_lahir = $this->request->getVar('tempat_lahir');
+            $tanggal_lahir = $this->request->getVar('tanggal_lahir');
+            $jenis_kelamin = $this->request->getVar('jenis_kelamin');
+            $agama = $this->request->getVar('agama');
+            $ijazah = $this->request->getVar('ijazah');
+            $tahun_ijazah = $this->request->getVar('tahun_ijazah');
+            $jenis_guru = $this->request->getVar('jenis_guru');
+            $tanggal_diangkat = $this->request->getVar('tanggal_diangkat');
+            $tanggal_bekerja = $this->request->getVar('tanggal_bekerja');
+            $tanggal_pensiun = $this->request->getVar('tanggal_pensiun');
+            $kelas_diampu = $this->request->getVar('kelas_diampu');
+            $jam_mengajar = $this->request->getVar('jam_mengajar');
+            $foto_guru = $this->request->getFile('foto');
+
+            if ($foto_guru->getError() == 4) {
+                $nama_foto = "Default.jpg";
+            } else {
+                $nama_foto = $nama . '.' . $foto_guru->getClientExtension();
+                $foto_guru->move(
+                    'img',
+                    $nama_foto
+                );
+            }
+
+            $data = [
+                'nip' => $nip,
+                'nuptk' => $nuptk,
+                'nama' => $nama,
+                'tempat_lahir' => $tempat_lahir,
+                'tanggal_lahir' => $tanggal_lahir,
+                'jenis_kelamin' => $jenis_kelamin,
+                'agama' => $agama,
+                'ijazah' => $ijazah,
+                'tahun_ijazah' => $tahun_ijazah,
+                'jenis_guru' => $jenis_guru,
+                'tanggal_diangkat' => $tanggal_diangkat,
+                'tanggal_bekerja' => $tanggal_bekerja,
+                'tanggal_pensiun' => $tanggal_pensiun,
+                'kelas_diampu' => $kelas_diampu,
+                'jam_mengajar' => $jam_mengajar,
+                'foto_guru' => $nama_foto
+            ];
+            $this->GuruModel->insert($data);
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_guru');
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -381,8 +661,22 @@ class Admin extends BaseController
     public function edit_dataguru()
     {
         if (session()->get('logged_in') == 'admin') {
-
-            return redirect()->to('/admin/akun_siswa');
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
+            $nip = $this->request->getVar('nip');
+            $data = [
+                'title' => 'Edit Data Guru',
+                'nama' => $dataGuru['nama'],
+                'nip' => $nip,
+                'dataGuru' => $this->GuruModel,
+                'validation' => \Config\Services::validation()
+            ];
+            return view(
+                'pages/admin/edit_dataguru',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -391,18 +685,145 @@ class Admin extends BaseController
     public function val_edit_dataguru()
     {
         if (session()->get('logged_in') == 'admin') {
+            if (!$this->validate([
+                'nip' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NIP harus di isi'
+                    ]
+                ],
+                'nuptk' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NUPTK harus di isi'
+                    ]
+                ],
+                'nama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama harus di isi'
+                    ]
+                ],
+                'tempat_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tempat lahir harus di isi'
+                    ]
+                ],
+                'tanggal_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal lahir harus di isi'
+                    ]
+                ],
+                'agama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Agama harus di isi'
+                    ]
+                ],
+                'ijazah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Ijazah harus di isi'
+                    ]
+                ],
+                'tahun_ijazah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tahun ijazah harus di isi'
+                    ]
+                ],
+                'tanggal_diangkat' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal diangkat harus di isi'
+                    ]
+                ],
+                'tanggal_bekerja' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal bekerja harus di isi'
+                    ]
+                ],
+                'tanggal_pensiun' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal pensiun harus di isi'
+                    ]
+                ],
+                'jam_mengajar' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Jumlah jam mengajar harus di isi'
+                    ]
+                ],
+            ])) {
+                $validation = \Config\Services::validation();
+                return redirect()->to('/admin/tambah_dataguru')->withInput()->withInput(
+                    'validation',
+                    $validation
+                );
+            }
 
-            return redirect()->to('/admin/akun_siswa');
-        } else {
-            return redirect()->to('/auth/admin');
-        }
-    }
+            $nip = $this->request->getVar('nip');
+            $nuptk = $this->request->getVar('nuptk');
+            $nama = $this->request->getVar('nama');
+            $tempat_lahir = $this->request->getVar('tempat_lahir');
+            $tanggal_lahir = $this->request->getVar('tanggal_lahir');
+            $jenis_kelamin = $this->request->getVar('jenis_kelamin');
+            $agama = $this->request->getVar('agama');
+            $ijazah = $this->request->getVar('ijazah');
+            $tahun_ijazah = $this->request->getVar('tahun_ijazah');
+            $jenis_guru = $this->request->getVar('jenis_guru');
+            $tanggal_diangkat = $this->request->getVar('tanggal_diangkat');
+            $tanggal_bekerja = $this->request->getVar('tanggal_bekerja');
+            $tanggal_pensiun = $this->request->getVar('tanggal_pensiun');
+            $kelas_diampu = $this->request->getVar('kelas_diampu');
+            $jam_mengajar = $this->request->getVar('jam_mengajar');
+            $foto_guru = $this->request->getFile('foto');
 
-    public function hapus_dataguru()
-    {
-        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                $nip
+            )->first();
 
-            return redirect()->to('/admin/akun_siswa');
+            if ($foto_guru->getError() == 4) {
+                $nama_foto = $dataGuru['foto_guru'];
+            } else {
+                $nama_foto = $nip . '.' . $foto_guru->getClientExtension();
+                $foto_guru->move(
+                    'img',
+                    $nama_foto
+                );
+            }
+
+            $data = [
+                'nuptk' => $nuptk,
+                'nama' => $nama,
+                'tempat_lahir' => $tempat_lahir,
+                'tanggal_lahir' => $tanggal_lahir,
+                'jenis_kelamin' => $jenis_kelamin,
+                'agama' => $agama,
+                'ijazah' => $ijazah,
+                'tahun_ijazah' => $tahun_ijazah,
+                'jenis_guru' => $jenis_guru,
+                'tanggal_diangkat' => $tanggal_diangkat,
+                'tanggal_bekerja' => $tanggal_bekerja,
+                'tanggal_pensiun' => $tanggal_pensiun,
+                'kelas_diampu' => $kelas_diampu,
+                'jam_mengajar' => $jam_mengajar,
+                'foto_guru' => $nama_foto
+            ];
+            $this->GuruModel->update(
+                $nip,
+                $data
+            );
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil diupdate!'
+            );
+            return redirect()->to('/admin/data_guru');
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -411,8 +832,20 @@ class Admin extends BaseController
     public function data_siswa()
     {
         if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
 
-            return redirect()->to('/admin/akun_siswa');
+            $data = [
+                'title' => 'Data Siswa',
+                'nama' => $dataGuru['nama'],
+                'dataSiswa' => $this->SiswaModel
+            ];
+            return view(
+                'pages/admin/dataSiswa',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -421,8 +854,20 @@ class Admin extends BaseController
     public function tambah_datasiswa()
     {
         if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
 
-            return redirect()->to('/admin/akun_siswa');
+            $data = [
+                'title' => 'Data Siswa',
+                'nama' => $dataGuru['nama'],
+                'validation' => \Config\Services::validation()
+            ];
+            return view(
+                'pages/admin/tambah_dataSiswa',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -431,8 +876,159 @@ class Admin extends BaseController
     public function val_tambah_datasiswa()
     {
         if (session()->get('logged_in') == 'admin') {
+            if (!$this->validate([
+                'nisn' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NISN harus di isi'
+                    ]
+                ],
+                'nis' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NIS harus di isi'
+                    ]
+                ],
+                'nama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama harus di isi'
+                    ]
+                ],
+                'tempat_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tempat lahir harus di isi'
+                    ]
+                ],
+                'tanggal_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal lahir harus di isi'
+                    ]
+                ],
+                'agama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Agama harus di isi'
+                    ]
+                ],
+                'pendidikan_sebelum' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Pendidikan sebelumnya harus di isi'
+                    ]
+                ],
+                'alamat' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Alamat harus di isi'
+                    ]
+                ],
+                'nama_ayah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama ayah harus di isi'
+                    ]
+                ],
+                'nama_ibu' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama ibu harus di isi'
+                    ]
+                ],
+                'pekerjaan_ayah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Pekerjaan ayah harus di isi'
+                    ]
+                ],
+                'pekerjaan_ibu' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Pekerjaan ibu harus di isi'
+                    ]
+                ],
+                'alamat_orang_tua' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Alamat orang tua harus di isi'
+                    ]
+                ],
+                'tahun_mendaftar' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tahun mendaftar harus di isi'
+                    ]
+                ],
+                'status_siswa' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Status siswa harus di isi'
+                    ]
+                ],
+            ])) {
+                $validation = \Config\Services::validation();
+                return redirect()->to('/admin/tambah_datasiswa')->withInput()->withInput(
+                    'validation',
+                    $validation
+                );
+            }
 
-            return redirect()->to('/admin/akun_siswa');
+            $nisn = $this->request->getVar('nisn');
+            $nis = $this->request->getVar('nis');
+            $nama = $this->request->getVar('nama');
+            $tempat_lahir = $this->request->getVar('tempat_lahir');
+            $tanggal_lahir = $this->request->getVar('tanggal_lahir');
+            $jenis_kelamin = $this->request->getVar('jenis_kelamin');
+            $agama = $this->request->getVar('agama');
+            $pendidikan_sebelum = $this->request->getVar('pendidikan_sebelum');
+            $alamat = $this->request->getVar('alamat');
+            $nama_ayah = $this->request->getVar('nama_ayah');
+            $nama_ibu = $this->request->getVar('nama_ibu');
+            $pekerjaan_ayah = $this->request->getVar('tempat_lahir');
+            $pekerjaan_ibu = $this->request->getVar('tanggal_lahir');
+            $alamat_orang_tua = $this->request->getVar('jenis_kelamin');
+            $tahun_mendaftar = $this->request->getVar('agama');
+            $status_siswa = $this->request->getVar('status_siswa');
+            $foto_siswa = $this->request->getFile('foto_siswa');
+
+            if ($foto_siswa->getError() == 4) {
+                $nama_foto = 'Default.jpg';
+            } else {
+                $nama_foto = $nisn . '.' . $foto_siswa->getClientExtension();
+                $foto_siswa->move(
+                    'img',
+                    $nama_foto
+                );
+            }
+            $data = [
+                'nisn' => $nisn,
+                'nis' => $nis,
+                'nama' => $nama,
+                'tempat_lahir' => $tempat_lahir,
+                'tanggal_lahir' => $tanggal_lahir,
+                'jenis_kelamin' => $jenis_kelamin,
+                'agama' => $agama,
+                'pendidikan_sebelum' => $pendidikan_sebelum,
+                'alamat' => $alamat,
+                'nama_ayah' => $nama_ayah,
+                'nama_ibu' => $nama_ibu,
+                'pekerjaan_ayah' => $pekerjaan_ayah,
+                'pekerjaan_ibu' => $pekerjaan_ibu,
+                'alamat_orang_tua' => $alamat_orang_tua,
+                'tahun_mendaftar' => $tahun_mendaftar,
+                'status_siswa' => $status_siswa,
+                'foto_siswa' => $nama_foto
+            ];
+            //dd($data);
+            $this->SiswaModel->insert($data);
+
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_siswa');
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -441,8 +1037,24 @@ class Admin extends BaseController
     public function edit_datasiswa()
     {
         if (session()->get('logged_in') == 'admin') {
-
-            return redirect()->to('/admin/akun_siswa');
+            $dataGuru = $this->GuruModel->where(
+                'nip',
+                session()->get('nip')
+            )->first();
+            $nisn = $this->request->getVar('nip');
+            $data = [
+                'title' => 'Data Siswa',
+                'nama' => $dataGuru['nama'],
+                'dataSiswa' => $this->SiswaModel->where(
+                    'nisn',
+                    $nisn
+                ),
+                'validation' => \Config\Services::validation()
+            ];
+            return view(
+                'pages/admin/edit_dataSiswa',
+                $data
+            );
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -451,245 +1063,8 @@ class Admin extends BaseController
     public function val_edit_datasiswa()
     {
         if (session()->get('logged_in') == 'admin') {
-
-            return redirect()->to('/admin/akun_siswa');
         } else {
             return redirect()->to('/auth/admin');
-        }
-    }
-
-    public function hapus_datasiswa()
-    {
-        if (session()->get('logged_in') == 'admin') {
-
-            return redirect()->to('/admin/akun_siswa');
-        } else {
-            return redirect()->to('/auth/admin');
-        }
-    }
-
-
-
-
-
-
-
-    //Akun Guru dan Siswa
-    public function tambah_akun_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Tambah Akun Guru'
-            ];
-            return view('pages/admin/tambah_akun_guru', $data);
-        } else {
-            return redirect()->to('/admin_login');
-        }
-    }
-
-    public function lihat_akun_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Lihat Akun Guru',
-                'akun' => $this->AkunGuruModel
-            ];
-            return view('pages/admin/lihat_akun_guru', $data);
-        } else {
-            return redirect()->to('/admin_login');
-        }
-    }
-
-    public function validasi_tambah_akun_guru()
-    {
-        $nip = $this->request->getVar('nip');
-        $username = $this->request->getVar('username');
-        $password = $this->request->getVar('password');
-        $akun = $this->GuruModel->where('nip', $nip)->first();
-        $data = $this->AkunGuruModel->where('nip', $nip)->first();
-        if ($akun) {
-            if ($data) {
-                session()->setFlashdata('gagal', 'Nip sudah pernah di tambah');
-                return redirect()->to('/admin/lihat_akun_guru');
-            } else {
-                $data = [
-                    'nip' => $nip,
-                    'username' => $username,
-                    'password' => password_hash($password, PASSWORD_DEFAULT),
-                    'is_aktif' => 1
-                ];
-                $this->AkunGuruModel->insert($data);
-                session()->setFlashdata('berhasil', 'Data berhasil di tambah');
-                return redirect()->to('/admin/lihat_akun_guru');
-            }
-        } else {
-            session()->setFlashdata('gagal', 'Nip tidak ditemukan');
-            return redirect()->to('/admin/lihat_akun_guru');
-        }
-    }
-
-    public function edit_akun_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            if ($this->request->getVar('id') != NULL) {
-                $data = [
-                    'title' => 'Edit Akun Guru',
-                    'akun' => $this->AkunGuruModel
-                ];
-                return view('pages/admin/edit_akun_guru', $data);
-            } else {
-                return redirect()->to('/admin/lihat_akun_guru');
-            }
-        } else {
-            return redirect()->to('/admin_login');
-        }
-    }
-
-    public function validasi_edit_akun_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $id = $this->request->getVar('id');
-            $nip = $this->request->getVar('nip');
-            $username = $this->request->getVar('username');
-            $password = $this->request->getVar('password');
-            $is_aktif = $this->request->getVar('is_aktif');
-
-            if ($password != null) {
-                $data = [
-                    'nip' => $nip,
-                    'username' => $username,
-                    'password' => password_hash($password, PASSWORD_DEFAULT),
-                    'is_aktif' => $is_aktif
-                ];
-            } else {
-                $data = [
-                    'nip' => $nip,
-                    'username' => $username,
-                    'is_aktif' => $is_aktif
-                ];
-            }
-            $this->AkunGuruModel->update($id, $data);
-            session()->setFlashdata('berhasil', 'Data berhasil di update');
-            return redirect()->to('/admin/lihat_akun_guru');
-        } else {
-            return redirect()->to('/admin_login');
-        }
-    }
-
-    public function hapus_akun_guru()
-    {
-        $nip = $this->request->getVar('nip');
-        //Hapus akun guru berdasarkan NIP
-        $this->AkunGuruModel->where('nip', $nip)->delete();
-        session()->setFlashdata('berhasil', 'Data berhasil di hapus');
-        return redirect()->to('/admin/lihat_akun_guru');
-    }
-
-    public function lihat_data_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Lihat Data Guru',
-                'akun' => $this->GuruModel
-            ];
-            return view('pages/admin/lihat_data_guru', $data);
-        } else {
-            return redirect()->to('/admin_login');
-        }
-    }
-
-    public function validasi_tambah_data_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            //Ambil gambar
-            $fileFoto = $this->request->getFile('foto_guru');
-
-            //Apakah tidak ada foto di upload
-            if ($fileFoto->getError() == 4) {
-                $namaFoto = "Default.jpg";
-            } else {
-                $fileFoto->move('img');
-                $namaFoto = $fileFoto->getName();
-            }
-
-            //Tambah Ke database
-            $data = [
-                'nip' => $this->request->getVar('nip'),
-                'nuptk' => $this->request->getVar('nuptk'),
-                'nama' => $this->request->getVar('nama'),
-                'tempat_lahir' => $this->request->getVar('tempat_lahir'),
-                'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
-                'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
-                'agama' => $this->request->getVar('agama'),
-                'ijazah' => $this->request->getVar('ijazah'),
-                'tahun_ijazah' => $this->request->getVar('tahun_ijazah'),
-                'jenis_guru' => $this->request->getVar('jenis_guru'),
-                'tanggal_angkatan' => $this->request->getVar('tanggal_angkatan'),
-                'mulai_bekerja_disekolah' => $this->request->getVar('mulai_bekerja_disekolah'),
-                'tmt_masa_pensiun' => $this->request->getVar('tmt_masa_pensiun'),
-                'mengajar_dikelas' => $this->request->getVar('mengajar_dikelas'),
-                'jumlah_jam_mengajar' => $this->request->getVar('jumlah_jam_mengajar'),
-                'foto_guru' => $namaFoto
-            ];
-
-            $this->GuruModel->insert($data);
-            session()->setFlashdata('berhasil', 'Data berhasil di tambah');
-            return redirect()->to('/admin/lihat_data_guru');
-        } else {
-            return redirect()->to('/admin_login');
-        }
-    }
-
-    public function edit_data_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            $data = [
-                'title' => 'Edit Akun Guru',
-                'guru' => $this->GuruModel
-            ];
-            return view('pages/admin/edit_data_guru', $data);
-        } else {
-            return redirect()->to('/admin_login');
-        }
-    }
-
-    public function validasi_edit_data_guru()
-    {
-        if (session()->get('logged_in') == 'admin') {
-            //Ambil gambar
-            $fotoGuru = $this->request->getFile('foto_guru');
-
-            //Mengambil data guru
-            $guru = $this->GuruModel->where('nip', $this->request->getVar('nip'))->first();
-
-            if ($fotoGuru->getName() == NULL) {
-                $nip = $this->request->getVar('nip');
-                $data = [
-                    'nuptk' => $this->request->getVar('nuptk'),
-                    'nama' => $this->request->getVar('nama'),
-                    'tempat_lahir' => $this->request->getVar('tempat_lahir'),
-                    'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
-                    'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
-                    'agama' => $this->request->getVar('agama'),
-                    'ijazah' => $this->request->getVar('ijazah'),
-                    'tahun_ijazah' => $this->request->getVar('tahun_ijazah'),
-                    'jenis_guru' => $this->request->getVar('jenis_guru'),
-                    'tanggal_angkatan' => $this->request->getVar('tanggal_angkatan'),
-                    'mulai_bekerja_disekolah' => $this->request->getVar('mulai_bekerja_disekolah'),
-                    'tmt_masa_pensiun' => $this->request->getVar('tmt_masa_pensiun'),
-                    'mengajar_dikelas' => $this->request->getVar('mengajar_dikelas'),
-                    'jumlah_jam_mengajar' => $this->request->getVar('jumlah_jam_mengajar')
-                ];
-                $this->GuruModel->update($nip, $data);
-                session()->setFlashdata('berhasil', 'Data berhasil di ubah');
-                return redirect()->to('/admin/lihat_data_guru');
-            } else {
-                unlink("./img/" . $guru['foto_guru']);
-
-                $fotoGuru->move('img');
-            }
-        } else {
-            return redirect()->to('/admin_login');
         }
     }
 }

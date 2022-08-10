@@ -5,10 +5,10 @@
     <div class="card-header">
         <div class="row">
             <div class="col-md-6">
-                <h5 class="text-primary font-weight-bold m-0 mt-2">Data Guru</h5>
+                <h5 class="text-primary font-weight-bold m-0 mt-2">Data Siswa</h5>
             </div>
             <div class="col-md-6">
-                <a href="/admin/tambah_dataguru" class="btn btn-primary float-right"><i class="fa fa-plus"></i></a>
+                <a href="/admin/tambah_datasiswa" class="btn btn-primary float-right"><i class="fa fa-plus"></i></a>
             </div>
         </div>
     </div>
@@ -32,64 +32,67 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead class="text-center">
                     <tr>
-                        <th>NIP</th>
-                        <th>NUPTK</th>
+                        <th>NISN</th>
+                        <th>NIS</th>
                         <th>NAMA</th>
                         <th>TEMPAT TANGGAL LAHIR</th>
                         <th>JENIS KELAMIN</th>
                         <th>AGAMA</th>
-                        <th>IJAZAH</th>
-                        <th>TAHUN IJAZAH</th>
-                        <th>JENIS GURU</th>
-                        <th>TANGGAL DANGKAT</th>
-                        <th>TANGGAL BEKERJA DISINI</th>
-                        <th>TANGGAL PENSIUN</th>
-                        <th>KELAS DIAMPU</th>
-                        <th>JAM MENGAJAR</th>
-                        <th>FOTO GURU</th>
+                        <th>PENDIDIKAN SEBELUMNYA</th>
+                        <th>ALAMAT</th>
+                        <th>NAMA AYAH</th>
+                        <th>NAMA IBU</th>
+                        <th>PEKERJAAN AYAH</th>
+                        <th>PEKERJAAN IBU</th>
+                        <th>ALAMAT ORANG TUA</th>
+                        <th>TAHUN MENDAFTAR</th>
+                        <th>STATUS SISWA</th>
+                        <th>FOTO SISWA</th>
                         <th>#</th>
                     </tr>
                 </thead>
                 <tfoot class="text-center">
                     <tr>
-                        <th>NIP</th>
-                        <th>NUPTK</th>
+                        <th>NISN</th>
+                        <th>NIS</th>
                         <th>NAMA</th>
                         <th>TEMPAT TANGGAL LAHIR</th>
                         <th>JENIS KELAMIN</th>
                         <th>AGAMA</th>
-                        <th>IJAZAH</th>
-                        <th>TAHUN IJAZAH</th>
-                        <th>JENIS GURU</th>
-                        <th>TANGGAL DANGKAT</th>
-                        <th>TANGGAL BEKERJA DISINI</th>
-                        <th>TANGGAL PENSIUN</th>
-                        <th>KELAS DIAMPU</th>
-                        <th>JAM MENGAJAR</th>
-                        <th>FOTO GURU</th>
+                        <th>PENDIDIKAN SEBELUMNYA</th>
+                        <th>ALAMAT</th>
+                        <th>NAMA AYAH</th>
+                        <th>NAMA IBU</th>
+                        <th>PEKERJAAN AYAH</th>
+                        <th>PEKERJAAN IBU</th>
+                        <th>ALAMAT ORANG TUA</th>
+                        <th>TAHUN MENDAFTAR</th>
+                        <th>STATUS SISWA</th>
+                        <th>FOTO SISWA</th>
                         <th>#</th>
                     </tr>
                 </tfoot>
 
                 <body>
-                    <?php foreach ($dataGuru->find() as $data) : ?>
+                    <?php foreach ($dataSiswa->find() as $data) : ?>
                         <tr>
-                            <td><?= $data['nip'] ?></td>
-                            <td><?= $data['nuptk'] ?></td>
+                            <td><?= $data['nisn'] ?></td>
+                            <td><?= $data['nis'] ?></td>
                             <td><?= $data['nama'] ?></td>
                             <td><?= $data['tempat_lahir'] . ', ' . date("d-m-Y", strtotime($data['tanggal_lahir'])) ?></td>
                             <td><?= $data['jenis_kelamin'] ?></td>
                             <td><?= $data['agama'] ?></td>
-                            <td><?= $data['ijazah'] ?></td>
-                            <td><?= $data['tahun_ijazah'] ?></td>
-                            <td><?= $data['jenis_guru'] ?></td>
-                            <td><?= $data['tanggal_diangkat'] ?></td>
-                            <td><?= $data['tanggal_bekerja'] ?></td>
-                            <td><?= $data['tanggal_pensiun'] ?></td>
-                            <td><?= $data['kelas_diampu'] ?></td>
-                            <td><?= $data['jam_mengajar'] ?></td>
-                            <td><img src="/img/<?= $data['foto_guru'] ?>" alt="" class="rounded img-thumbnail"></td>
-                            <td><a href="<?= base_url('admin/edit_dataguru') . "?nip=$data[nip]" ?>" class="fa fa-edit"></a></td>
+                            <td><?= $data['pendidikan_sebelum'] ?></td>
+                            <td><?= $data['alamat'] ?></td>
+                            <td><?= $data['nama_ayah'] ?></td>
+                            <td><?= $data['nama_ibu'] ?></td>
+                            <td><?= $data['pekerjaan_ayah'] ?></td>
+                            <td><?= $data['pekerjaan_ibu'] ?></td>
+                            <td><?= $data['alamat_orang_tua'] ?></td>
+                            <td><?= $data['tahun_mendaftar'] ?></td>
+                            <td><?= $data['status_siswa'] ?></td>
+                            <td><img src="/img/<?= $data['foto_siswa'] ?>" alt="" class="rounded img-thumbnail"></td>
+                            <td><a href="<?= base_url('admin/edit_datasiswa') . "?nisn=$data[nisn]" ?>" class="fa fa-edit"></a></td>
                         </tr>
                     <?php
                     endforeach;
