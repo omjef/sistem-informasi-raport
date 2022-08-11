@@ -8,5 +8,5 @@ class TahunAjaranModel extends Model
 {
     protected $table = 'tahun_ajaran';
     protected $primaryKey = 'id_tahun_ajaran';
-    protected $allowedFields = ['id_kelas', 'tahun_ajaran'];
+    protected $allowedFields = ['id_tahun_ajaran', 'id_kelas', 'tahun_ajaran'];
 }

@@ -107,14 +107,16 @@
                             <option value="Guru PJOK">Guru PJOK</option>
                         </select>
                     </div>
-                </div>
-                <div class="col-md-6">
+
                     <!-- TANGGAL DIANGKAT -->
                     <div class="form-group">
                         <label for="tanggal_angkatan">TANGGAL DIANGKAT</label>
                         <input type="date" class="form-control <?= ($validation->hasError('tanggal_diangkat')) ? 'is-invalid' : ''; ?>" name="tanggal_diangkat" id="tanggal_diangkat" value="<?= $data['tanggal_diangkat'] ?>">
                         <small class=" form-text text-danger"><?= $validation->getError('tanggal_diangkat'); ?></small>
                     </div>
+                </div>
+                <div class="col-md-6">
+
 
                     <!-- TANGGAL MULAI MENGAJAR DISEKOLAH INI -->
                     <div class="form-group">
@@ -150,6 +152,15 @@
                         <label for="nama">JUMLAH JAM MENGAJAR</label>
                         <input type="text" class="form-control <?= ($validation->hasError('jam_mengajar')) ? 'is-invalid' : ''; ?>" name="jam_mengajar" id="jam_mengajar" placeholder="Masukan jumlah jam mengajar" value="<?= $data['jam_mengajar'] ?>">
                         <small class=" form-text text-danger"><?= $validation->getError('jam_mengajar'); ?></small>
+                    </div>
+
+                    <!-- STATUS GURU -->
+                    <div class="form-group">
+                        <label for="jenis_kelamin">STATUS AKUN</label>
+                        <select class="form-control" name="status_guru" id="status_guru">
+                            <option <?= ($data['status_guru'] == 'Aktif') ? 'selected' : ''; ?>>Aktif</option>
+                            <option <?= ($data['status_guru'] == 'Tidak Aktif') ? 'selected' : ''; ?>>Tidak Aktif</option>
+                        </select>
                     </div>
 
                     <!-- FOTO -->

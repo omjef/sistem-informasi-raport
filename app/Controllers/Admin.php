@@ -14,7 +14,9 @@ class Admin extends BaseController
 
             $data = [
                 'title' => 'Dashboard',
-                'nama' => $guru['nama']
+                'nama' => $guru['nama'],
+                'dataGuru' => $this->GuruModel,
+                'dataSiswa' => $this->SiswaModel
             ];
             return view(
                 'pages/admin/dashboard',
@@ -617,6 +619,7 @@ class Admin extends BaseController
             $tanggal_pensiun = $this->request->getVar('tanggal_pensiun');
             $kelas_diampu = $this->request->getVar('kelas_diampu');
             $jam_mengajar = $this->request->getVar('jam_mengajar');
+            $status_guru = $this->request->getVar('status_guru');
             $foto_guru = $this->request->getFile('foto');
 
             if ($foto_guru->getError() == 4) {
@@ -645,6 +648,7 @@ class Admin extends BaseController
                 'tanggal_pensiun' => $tanggal_pensiun,
                 'kelas_diampu' => $kelas_diampu,
                 'jam_mengajar' => $jam_mengajar,
+                'status_guru' => $status_guru,
                 'foto_guru' => $nama_foto
             ];
 
@@ -782,6 +786,7 @@ class Admin extends BaseController
             $tanggal_pensiun = $this->request->getVar('tanggal_pensiun');
             $kelas_diampu = $this->request->getVar('kelas_diampu');
             $jam_mengajar = $this->request->getVar('jam_mengajar');
+            $status_guru = $this->request->getVar('status_guru');
             $foto_guru = $this->request->getFile('foto');
 
             $dataGuru = $this->GuruModel->where(
@@ -815,6 +820,7 @@ class Admin extends BaseController
                 'tanggal_pensiun' => $tanggal_pensiun,
                 'kelas_diampu' => $kelas_diampu,
                 'jam_mengajar' => $jam_mengajar,
+                'status_guru' => $status_guru,
                 'foto_guru' => $nama_foto
             ];
             $this->GuruModel->update(
@@ -1023,7 +1029,7 @@ class Admin extends BaseController
                 'status_siswa' => $status_siswa,
                 'foto_siswa' => $nama_foto
             ];
-            //       dd($data);
+
             $this->SiswaModel->insert($data);
 
             session()->setFlashdata(
@@ -1043,14 +1049,11 @@ class Admin extends BaseController
                 'nip',
                 session()->get('nip')
             )->first();
-            $nisn = $this->request->getVar('nip');
+            $nisn = $this->request->getVar('nisn');
             $data = [
                 'title' => 'Data Siswa',
                 'nama' => $dataGuru['nama'],
-                'dataSiswa' => $this->SiswaModel->where(
-                    'nisn',
-                    $nisn
-                ),
+                'dataSiswa' => $this->SiswaModel->where('nisn', $nisn)->first(),
                 'validation' => \Config\Services::validation()
             ];
             return view(
@@ -1063,6 +1066,337 @@ class Admin extends BaseController
     }
 
     public function val_edit_datasiswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            if (!$this->validate([
+                'nisn' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NISN harus di isi'
+                    ]
+                ],
+                'nis' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'NIS harus di isi'
+                    ]
+                ],
+                'nama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama harus di isi'
+                    ]
+                ],
+                'tempat_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tempat lahir harus di isi'
+                    ]
+                ],
+                'tanggal_lahir' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tanggal lahir harus di isi'
+                    ]
+                ],
+                'agama' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Agama harus di isi'
+                    ]
+                ],
+                'pendidikan_sebelum' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Pendidikan sebelumnya harus di isi'
+                    ]
+                ],
+                'alamat' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Alamat harus di isi'
+                    ]
+                ],
+                'nama_ayah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama ayah harus di isi'
+                    ]
+                ],
+                'nama_ibu' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama ibu harus di isi'
+                    ]
+                ],
+                'pekerjaan_ayah' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Pekerjaan ayah harus di isi'
+                    ]
+                ],
+                'pekerjaan_ibu' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Pekerjaan ibu harus di isi'
+                    ]
+                ],
+                'alamat_orang_tua' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Alamat orang tua harus di isi'
+                    ]
+                ],
+                'tahun_mendaftar' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Tahun mendaftar harus di isi'
+                    ]
+                ],
+                'status_siswa' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Status siswa harus di isi'
+                    ]
+                ],
+            ])) {
+                $validation = \Config\Services::validation();
+                return redirect()->to('/admin/edit_datasiswa?nisn=' . $this->request->getVar('nisn'))->withInput()->withInput(
+                    'validation',
+                    $validation
+                );
+            }
+
+            $nisn = $this->request->getVar('nisn');
+            $nis = $this->request->getVar('nis');
+            $nama = $this->request->getVar('nama');
+            $tempat_lahir = $this->request->getVar('tempat_lahir');
+            $tanggal_lahir = $this->request->getVar('tanggal_lahir');
+            $jenis_kelamin = $this->request->getVar('jenis_kelamin');
+            $agama = $this->request->getVar('agama');
+            $pendidikan_sebelum = $this->request->getVar('pendidikan_sebelum');
+            $alamat = $this->request->getVar('alamat');
+            $nama_ayah = $this->request->getVar('nama_ayah');
+            $nama_ibu = $this->request->getVar('nama_ibu');
+            $pekerjaan_ayah = $this->request->getVar('tempat_lahir');
+            $pekerjaan_ibu = $this->request->getVar('tanggal_lahir');
+            $alamat_orang_tua = $this->request->getVar('jenis_kelamin');
+            $tahun_mendaftar = $this->request->getVar('agama');
+            $status_siswa = $this->request->getVar('status_siswa');
+            $foto_siswa = $this->request->getFile('foto_siswa');
+
+            $tempSiswa = $this->SiswaModel->where('nisn', $nisn)->first();
+            if ($foto_siswa->getError() == 4) {
+                $nama_foto = 'Default.jpg';
+            } else {
+                if (!hash_equals($tempSiswa['foto_siswa'], 'Default.jpg')) {
+                    unlink('./img/' . $tempSiswa['foto_siswa']);
+                }
+                $nama_foto = $nisn . '.' . $foto_siswa->getClientExtension();
+                $foto_siswa->move(
+                    'img',
+                    $nama_foto
+                );
+            }
+            $data = [
+                'nis' => $nis,
+                'nama' => $nama,
+                'tempat_lahir' => $tempat_lahir,
+                'tanggal_lahir' => $tanggal_lahir,
+                'jenis_kelamin' => $jenis_kelamin,
+                'agama' => $agama,
+                'pendidikan_sebelum' => $pendidikan_sebelum,
+                'alamat' => $alamat,
+                'nama_ayah' => $nama_ayah,
+                'nama_ibu' => $nama_ibu,
+                'pekerjaan_ayah' => $pekerjaan_ayah,
+                'pekerjaan_ibu' => $pekerjaan_ibu,
+                'alamat_orang_tua' => $alamat_orang_tua,
+                'tahun_mendaftar' => $tahun_mendaftar,
+                'status_siswa' => $status_siswa,
+                'foto_siswa' => $nama_foto
+            ];
+
+            $this->SiswaModel->update($nisn, $data);
+
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function data_mapel()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Mapel',
+                'nama' => $dataGuru['nama'],
+                'dataMapel' => $this->MapelModel->find(),
+                'validation' => \Config\Services::validation()
+            ];
+            return view('/pages/admin/dataMapel', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function tambah_datamapel()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Tambah Data Mapel',
+                'nama' => $dataGuru['nama'],
+                'validation' => \Config\Services::validation()
+            ];
+
+            return view('pages/admin/tambah_dataMapel', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_tambah_datamapel()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            if (!$this->validate([
+                'id_mapel' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Id matapelajaran harus di isi'
+                    ]
+                ],
+                'nama_mapel' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Nama matapelajaran harus di isi'
+                    ]
+                ],
+                'kelas' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Kelas harus di isi'
+                    ]
+                ],
+                'aspek' => [
+                    'rules' => 'required|',
+                    'errors' => [
+                        'required' => 'Aspek harus di isi'
+                    ]
+                ],
+            ])) {
+                $validation = \Config\Services::validation();
+                return redirect()->to('/admin/tambah_datamapel')->withInput()->withInput(
+                    'validation',
+                    $validation
+                );
+            }
+
+            $id_mapel = $this->request->getVar('id_mapel');
+            $nama_mapel = $this->request->getVar('nama_mapel');
+            $kelas = $this->request->getVar('kelas');
+            $aspek = $this->request->getVar('aspek');
+
+            $data = [
+                'id_mapel' => $id_mapel,
+                'nama_mapel' => $nama_mapel,
+                'kelas' => $kelas,
+                'aspek' => $aspek
+            ];
+            //dd($data);
+            $this->MapelModel->insert($data);
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_mapel');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function edit_datamapel()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $dataMapel = $this->MapelModel->where('id_mapel', $this->request->getVar('id_mapel'))->first();
+            $data = [
+                'title' => 'Data Mapel',
+                'nama' => $dataGuru['nama'],
+                'dataMapel' => $dataMapel,
+                'validation' => \Config\Services::validation()
+            ];
+            return view('/pages/admin/edit_dataMapel', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_edit_datamapel()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_mapel = $this->request->getVar('id_mapel');
+            $nama_mapel = $this->request->getVar('nama_mapel');
+            $kelas = $this->request->getVar('kelas');
+            $aspek = $this->request->getVar('aspek');
+
+            $data = [
+                'id_mapel' => $id_mapel,
+                'nama_mapel' => $nama_mapel,
+                'kelas' => $kelas,
+                'aspek' => $aspek
+            ];
+            //dd($data);
+            $this->MapelModel->update($id_mapel, $data);
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil diupdate!'
+            );
+            return redirect()->to('/admin/data_mapel');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function data_kelas()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Kelas',
+                'nama' => $dataGuru['nama'],
+                'dataKelas' => $this->KelasModel
+            ];
+            return view('pages/admin/dataKelas', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function edit_datakelas()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $dataKelas = $this->KelasModel->where('id_kelas', $this->request->getVar('id_kelas'))->first();
+            $data = [
+                'title' => 'Edit data kelas',
+                'nama' => $dataGuru['nama'],
+                'dataKelas' => $dataKelas,
+                'guru' => $this->GuruModel,
+                'validation' => \Config\Services::validation()
+            ];
+            return view('pages/admin/edit_dataKelas', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_edit_datakelas()
     {
         if (session()->get('logged_in') == 'admin') {
         } else {
