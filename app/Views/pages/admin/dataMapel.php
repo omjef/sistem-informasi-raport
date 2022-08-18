@@ -34,7 +34,6 @@
                     <tr>
                         <th>ID MAPEL</th>
                         <th>NAMA MAPEL</th>
-                        <th>KELAS</th>
                         <th>ASPEK</th>
                         <th>#</th>
                     </tr>
@@ -43,7 +42,6 @@
                     <tr>
                         <th>ID MAPEL</th>
                         <th>NAMA MAPEL</th>
-                        <th>KELAS</th>
                         <th>ASPEK</th>
                         <th>#</th>
                     </tr>
@@ -54,7 +52,6 @@
                         <tr>
                             <td><?= $data['id_mapel'] ?></td>
                             <td><?= $data['nama_mapel'] ?></td>
-                            <td><?= $data['kelas'] ?></td>
                             <td><?= $data['aspek'] ?></td>
                             <td class="text-center"><a href="<?= base_url('admin/edit_datamapel?id_mapel=' . $data['id_mapel']) ?>" class="fa fa-edit"></a></td>
                         </tr>

@@ -27,7 +27,7 @@ class Admin extends BaseController
         }
     }
 
-    //--------------------------------Akun-------------------------------------------
+    //--------------------------------RUANG ADMIN-------------------------------------------
     public function akun_guru()
     {
         if (session()->get('logged_in') == 'admin') {
@@ -39,7 +39,7 @@ class Admin extends BaseController
             $dataGuru = $this->GuruModel;
 
             $data = [
-                'title' => 'Akun Guru',
+                'title' => 'Kelola Akun Guru',
                 'nama' => $guru['nama'],
                 'akunGuru' => $akunGuru,
                 'dataGuru' => $dataGuru
@@ -116,7 +116,7 @@ class Admin extends BaseController
             $dataGuru = $this->GuruModel;
 
             $data = [
-                'title' => 'Akun Guru',
+                'title' => 'Kelola Akun Guru',
                 'nama' => $guru['nama'],
                 'akunGuru' => $akunGuru,
                 'dataGuru' => $dataGuru
@@ -223,7 +223,7 @@ class Admin extends BaseController
             $akunSiswa = $this->AkunSiswaModel;
             $dataSiswa = $this->SiswaModel;
             $data = [
-                'title' => 'Akun Siswa',
+                'title' => 'Kelola Akun Siswa',
                 'nama' => $guru['nama'],
                 'akunSiswa' => $akunSiswa,
                 'dataSiswa' => $dataSiswa
@@ -296,7 +296,7 @@ class Admin extends BaseController
             $dataSiswa = $this->SiswaModel;
             $akunSiswa = $this->AkunSiswaModel;
             $data = [
-                'title' => 'Edit Akun Siswa',
+                'title' => 'Kelola Akun Siswa',
                 'nama' => $guru['nama'],
                 'dataSiswa' => $dataSiswa,
                 'akunSiswa' => $akunSiswa,
@@ -394,7 +394,7 @@ class Admin extends BaseController
         }
     }
 
-    //--------------------------------Data-------------------------------------------
+    //--------------------------------RUANG OPERATOR-------------------------------------------
     public function data_sekolah()
     {
         if (session()->get('logged_in') == 'admin') {
@@ -424,7 +424,7 @@ class Admin extends BaseController
                 session()->get('nip')
             )->first();
             $data = [
-                'title' => 'Edit Data Sekolah',
+                'title' => 'Data Sekolah',
                 'nama' => $dataGuru['nama'],
                 'dataSekolah' => $this->SekolahModel
             ];
@@ -507,7 +507,7 @@ class Admin extends BaseController
                 session()->get('nip')
             )->first();
             $data = [
-                'title' => 'Tambah Data Guru',
+                'title' => 'Data Guru',
                 'nama' => $dataGuru['nama'],
                 'validation' => \Config\Services::validation()
             ];
@@ -672,7 +672,7 @@ class Admin extends BaseController
             )->first();
             $nip = $this->request->getVar('nip');
             $data = [
-                'title' => 'Edit Data Guru',
+                'title' => 'Data Guru',
                 'nama' => $dataGuru['nama'],
                 'nip' => $nip,
                 'dataGuru' => $this->GuruModel,
@@ -1234,7 +1234,7 @@ class Admin extends BaseController
         if (session()->get('logged_in') == 'admin') {
             $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
             $data = [
-                'title' => 'Data Mapel',
+                'title' => 'Data Mata Pelajaran',
                 'nama' => $dataGuru['nama'],
                 'dataMapel' => $this->MapelModel->find(),
                 'validation' => \Config\Services::validation()
@@ -1250,7 +1250,7 @@ class Admin extends BaseController
         if (session()->get('logged_in') == 'admin') {
             $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
             $data = [
-                'title' => 'Tambah Data Mapel',
+                'title' => 'Data Mata Pelajaran',
                 'nama' => $dataGuru['nama'],
                 'validation' => \Config\Services::validation()
             ];
@@ -1308,7 +1308,6 @@ class Admin extends BaseController
                 'kelas' => $kelas,
                 'aspek' => $aspek
             ];
-            //dd($data);
             $this->MapelModel->insert($data);
             session()->setFlashdata(
                 'berhasil',
@@ -1326,7 +1325,7 @@ class Admin extends BaseController
             $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
             $dataMapel = $this->MapelModel->where('id_mapel', $this->request->getVar('id_mapel'))->first();
             $data = [
-                'title' => 'Data Mapel',
+                'title' => 'Data Mata Pelajaran',
                 'nama' => $dataGuru['nama'],
                 'dataMapel' => $dataMapel,
                 'validation' => \Config\Services::validation()
@@ -1351,7 +1350,6 @@ class Admin extends BaseController
                 'kelas' => $kelas,
                 'aspek' => $aspek
             ];
-            //dd($data);
             $this->MapelModel->update($id_mapel, $data);
             session()->setFlashdata(
                 'berhasil',
@@ -1384,7 +1382,7 @@ class Admin extends BaseController
             $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
             $dataKelas = $this->KelasModel->where('id_kelas', $this->request->getVar('id_kelas'))->first();
             $data = [
-                'title' => 'Edit data kelas',
+                'title' => 'Data Kelas',
                 'nama' => $dataGuru['nama'],
                 'dataKelas' => $dataKelas,
                 'guru' => $this->GuruModel,
@@ -1397,6 +1395,417 @@ class Admin extends BaseController
     }
 
     public function val_edit_datakelas()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_kelas = $this->request->getVar('id_kelas');
+            $kelas = $this->request->getVar('kelas');
+            $semester = $this->request->getVar('semester');
+            $nip = $this->request->getVar('nip');
+
+            $data = [
+                'kelas' => $kelas,
+                'semester' => $semester,
+                'nip' => $nip
+            ];
+
+            $this->KelasModel->update($id_kelas, $data);
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil diupdate!'
+            );
+            return redirect()->to('/admin/data_kelas');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function data_eskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Ekstrakulikuler',
+                'nama' => $dataGuru['nama'],
+                'dataEskul' => $this->EskulModel->find()
+            ];
+            return view('/pages/admin/dataEskul', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_tambah_dataeskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_eskul = $this->request->getVar('id_eskul');
+            $nama_eskul = $this->request->getVar('nama_eskul');
+            $data = [
+                'id_eskul' => $id_eskul,
+                'nama_eskul' => $nama_eskul
+            ];
+            $this->EskulModel->insert($data);
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_eskul');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function edit_dataeskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $dataEskul = $this->EskulModel->where('id_eskul', $this->request->getVar('id_eskul'))->first();
+            $data = [
+                'title' => 'Data Ekstrakulikuler',
+                'nama' => $dataGuru['nama'],
+                'dataEskul' => $dataEskul,
+            ];
+            return view('/pages/admin/edit_dataEskul', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_edit_dataeskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_eskul = $this->request->getVar('id_eskul');
+            $id_eskul1 = $this->request->getVar('id_eskul1');
+            $nama_eskul = $this->request->getVar('nama_eskul');
+            $data = [
+                'id_eskul' => $id_eskul1,
+                'nama_eskul' => $nama_eskul
+            ];
+            $this->EskulModel->update($id_eskul, $data);
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil diupdate!'
+            );
+            return redirect()->to('/admin/data_eskul');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    //--------------------------------Aktifitas Sekolah-------------------------------------------
+
+    public function data_ta()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Tahun Ajaran',
+                'nama' => $dataGuru['nama'],
+                'dataKelas' => $this->KelasModel,
+                'dataTA' => $this->TahunAjaranModel
+            ];
+            return view('/pages/admin/dataTA', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_tambah_datata()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $kelas = $this->KelasModel->find();
+            $tahun_ajaran = $this->request->getVar('tahun_ajaran');
+            $ta = $this->TahunAjaranModel->where('tahun_ajaran', $tahun_ajaran)->first();
+            if ($ta) {
+                session()->setFlashdata(
+                    'gagal',
+                    'Data sudah pernah dimasukan!'
+                );
+                return redirect()->to('/admin/data_ta');
+            } else {
+                foreach ($kelas as $data) :
+                    $dataTemp = [
+                        'id_tahun_ajaran' => 'TA-' . $data['id_kelas'] . '-' . $tahun_ajaran,
+                        'id_kelas' => $data['id_kelas'],
+                        'tahun_ajaran' => $tahun_ajaran
+                    ];
+                    $this->TahunAjaranModel->insert($dataTemp);
+                endforeach;
+            }
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_ta');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function data_siswakelas()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $tempTA = $this->TahunAjaranModel->where('id_kelas', 'K11')->find();
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Siswa Perkelas',
+                'nama' => $dataGuru['nama'],
+                'TahunAjaran' => $tempTA,
+                'dataKelas' => $this->KelasModel,
+                'dataGuru' => $this->GuruModel,
+                'Nilai' => $this->NilaiModel,
+                'Kelas' => $this->KelasModel,
+                'TA' => $this->TahunAjaranModel
+            ];
+            return view('pages/admin/dataSiswaKelas', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function tambah_data_siswakelas()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Siswa Perkelas',
+                'nama' => $dataGuru['nama'],
+                'TahunAjaran' => $this->TahunAjaranModel->where('id_kelas', 'K11')->find(),
+                'Siswa' => $this->SiswaModel
+            ];
+
+            return view('pages/admin/tambah_dataSiswaKelas', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_tambah_data_siswakelas()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $kelas = $this->request->getVar('kelas');
+            $semester = $this->request->getVar('semester');
+            $tahun_ajaran = $this->request->getVar('tahun_ajaran');
+            $nisn = $this->request->getVar('siswa');
+
+            $dataKelas = $this->KelasModel->where(['kelas' => $kelas, 'semester' => $semester])->first();
+            $tahunAjaran = $this->TahunAjaranModel->where(['id_kelas' => $dataKelas['id_kelas'], 'tahun_ajaran' => $tahun_ajaran])->first();
+
+            for ($i = 0; $i < sizeof($nisn); $i++) :
+                for ($k = 1; $k <= 6; $k++) :
+                    $cek = $this->NilaiModel->where(['id_kelas' => $dataKelas['id_kelas'], 'id_mapel' => 'K' . $k, 'nisn' => $nisn[$i], 'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran']])->first();
+                    if ($cek) {
+                    } else {
+                        $data = [
+                            'id_kelas' => $dataKelas['id_kelas'],
+                            'id_mapel' => 'K' . $k,
+                            'nisn' => $nisn[$i],
+                            'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran'],
+                            'nilai_1' => 0,
+                            'nilai_2' => 0,
+                            'nilai_3' => 0,
+                            'nilai_4' => 0,
+                            'nilai_5' => 0,
+                            'nilai_6' => 0,
+                            'nilai_7' => 0,
+                            'nilai_8' => 0,
+                            'nilai_9' => 0,
+                            'nilai_10' => 0,
+                            'nilai_11' => 0,
+                            'nilai_12' => 0,
+                            'nilai_13' => 0,
+                            'nilai_14' => 0,
+                            'nilai_15' => 0,
+                            'nilai_16' => 0,
+                            'pts' => 0,
+                            'pta' => 0
+                        ];
+                        $this->NilaiModel->insert($data);
+                        $data = [
+                            'id_kelas' => $dataKelas['id_kelas'],
+                            'id_mapel' => 'P' . $k,
+                            'nisn' => $nisn[$i],
+                            'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran'],
+                            'nilai_1' => 0,
+                            'nilai_2' => 0,
+                            'nilai_3' => 0,
+                            'nilai_4' => 0,
+                            'nilai_5' => 0,
+                            'nilai_6' => 0,
+                            'nilai_7' => 0,
+                            'nilai_8' => 0,
+                            'nilai_9' => 0,
+                            'nilai_10' => 0,
+                            'nilai_11' => 0,
+                            'nilai_12' => 0,
+                            'nilai_13' => 0,
+                            'nilai_14' => 0,
+                            'nilai_15' => 0,
+                            'nilai_16' => 0,
+                            'pts' => 0,
+                            'pta' => 0
+                        ];
+                        $this->NilaiModel->insert($data);
+                    }
+                endfor;
+                $cekSiswa = $this->AbsensiModel->where(['nisn' => $nisn[$i], 'id_kelas' => $dataKelas['id_kelas'], 'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran']])->first();
+                if ($cekSiswa) {
+                } else {
+                    $absensi = [
+                        'nisn' => $nisn[$i],
+                        'id_kelas' => $dataKelas['id_kelas'],
+                        'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran'],
+                        'sakit' => 0,
+                        'izin' => 0,
+                        'tanpa_keterangan' => 0
+                    ];
+                    $this->AbsensiModel->insert($absensi);
+                }
+            endfor;
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_siswakelas');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function data_siswaeskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $tempTA = $this->TahunAjaranModel->where('id_kelas', 'K11')->find();
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Data Siswa Pereskul',
+                'nama' => $dataGuru['nama'],
+                'TahunAjaran' => $tempTA,
+                'dataEskul' => $this->EskulModel,
+                'dataKelas' => $this->KelasModel,
+                'dataGuru' => $this->GuruModel,
+                'nilaiEskul' => $this->NilaiEskulModel->join('siswa', 'nilai_eskul.nisn=siswa.nisn', 'inner'),
+                'Kelas' => $this->KelasModel,
+                'TA' => $this->TahunAjaranModel
+            ];
+            return view('pages/admin/dataSiswaEskul', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function tambah_siswaeskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+
+            $data = [
+                'title' => 'Data Siswa Pereskul',
+                'nama' => $dataGuru['nama'],
+                'dataEskul' => $this->EskulModel,
+                'TahunAjaran' => $this->TahunAjaranModel->find(),
+                'Siswa' => $this->SiswaModel,
+                'NilaiEskul' => $this->NilaiEskulModel
+            ];
+            return view('pages/admin/tambah_dataSiswaEskul', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_tambah_siswaeskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $nama_eskul = $this->request->getVar('nama_eskul');
+            $kelas = $this->request->getVar('kelas');
+            $semester = $this->request->getVar('semester');
+            $tahun_ajaran = $this->request->getVar('tahun_ajaran');
+            $nisn = $this->request->getVar('siswa');
+
+            $dataEskul = $this->EskulModel->where('nama_eskul', $nama_eskul)->first();
+            $dataKelas = $this->KelasModel->where(['kelas' => $kelas, 'semester' => $semester])->first();
+            $dataTA = $this->TahunAjaranModel->where(['id_kelas' => $dataKelas['id_kelas'], 'tahun_ajaran' => $tahun_ajaran])->first();
+            for ($i = 0; $i < sizeof($nisn); $i++) {
+                $tempInsert = $this->NilaiEskulModel->where(['nisn' => $nisn[$i], 'id_kelas' => $dataKelas['id_kelas'], 'id_tahun_ajaran' => $dataTA['id_tahun_ajaran']])->first();
+                if ($tempInsert) {
+                } else {
+                    $data = [
+                        'id_eskul' => $dataEskul['id_eskul'],
+                        'nisn' => $nisn[$i],
+                        'id_kelas' => $dataKelas['id_kelas'],
+                        'id_tahun_ajaran' => $dataTA['id_tahun_ajaran'],
+                        'nilai' => 0,
+                        'deskripsi' => '-'
+                    ];
+                    $this->NilaiEskulModel->insert($data);
+                }
+            }
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil ditambah!'
+            );
+            return redirect()->to('/admin/data_siswaeskul');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_hapus_siswaeskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_eskul = $this->request->getVar('id_eskul');
+            $nisn = $this->request->getVar('nisn');
+            $id_kelas = $this->request->getVar('id_kelas');
+            $id_tahun_ajaran = $this->request->getVar('id_tahun_ajaran');
+
+            $data = [
+                'id_eskul' => $id_eskul,
+                'nisn' => $nisn,
+                'id_kelas' => $id_kelas,
+                'id_tahun_ajaran' => $id_tahun_ajaran
+            ];
+            $this->NilaiEskulModel->where($data)->delete();
+
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil dihapus!'
+            );
+            return redirect()->to('/admin/data_siswaeskul');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+    //--------------------RUANG GURU------------------------
+
+    public function input_nilai_siswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Nilai Siswa',
+                'nama' => $dataGuru['nama'],
+                'TahunAjaran' => $this->TahunAjaranModel->find(),
+                'Mapel' => $this->MapelModel,
+                'Kelas' => $this->KelasModel,
+                'TahunAjaran' => $this->TahunAjaranModel,
+                'Guru' => $this->GuruModel,
+                'Nilai' => $this->NilaiModel
+            ];
+
+            return view('/pages/admin/input_NilaiSiswa', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function input_absensi_siswa()
+    {
+        if (session()->get('logged_in') == 'admin') {
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function input_nilai_eskul()
     {
         if (session()->get('logged_in') == 'admin') {
         } else {

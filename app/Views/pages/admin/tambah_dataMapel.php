@@ -3,7 +3,7 @@
 <?= $this->Section('content') ?>
 <div class="card">
     <div class="card-header">
-        <h5 class="text-primary font-weight-bold m-0">EDIT DATA MATA PELAJARAN</h5>
+        <h5 class="text-primary font-weight-bold m-0">TAMBAH DATA MATA PELAJARAN</h5>
     </div>
     <div class="card-body">
         <?php if (session()->getFlashdata('berhasil')) : ?>
@@ -39,13 +39,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="id_mapel">KELAS</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('kelas')) ? 'is-invalid' : ''; ?>" name="kelas" id="kelas" placeholder="Masukan kelas" value="<?= old('kelas') ?>">
-                        <small class=" form-text text-danger"><?= $validation->getError('kelas'); ?></small>
-                    </div>
-                </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="aspek">ASPEK</label>

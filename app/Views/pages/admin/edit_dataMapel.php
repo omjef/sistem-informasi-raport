@@ -40,12 +40,6 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="id_mapel">KELAS</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('kelas')) ? 'is-invalid' : ''; ?>" name="kelas" id="kelas" placeholder="Masukan kelas" value="<?= $dataMapel['kelas'] ?>">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
                         <label for="aspek">ASPEK</label>
                         <select class="form-control" name="aspek" id="aspek">
                             <option value="Keterampilan" <?= ($dataMapel['aspek'] == 'Keterampilan') ? 'selected' : ''; ?>>Keterampilan</option>

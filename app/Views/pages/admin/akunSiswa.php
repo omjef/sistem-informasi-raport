@@ -49,11 +49,12 @@
 
                 <body>
                     <?php
+                    $no = 1;
                     $data = $akunSiswa->find();
                     foreach ($data as $data) :
                     ?>
                         <tr>
-                            <td><?= $data['id'] ?></td>
+                            <td><?= $no++ ?></td>
                             <td><?= $data['nisn'] ?></td>
                             <td><?= $data['username'] ?></td>
                             <td><?= ($data['status_akun'] == 'Aktif') ? "<span class='text-success'>$data[status_akun]</span>" : "<span class='text-danger'>$data[status_akun]</span>"; ?></td>
