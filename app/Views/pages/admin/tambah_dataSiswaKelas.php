@@ -36,7 +36,7 @@
                             <label>Semester</label>
                             <select class="form-control" name="semester" id="semester">
                                 <option value="Ganjil">Ganjil</option>
-                                <option value="Ganjil">Genap</option>
+                                <option value="Genap">Genap</option>
                             </select>
                         </div>
                     </div>

@@ -161,7 +161,7 @@
                                         </span>
                                         <span class="text">Print</span>
                                     </a>
-                                    <a href="#" class="btn btn-danger btn-icon-split">
+                                    <a href="<?= base_url('admin/val_hapus_data_siswakelas' . '?id_kelas=' . $data['id_kelas'] . '&nisn=' . $data['nisn'] . '&id_tahun_ajaran=' . $data['id_tahun_ajaran']) ?>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>

@@ -57,8 +57,12 @@
                     <div class="form-group">
                         <label>Aspek</label>
                         <select class="form-control" name="aspek" id="aspek">
-                            <option value="Pengetahuan">Pengetahuan</option>
-                            <option value="Keterampilan">Keterampilan</option>
+                            <option <?php if (isset($_POST['cek_data'])) {
+                                        echo ('Pengetahuan' == $_POST['aspek']) ? 'selected' : '';
+                                    } ?> value="Pengetahuan">Pengetahuan</option>
+                            <option <?php if (isset($_POST['cek_data'])) {
+                                        echo ('Keterampilan' == $_POST['aspek']) ? 'selected' : '';
+                                    } ?> value="Keterampilan">Keterampilan</option>
                         </select>
                     </div>
                 </div>
@@ -104,11 +108,12 @@
             $mapel = $_POST['mapel'];
             $kelas = $_POST['kelas'];
             $semester = $_POST['semester'];
+            $aspek = $_POST['aspek'];
             $tahun_ajaran = $_POST['tahun_ajaran'];
 
             //ID MAPEL
             $namaIDMAPEL = $Mapel->where('id_mapel', $mapel)->first();
-            $tempIDMAPEL = $Mapel->where('nama_mapel', $namaIDMAPEL['nama_mapel'])->first();
+            $tempIDMAPEL = $Mapel->where(['nama_mapel' => $namaIDMAPEL['nama_mapel'], 'aspek' => $aspek])->first();
             //KELAS
             if ($kelas == 1) :
                 $tempKELAS = 'Satu';
@@ -141,6 +146,11 @@
                     <td><?= $tempIDMAPEL['nama_mapel'] ?></td>
                 </tr>
                 <tr>
+                    <td>Aspek</td>
+                    <td>:</td>
+                    <td><?= $aspek ?></td>
+                </tr>
+                <tr>
                     <td>Kelas</td>
                     <td>:</td>
                     <td><?= $kelas . ' (' . $tempKELAS . ')'; ?></td>
@@ -161,14 +171,14 @@
                     <td><?= $namaWALIKELAS['nama'] ?></td>
                 </tr>
                 <tr>
-                    <td>Kkm Satuan Pendidikan</td>
+                    <td>KKM Satuan Pendidikan</td>
                     <td>:</td>
                     <td>75</td>
                 </tr>
             </table>
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" cellspacing="0">
-                    <?php if ($IDKELAS['id_kelas'] == 'K11' or $IDKELAS['id_kelas'] == 'K21' or $IDKELAS['id_kelas'] == 'K31') : ?>
+                    <?php if ($IDKELAS['id_kelas'] == 'K11' or $IDKELAS['id_kelas'] == 'K21' or $IDKELAS['id_kelas'] == 'K31' or $IDKELAS['id_kelas'] == 'P11' or $IDKELAS['id_kelas'] == 'P21' or $IDKELAS['id_kelas'] == 'P31') : ?>
                         <thead class="text-center">
                             <tr>
                                 <th rowspan="2">NAMA</th>
@@ -202,7 +212,7 @@
                                 <td>SUB TEMA 4</td>
                             </tr>
                         </thead>
-                    <?php elseif ($IDKELAS['id_kelas'] == 'K12' or $IDKELAS['id_kelas'] == 'K22' or $IDKELAS['id_kelas'] == 'K32') : ?>
+                    <?php elseif ($IDKELAS['id_kelas'] == 'K12' or $IDKELAS['id_kelas'] == 'K22' or $IDKELAS['id_kelas'] == 'K32' or $IDKELAS['id_kelas'] == 'P12' or $IDKELAS['id_kelas'] == 'P22' or $IDKELAS['id_kelas'] == 'P32') : ?>
                         <thead class="text-center">
                             <tr>
                                 <th rowspan="2">NAMA</th>
@@ -210,9 +220,11 @@
                                 <th colspan="4">TEMA 6</th>
                                 <th colspan="4">TEMA 7</th>
                                 <th colspan="4">TEMA 8</th>
+                                <th rowspan="2">NILAI RATA-RATA TEMA</th>
                                 <th rowspan="2">PTS</th>
                                 <th rowspan="2">PTA</th>
                                 <th rowspan="2">NILAI RATA-RATA</th>
+                                <th rowspan="2">KET. TUNTAS/TIDAK TUNTAS</th>
                                 <th rowspan="2">OPTION</th>
                             </tr>
                             <tr>
@@ -234,7 +246,7 @@
                                 <td>SUB TEMA 4</td>
                             </tr>
                         </thead>
-                    <?php elseif ($IDKELAS['id_kelas'] == 'K41' or $IDKELAS['id_kelas'] == 'K51' or $IDKELAS['id_kelas'] == 'K61') : ?>
+                    <?php elseif ($IDKELAS['id_kelas'] == 'K41' or $IDKELAS['id_kelas'] == 'K51' or $IDKELAS['id_kelas'] == 'K61' or $IDKELAS['id_kelas'] == 'P41' or $IDKELAS['id_kelas'] == 'P51' or $IDKELAS['id_kelas'] == 'P61') : ?>
                         <thead class="text-center">
                             <tr>
                                 <th rowspan="2">NAMA</th>
@@ -243,9 +255,11 @@
                                 <th colspan="3">TEMA 3</th>
                                 <th colspan="3">TEMA 4</th>
                                 <th colspan="3">TEMA 5</th>
+                                <th rowspan="2">NILAI RATA-RATA TEMA</th>
                                 <th rowspan="2">PTS</th>
                                 <th rowspan="2">PTA</th>
                                 <th rowspan="2">NILAI RATA-RATA</th>
+                                <th rowspan="2">KET. TUNTAS/TIDAK TUNTAS</th>
                                 <th rowspan="2">OPTION</th>
                             </tr>
                             <tr>
@@ -266,7 +280,7 @@
                                 <td>SUB TEMA 3</td>
                             </tr>
                         </thead>
-                    <?php elseif ($IDKELAS['id_kelas'] == 'K42' or $IDKELAS['id_kelas'] == 'K52' or $IDKELAS['id_kelas'] == 'K62') : ?>
+                    <?php elseif ($IDKELAS['id_kelas'] == 'K42' or $IDKELAS['id_kelas'] == 'K52' or $IDKELAS['id_kelas'] == 'K62' or $IDKELAS['id_kelas'] == 'P42' or $IDKELAS['id_kelas'] == 'P52' or $IDKELAS['id_kelas'] == 'P62') : ?>
                         <thead class="text-center">
                             <tr>
                                 <th rowspan="2">NAMA</th>
@@ -274,9 +288,11 @@
                                 <th colspan="3">TEMA 7</th>
                                 <th colspan="3">TEMA 8</th>
                                 <th colspan="3">TEMA 9</th>
+                                <th rowspan="2">NILAI RATA-RATA TEMA</th>
                                 <th rowspan="2">PTS</th>
-                                <th rowspan="2">PAS</th>
+                                <th rowspan="2">PTA</th>
                                 <th rowspan="2">NILAI RATA-RATA</th>
+                                <th rowspan="2">KET. TUNTAS/TIDAK TUNTAS</th>
                                 <th rowspan="2">OPTION</th>
                             </tr>
                             <tr>
@@ -296,7 +312,7 @@
                         </thead>
                     <?php endif; ?>
 
-                    <?php if ($IDKELAS['id_kelas'] == 'K11' or $IDKELAS['id_kelas'] == 'K21' or $IDKELAS['id_kelas'] == 'K31') : ?>
+                    <?php if ($IDKELAS['id_kelas'] == 'K11' or $IDKELAS['id_kelas'] == 'K21' or $IDKELAS['id_kelas'] == 'K31' or $IDKELAS['id_kelas'] == 'P11' or $IDKELAS['id_kelas'] == 'P21' or $IDKELAS['id_kelas'] == 'P31') : ?>
                         <Tbody>
                             <?php foreach ($Nilai->join('siswa', 'nilai.nisn=siswa.nisn', 'inner')->where(['id_kelas' => $IDKELAS['id_kelas'], 'id_mapel' => $tempIDMAPEL['id_mapel'], 'id_tahun_ajaran' => $IDTAHUNAJARAN['id_tahun_ajaran']])->find() as $data) : ?>
                                 <tr>
@@ -351,7 +367,7 @@
                                     <?php endif; ?>
                                     <!-- END KET. TUNTAS/TIDAK TUNTAS -->
                                     <td>
-                                        <a href="#" class="btn btn-success btn-icon-split">
+                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>
@@ -361,17 +377,195 @@
                                 </tr>
                             <?php endforeach; ?>
                         </Tbody>
-                    <?php elseif ($IDKELAS['id_kelas'] == 'K12' or $IDKELAS['id_kelas'] == 'K22' or $IDKELAS['id_kelas'] == 'K32') : ?>
+                    <?php elseif ($IDKELAS['id_kelas'] == 'K12' or $IDKELAS['id_kelas'] == 'K22' or $IDKELAS['id_kelas'] == 'K32' or $IDKELAS['id_kelas'] == 'P12' or $IDKELAS['id_kelas'] == 'P22' or $IDKELAS['id_kelas'] == 'P32') : ?>
                         <Tbody>
+                            <?php foreach ($Nilai->join('siswa', 'nilai.nisn=siswa.nisn', 'inner')->where(['id_kelas' => $IDKELAS['id_kelas'], 'id_mapel' => $tempIDMAPEL['id_mapel'], 'id_tahun_ajaran' => $IDTAHUNAJARAN['id_tahun_ajaran']])->find() as $data) : ?>
+                                <tr>
+                                    <td><?= $data['nama'] ?></td>
+                                    <td><?= $data['nilai_1'] ?></td>
+                                    <td><?= $data['nilai_2'] ?></td>
+                                    <td><?= $data['nilai_3'] ?></td>
+                                    <td><?= $data['nilai_4'] ?></td>
+                                    <td><?= $data['nilai_5'] ?></td>
+                                    <td><?= $data['nilai_6'] ?></td>
+                                    <td><?= $data['nilai_7'] ?></td>
+                                    <td><?= $data['nilai_8'] ?></td>
+                                    <td><?= $data['nilai_9'] ?></td>
+                                    <td><?= $data['nilai_10'] ?></td>
+                                    <td><?= $data['nilai_11'] ?></td>
+                                    <td><?= $data['nilai_12'] ?></td>
+                                    <td><?= $data['nilai_13'] ?></td>
+                                    <td><?= $data['nilai_14'] ?></td>
+                                    <td><?= $data['nilai_15'] ?></td>
+                                    <td><?= $data['nilai_16'] ?></td>
+                                    <!-- NILAI RATA-RATA TEMA -->
+                                    <?php
+                                    $rerata = 0;
+                                    for ($i = 1; $i <= 16; $i++) :
+                                        $rerata = $rerata + $data['nilai_' . $i];
+                                    endfor;
+                                    ?>
+                                    <!-- END NILAI RATA-RATA TEMA -->
 
+                                    <td class="font-weight-bold"><?= ($rerata / 16); ?></td>
+
+                                    <td><?= $data['pts'] ?></td>
+                                    <td><?= $data['pas'] ?></td>
+
+                                    <!-- NILAI AKHIR -->
+                                    <?php
+                                    $tempNilaiAkhir = (($rerata / 16) + ($rerata / 16) + $data['pts'] + $data['pas']) / 4;
+                                    ?>
+                                    <td class="font-weight-bold"><?= $tempNilaiAkhir ?></td>
+                                    <!-- END NILAI AKHIR -->
+
+                                    <!-- KET. TUNTAS/TIDAK TUNTAS -->
+                                    <?php
+                                    if ($tempNilaiAkhir < 75) : ?>
+                                        <td>
+                                            <h6 class="text-danger font-weight-bold text-center">Tidak Lulus</h6>
+                                        </td>
+                                    <?php elseif ($tempNilaiAkhir >= 75) : ?>
+                                        <td>
+                                            <h6 class="text-success font-weight-bold text-center">Lulus</h6>
+                                        </td>
+                                    <?php endif; ?>
+                                    <!-- END KET. TUNTAS/TIDAK TUNTAS -->
+                                    <td>
+                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-edit"></i>
+                                            </span>
+                                            <span class="text">Input Nilai</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </Tbody>
-                    <?php elseif ($IDKELAS['id_kelas'] == 'K41' or $IDKELAS['id_kelas'] == 'K51' or $IDKELAS['id_kelas'] == 'K61') : ?>
+                    <?php elseif ($IDKELAS['id_kelas'] == 'K41' or $IDKELAS['id_kelas'] == 'K51' or $IDKELAS['id_kelas'] == 'K61' or $IDKELAS['id_kelas'] == 'P41' or $IDKELAS['id_kelas'] == 'P51' or $IDKELAS['id_kelas'] == 'P61') : ?>
                         <Tbody>
+                            <?php foreach ($Nilai->join('siswa', 'nilai.nisn=siswa.nisn', 'inner')->where(['id_kelas' => $IDKELAS['id_kelas'], 'id_mapel' => $tempIDMAPEL['id_mapel'], 'id_tahun_ajaran' => $IDTAHUNAJARAN['id_tahun_ajaran']])->find() as $data) : ?>
+                                <tr>
+                                    <td><?= $data['nama'] ?></td>
+                                    <td><?= $data['nilai_1'] ?></td>
+                                    <td><?= $data['nilai_2'] ?></td>
+                                    <td><?= $data['nilai_3'] ?></td>
+                                    <td><?= $data['nilai_4'] ?></td>
+                                    <td><?= $data['nilai_5'] ?></td>
+                                    <td><?= $data['nilai_6'] ?></td>
+                                    <td><?= $data['nilai_7'] ?></td>
+                                    <td><?= $data['nilai_8'] ?></td>
+                                    <td><?= $data['nilai_9'] ?></td>
+                                    <td><?= $data['nilai_10'] ?></td>
+                                    <td><?= $data['nilai_11'] ?></td>
+                                    <td><?= $data['nilai_12'] ?></td>
+                                    <td><?= $data['nilai_13'] ?></td>
+                                    <td><?= $data['nilai_14'] ?></td>
+                                    <td><?= $data['nilai_15'] ?></td>
+                                    <!-- NILAI RATA-RATA TEMA -->
+                                    <?php
+                                    $rerata = 0;
+                                    for ($i = 1; $i <= 16; $i++) :
+                                        $rerata = $rerata + $data['nilai_' . $i];
+                                    endfor;
+                                    ?>
+                                    <!-- END NILAI RATA-RATA TEMA -->
 
+                                    <td class="font-weight-bold"><?= ($rerata / 15); ?></td>
+
+                                    <td><?= $data['pts'] ?></td>
+                                    <td><?= $data['pas'] ?></td>
+
+                                    <!-- NILAI AKHIR -->
+                                    <?php
+                                    $tempNilaiAkhir = (($rerata / 15) + ($rerata / 15) + $data['pts'] + $data['pas']) / 4;
+                                    ?>
+                                    <td class="font-weight-bold"><?= $tempNilaiAkhir ?></td>
+                                    <!-- END NILAI AKHIR -->
+
+                                    <!-- KET. TUNTAS/TIDAK TUNTAS -->
+                                    <?php
+                                    if ($tempNilaiAkhir < 75) : ?>
+                                        <td>
+                                            <h6 class="text-danger font-weight-bold text-center">Tidak Lulus</h6>
+                                        </td>
+                                    <?php elseif ($tempNilaiAkhir >= 75) : ?>
+                                        <td>
+                                            <h6 class="text-success font-weight-bold text-center">Lulus</h6>
+                                        </td>
+                                    <?php endif; ?>
+                                    <!-- END KET. TUNTAS/TIDAK TUNTAS -->
+                                    <td>
+                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-edit"></i>
+                                            </span>
+                                            <span class="text">Input Nilai</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </Tbody>
-                    <?php elseif ($IDKELAS['id_kelas'] == 'K42' or $IDKELAS['id_kelas'] == 'K52' or $IDKELAS['id_kelas'] == 'K62') : ?>
+                    <?php elseif ($IDKELAS['id_kelas'] == 'K42' or $IDKELAS['id_kelas'] == 'K52' or $IDKELAS['id_kelas'] == 'K62' or $IDKELAS['id_kelas'] == 'P42' or $IDKELAS['id_kelas'] == 'P52' or $IDKELAS['id_kelas'] == 'P62') : ?>
                         <Tbody>
+                            <?php foreach ($Nilai->join('siswa', 'nilai.nisn=siswa.nisn', 'inner')->where(['id_kelas' => $IDKELAS['id_kelas'], 'id_mapel' => $tempIDMAPEL['id_mapel'], 'id_tahun_ajaran' => $IDTAHUNAJARAN['id_tahun_ajaran']])->find() as $data) : ?>
+                                <tr>
+                                    <td><?= $data['nama'] ?></td>
+                                    <td><?= $data['nilai_1'] ?></td>
+                                    <td><?= $data['nilai_2'] ?></td>
+                                    <td><?= $data['nilai_3'] ?></td>
+                                    <td><?= $data['nilai_4'] ?></td>
+                                    <td><?= $data['nilai_5'] ?></td>
+                                    <td><?= $data['nilai_6'] ?></td>
+                                    <td><?= $data['nilai_7'] ?></td>
+                                    <td><?= $data['nilai_8'] ?></td>
+                                    <td><?= $data['nilai_9'] ?></td>
+                                    <td><?= $data['nilai_10'] ?></td>
+                                    <td><?= $data['nilai_11'] ?></td>
+                                    <td><?= $data['nilai_12'] ?></td>
+                                    <!-- NILAI RATA-RATA TEMA -->
+                                    <?php
+                                    $rerata = 0;
+                                    for ($i = 1; $i <= 12; $i++) :
+                                        $rerata = $rerata + $data['nilai_' . $i];
+                                    endfor;
+                                    ?>
+                                    <!-- END NILAI RATA-RATA TEMA -->
 
+                                    <td class="font-weight-bold"><?= ($rerata / 12); ?></td>
+
+                                    <td><?= $data['pts'] ?></td>
+                                    <td><?= $data['pas'] ?></td>
+
+                                    <!-- NILAI AKHIR -->
+                                    <?php
+                                    $tempNilaiAkhir = (($rerata / 12) + ($rerata / 12) + $data['pts'] + $data['pas']) / 4;
+                                    ?>
+                                    <td class="font-weight-bold"><?= $tempNilaiAkhir ?></td>
+                                    <!-- END NILAI AKHIR -->
+
+                                    <!-- KET. TUNTAS/TIDAK TUNTAS -->
+                                    <?php
+                                    if ($tempNilaiAkhir < 75) : ?>
+                                        <td>
+                                            <h6 class="text-danger font-weight-bold text-center">Tidak Lulus</h6>
+                                        </td>
+                                    <?php elseif ($tempNilaiAkhir >= 75) : ?>
+                                        <td>
+                                            <h6 class="text-success font-weight-bold text-center">Lulus</h6>
+                                        </td>
+                                    <?php endif; ?>
+                                    <!-- END KET. TUNTAS/TIDAK TUNTAS -->
+                                    <td>
+                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-edit"></i>
+                                            </span>
+                                            <span class="text">Input Nilai</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </Tbody>
                     <?php endif; ?>
 

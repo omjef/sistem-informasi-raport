@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use \Dompdf\Dompdf;
+
 class Admin extends BaseController
 {
     public function index()
@@ -1671,6 +1673,30 @@ class Admin extends BaseController
         }
     }
 
+    public function val_hapus_data_siswakelas()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_kelas = $this->request->getVar('id_kelas');
+            $nisn = $this->request->getVar('nisn');
+            $id_tahun_ajaran = $this->request->getVar('id_tahun_ajaran');
+            $where = [
+                'id_kelas' => $id_kelas,
+                'nisn' => $nisn,
+                'id_tahun_ajaran' => $id_tahun_ajaran
+            ];
+
+            $this->NilaiModel->where($where)->delete();
+            $this->AbsensiModel->where($where)->delete();
+            session()->setFlashdata(
+                'berhasil',
+                'Data berhasil dihapus!'
+            );
+            return redirect()->to('/admin/data_siswakelas');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
     public function data_siswaeskul()
     {
         if (session()->get('logged_in') == 'admin') {
@@ -1797,9 +1823,250 @@ class Admin extends BaseController
         }
     }
 
+    public function input_nilai()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Nilai Siswa',
+                'nama' => $dataGuru['nama'],
+                'Nilai' => $this->NilaiModel
+            ];
+
+            return view('/pages/admin/t_input_NilaiSiswa', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_input_nilai()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_kelas = $this->request->getVar('id_kelas');
+            $nisn = $this->request->getVar('nisn');
+            $id_mapel = $this->request->getVar('id_mapel');
+            $id_tahun_ajaran = $this->request->getVar('id_tahun_ajaran');
+            if ($id_kelas == 'K11' or $id_kelas == 'K12' or $id_kelas == 'K21' or $id_kelas == 'K22' or $id_kelas == 'K31' or $id_kelas == 'K32' or $id_kelas == 'P11' or $id_kelas == 'P12' or $id_kelas == 'P21' or $id_kelas == 'P22' or $id_kelas == 'P31' or $id_kelas == 'P32') :
+                $nilai_1 = $this->request->getVar('nilai_1');
+                $nilai_2 = $this->request->getVar('nilai_2');
+                $nilai_3 = $this->request->getVar('nilai_3');
+                $nilai_4 = $this->request->getVar('nilai_4');
+                $nilai_5 = $this->request->getVar('nilai_5');
+                $nilai_6 = $this->request->getVar('nilai_6');
+                $nilai_7 = $this->request->getVar('nilai_7');
+                $nilai_8 = $this->request->getVar('nilai_8');
+                $nilai_9 = $this->request->getVar('nilai_9');
+                $nilai_10 = $this->request->getVar('nilai_10');
+                $nilai_11 = $this->request->getVar('nilai_11');
+                $nilai_12 = $this->request->getVar('nilai_12');
+                $nilai_13 = $this->request->getVar('nilai_13');
+                $nilai_14 = $this->request->getVar('nilai_14');
+                $nilai_15 = $this->request->getVar('nilai_15');
+                $nilai_16 = $this->request->getVar('nilai_16');
+                $pts = $this->request->getVar('pts');
+                $pas = $this->request->getVar('pas');
+
+                $where = [
+                    'id_kelas' => $id_kelas,
+                    'id_mapel' => $id_mapel,
+                    'nisn' => $nisn,
+                    'id_tahun_ajaran' => $id_tahun_ajaran
+                ];
+                $id = $this->NilaiModel->where($where)->first();
+                $data = [
+                    'id_kelas' => $id_kelas,
+                    'id_mapel' => $id_mapel,
+                    'nisn' => $nisn,
+                    'id_tahun_ajaran' => $id_tahun_ajaran,
+                    'nilai_1' => $nilai_1,
+                    'nilai_2' => $nilai_2,
+                    'nilai_3' => $nilai_3,
+                    'nilai_4' => $nilai_4,
+                    'nilai_5' => $nilai_5,
+                    'nilai_6' => $nilai_6,
+                    'nilai_7' => $nilai_7,
+                    'nilai_8' => $nilai_8,
+                    'nilai_9' => $nilai_9,
+                    'nilai_10' => $nilai_10,
+                    'nilai_11' => $nilai_11,
+                    'nilai_12' => $nilai_12,
+                    'nilai_13' => $nilai_13,
+                    'nilai_14' => $nilai_14,
+                    'nilai_15' => $nilai_15,
+                    'nilai_16' => $nilai_16,
+                    'pts' => $pts,
+                    'pas' => $pas
+                ];
+            elseif ($id_kelas == 'K41' or $id_kelas == 'K51' or $id_kelas == 'K61' or $id_kelas == 'P41' or $id_kelas == 'P51' or $id_kelas == 'P61') :
+                $nilai_1 = $this->request->getVar('nilai_1');
+                $nilai_2 = $this->request->getVar('nilai_2');
+                $nilai_3 = $this->request->getVar('nilai_3');
+                $nilai_4 = $this->request->getVar('nilai_4');
+                $nilai_5 = $this->request->getVar('nilai_5');
+                $nilai_6 = $this->request->getVar('nilai_6');
+                $nilai_7 = $this->request->getVar('nilai_7');
+                $nilai_8 = $this->request->getVar('nilai_8');
+                $nilai_9 = $this->request->getVar('nilai_9');
+                $nilai_10 = $this->request->getVar('nilai_10');
+                $nilai_11 = $this->request->getVar('nilai_11');
+                $nilai_12 = $this->request->getVar('nilai_12');
+                $pts = $this->request->getVar('pts');
+                $pas = $this->request->getVar('pas');
+
+                $where = [
+                    'id_kelas' => $id_kelas,
+                    'id_mapel' => $id_mapel,
+                    'nisn' => $nisn,
+                    'id_tahun_ajaran' => $id_tahun_ajaran
+                ];
+                $id = $this->NilaiModel->where($where)->first();
+                $data = [
+                    'id_kelas' => $id_kelas,
+                    'id_mapel' => $id_mapel,
+                    'nisn' => $nisn,
+                    'id_tahun_ajaran' => $id_tahun_ajaran,
+                    'nilai_1' => $nilai_1,
+                    'nilai_2' => $nilai_2,
+                    'nilai_3' => $nilai_3,
+                    'nilai_4' => $nilai_4,
+                    'nilai_5' => $nilai_5,
+                    'nilai_6' => $nilai_6,
+                    'nilai_7' => $nilai_7,
+                    'nilai_8' => $nilai_8,
+                    'nilai_9' => $nilai_9,
+                    'nilai_10' => $nilai_10,
+                    'nilai_11' => $nilai_11,
+                    'nilai_12' => $nilai_12,
+                    'nilai_13' => 0,
+                    'nilai_14' => 0,
+                    'nilai_15' => 0,
+                    'nilai_16' => 0,
+                    'pts' => $pts,
+                    'pas' => $pas
+                ];
+            elseif ($id_kelas == 'K42' or $id_kelas == 'K52' or $id_kelas == 'K62' or $id_kelas == 'P42' or $id_kelas == 'P52' or $id_kelas == 'P62') :
+                $nilai_1 = $this->request->getVar('nilai_1');
+                $nilai_2 = $this->request->getVar('nilai_2');
+                $nilai_3 = $this->request->getVar('nilai_3');
+                $nilai_4 = $this->request->getVar('nilai_4');
+                $nilai_5 = $this->request->getVar('nilai_5');
+                $nilai_6 = $this->request->getVar('nilai_6');
+                $nilai_7 = $this->request->getVar('nilai_7');
+                $nilai_8 = $this->request->getVar('nilai_8');
+                $nilai_9 = $this->request->getVar('nilai_9');
+                $nilai_10 = $this->request->getVar('nilai_10');
+                $nilai_11 = $this->request->getVar('nilai_11');
+                $nilai_12 = $this->request->getVar('nilai_12');
+                $nilai_13 = $this->request->getVar('nilai_13');
+                $nilai_14 = $this->request->getVar('nilai_14');
+                $nilai_15 = $this->request->getVar('nilai_15');
+                $pts = $this->request->getVar('pts');
+                $pas = $this->request->getVar('pas');
+
+                $where = [
+                    'id_kelas' => $id_kelas,
+                    'id_mapel' => $id_mapel,
+                    'nisn' => $nisn,
+                    'id_tahun_ajaran' => $id_tahun_ajaran
+                ];
+                $id = $this->NilaiModel->where($where)->first();
+                $data = [
+                    'id_kelas' => $id_kelas,
+                    'id_mapel' => $id_mapel,
+                    'nisn' => $nisn,
+                    'id_tahun_ajaran' => $id_tahun_ajaran,
+                    'nilai_1' => $nilai_1,
+                    'nilai_2' => $nilai_2,
+                    'nilai_3' => $nilai_3,
+                    'nilai_4' => $nilai_4,
+                    'nilai_5' => $nilai_5,
+                    'nilai_6' => $nilai_6,
+                    'nilai_7' => $nilai_7,
+                    'nilai_8' => $nilai_8,
+                    'nilai_9' => $nilai_9,
+                    'nilai_10' => $nilai_10,
+                    'nilai_11' => $nilai_11,
+                    'nilai_12' => $nilai_12,
+                    'nilai_13' => $nilai_13,
+                    'nilai_14' => $nilai_14,
+                    'nilai_15' => $nilai_15,
+                    'nilai_16' => 0,
+                    'pts' => $pts,
+                    'pas' => $pas
+                ];
+            endif;
+            $this->NilaiModel->update($id['id'], $data);
+
+            session()->setFlashdata(
+                'berhasil',
+                'Nilai Siswa Berhasil Di Masukan!'
+            );
+            return redirect()->to('/admin/input_nilai_siswa');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
     public function input_absensi_siswa()
     {
         if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Absensi Siswa',
+                'nama' => $dataGuru['nama'],
+                'Kelas' => $this->KelasModel,
+                'TahunAjaran' => $this->TahunAjaranModel,
+                'Absensi' => $this->AbsensiModel
+            ];
+
+            return view('/pages/admin/input_AbsensiSiswa', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function input_absensi()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Absensi Siswa',
+                'nama' => $dataGuru['nama'],
+                'Absensi' => $this->AbsensiModel
+            ];
+
+            return view('/pages/admin/t_input_AbsensiSiswa', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_input_absensi()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $nisn = $this->request->getVar('nisn');
+            $id_kelas = $this->request->getVar('id_kelas');
+            $id_tahun_ajaran = $this->request->getVar('id_tahun_ajaran');
+            $sakit = $this->request->getVar('sakit');
+            $izin = $this->request->getVar('izin');
+            $tanpa_keterangan = $this->request->getVar('tanpa_keterangan');
+
+            $id = $this->AbsensiModel->where(['nisn' => $nisn, 'id_kelas' => $id_kelas, 'id_tahun_ajaran' => $id_tahun_ajaran])->first();
+            $data = [
+                'nisn' => $nisn,
+                'id_kelas' => $id_kelas,
+                'id_tahun_ajaran' => $id_tahun_ajaran,
+                'sakit' => $sakit,
+                'izin' => $izin,
+                'tanpa_keterangan' => $tanpa_keterangan
+            ];
+
+            $this->AbsensiModel->Update($id, $data);
+            session()->setFlashdata(
+                'berhasil',
+                'Absensi Siswa Berhasil Di Masukan!'
+            );
+            return redirect()->to('/admin/input_absensi_siswa');
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -1808,8 +2075,78 @@ class Admin extends BaseController
     public function input_nilai_eskul()
     {
         if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Nilai Eskul Siswa',
+                'nama' => $dataGuru['nama'],
+                'NilaiEskul' => $this->NilaiEskulModel,
+                'Eskul' => $this->EskulModel,
+                'Kelas' => $this->KelasModel,
+                'TahunAjaran' => $this->TahunAjaranModel
+            ];
+
+            return view('/pages/admin/input_NilaiEskul', $data);
         } else {
             return redirect()->to('/auth/admin');
         }
+    }
+
+    public function nilai_eskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $dataGuru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+            $data = [
+                'title' => 'Nilai Eskul Siswa',
+                'nama' => $dataGuru['nama'],
+                'Eskul' => $this->NilaiEskulModel
+            ];
+
+            return view('/pages/admin/t_input_NilaiEskul', $data);
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function val_nilai_eskul()
+    {
+        if (session()->get('logged_in') == 'admin') {
+            $id_eskul = $this->request->getVar('id_eskul');
+            $nisn = $this->request->getVar('nisn');
+            $id_kelas = $this->request->getVar('id_kelas');
+            $id_tahun_ajaran = $this->request->getVar('id_tahun_ajaran');
+            $nilai = $this->request->getVar('nilai');
+            $deskripsi = $this->request->getVar('deskripsi');
+
+            $id = $this->NilaiEskulModel->where(['id_eskul' => $id_eskul, 'nisn' => $nisn, 'id_kelas' => $id_kelas, 'id_tahun_ajaran' => $id_tahun_ajaran,])->first();
+
+            $data = [
+                'id_eskul' => $id_eskul,
+                'nisn' => $nisn,
+                'id_kelas' => $id_kelas,
+                'id_tahun_ajaran' => $id_tahun_ajaran,
+                'nilai' => $nilai,
+                'deskripsi' => $deskripsi
+            ];
+
+            $this->NilaiEskulModel->update($id['id'], $data);
+            session()->setFlashdata(
+                'berhasil',
+                'Nilai Eskul Berhasil Di Masukan!'
+            );
+            return redirect()->to('/admin/input_nilai_eskul');
+        } else {
+            return redirect()->to('/auth/admin');
+        }
+    }
+
+    public function pdf()
+    {
+        $dompdf = new Dompdf();
+
+        $data = view('pages/admin/pdf');
+        $dompdf->loadHtml($data);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+        $dompdf->stream();
     }
 }
