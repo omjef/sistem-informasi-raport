@@ -46,6 +46,7 @@
                         <th>TANGGAL PENSIUN</th>
                         <th>KELAS DIAMPU</th>
                         <th>JAM MENGAJAR</th>
+                        <th>STATUS GURU</th>
                         <th>FOTO GURU</th>
                         <th>#</th>
                     </tr>
@@ -66,6 +67,7 @@
                         <th>TANGGAL PENSIUN</th>
                         <th>KELAS DIAMPU</th>
                         <th>JAM MENGAJAR</th>
+                        <th>STATUS GURU</th>
                         <th>FOTO GURU</th>
                         <th>#</th>
                     </tr>
@@ -87,6 +89,7 @@
                             <td><?= $data['tanggal_bekerja'] ?></td>
                             <td><?= $data['tanggal_pensiun'] ?></td>
                             <td><?= $data['kelas_diampu'] ?></td>
+                            <td class='font-weight-bold <?= ($data['status_guru'] == 'Aktif') ? 'text-success' : 'text-danger'; ?>'><?= $data['status_guru'] ?></td>
                             <td><?= $data['jam_mengajar'] ?></td>
                             <td><img src="/img/<?= $data['foto_guru'] ?>" alt="" class="rounded img-thumbnail"></td>
                             <td><a href="<?= base_url('admin/edit_dataguru') . "?nip=$data[nip]" ?>" class="fa fa-edit"></a></td>

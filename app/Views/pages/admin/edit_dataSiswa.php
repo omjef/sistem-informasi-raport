@@ -139,8 +139,12 @@
 
                     <div class="form-group">
                         <label for="status_siswa">Status Siswa</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('status_siswa')) ? 'is-invalid' : ''; ?>" name="status_siswa" id="status_siswa" placeholder="Masukan status siswa" value="<?= $dataSiswa['status_siswa'] ?>">
-                        <small class="form-text text-danger"><?= $validation->getError('status_siswa'); ?></small>
+                        <select class="form-control" name="status_siswa" id="status_siswa">
+                            <option <?= ($dataSiswa['status_siswa'] == 'Aktif') ? '' : ''; ?> value="Aktif">Aktif</option>
+                            <option <?= ($dataSiswa['status_siswa'] == 'Lulus') ? '' : ''; ?> value="Lulus">Lulus</option>
+                            <option <?= ($dataSiswa['status_siswa'] == 'Pindah') ? '' : ''; ?> value="Pindah">Pindah</option>
+                            <option <?= ($dataSiswa['status_siswa'] == 'Keluar') ? '' : ''; ?> value="Keluar">Keluar</option>
+                        </select>
                     </div>
 
                     <div class="form-group">

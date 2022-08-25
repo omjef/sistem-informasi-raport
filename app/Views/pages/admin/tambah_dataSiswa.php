@@ -6,7 +6,7 @@
         <h5 class="text-primary font-weight-bold m-0">Tambah Data Siswa</h5>
     </div>
     <div class="card-body">
-        <form action="<?= base_url('/admin/val_tambah_datasiswa') ?>" method="post" enctype="multipart/form-data">
+        <form action="/admin/val_tambah_datasiswa" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
@@ -135,12 +135,6 @@
                         <label for="tahun_mendaftar">Tahun Mendaftar</label>
                         <input type="text" class="form-control <?= ($validation->hasError('tahun_mendaftar')) ? 'is-invalid' : ''; ?>" name="tahun_mendaftar" id="tahun_mendaftar" placeholder="Masukan tahun mendaftar" value="<?= old('tahun_mendaftar') ?>">
                         <small class=" form-text text-danger"><?= $validation->getError('tahun_mendaftar'); ?></small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="status_siswa">Status Siswa</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('status_siswa')) ? 'is-invalid' : ''; ?>" name="status_siswa" id="status_siswa" placeholder="Masukan status siswa" value="<?= old('status_siswa') ?>">
-                        <small class=" form-text text-danger"><?= $validation->getError('status_siswa'); ?></small>
                     </div>
 
                     <div class="form-group">

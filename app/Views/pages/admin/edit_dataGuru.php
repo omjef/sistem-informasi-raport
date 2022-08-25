@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <div class="card mb-2">
     <div class="card-header">
-        <h5 class="text-primary font-weight-bold m-0">Tambah Data Guru</h5>
+        <h5 class="text-primary font-weight-bold m-0">Edit Data Guru</h5>
     </div>
     <div class="card-body">
         <?php $data = $dataGuru->where('nip', $nip)->first() ?>

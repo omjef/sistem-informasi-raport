@@ -7,12 +7,13 @@
     </div>
     <div class="card-body">
         <?php
+        $nisn = $_GET['nisn'];
         $id_kelas = $_GET['id_kelas'];
         $id_mapel = $_GET['id_mapel'];
         $id_tahun_ajaran = $_GET['id_tahun_ajaran'];
 
         //NILAI SISWA
-        $Nilai = $Nilai->where(['id_kelas' => $id_kelas, 'id_mapel' => $id_mapel, 'id_tahun_ajaran' => $id_tahun_ajaran])->first();
+        $Nilai = $Nilai->where(['nisn' => $nisn, 'id_kelas' => $id_kelas, 'id_mapel' => $id_mapel, 'id_tahun_ajaran' => $id_tahun_ajaran])->first();
         ?>
 
         <?php if ($id_kelas == 'K11' or $id_kelas == 'K21' or $id_kelas == 'K31' or $id_kelas == 'P11' or $id_kelas == 'P21' or $id_kelas == 'P31') : ?>

@@ -366,8 +366,9 @@
                                         </td>
                                     <?php endif; ?>
                                     <!-- END KET. TUNTAS/TIDAK TUNTAS -->
+                                    <?php $nisn = $Siswa->where('nama', $data['nama'])->first() ?>
                                     <td>
-                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
+                                        <a href="<?= base_url('/admin/input_nilai' . '?nisn=' . $nisn['nisn'] . '&id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>
@@ -431,8 +432,9 @@
                                         </td>
                                     <?php endif; ?>
                                     <!-- END KET. TUNTAS/TIDAK TUNTAS -->
+                                    <?php $nisn = $Siswa->where('nama', $data['nama'])->first() ?>
                                     <td>
-                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
+                                        <a href="<?= base_url('/admin/input_nilai' . '?nisn=' . $nisn['nisn'] . '&id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>
@@ -495,8 +497,9 @@
                                         </td>
                                     <?php endif; ?>
                                     <!-- END KET. TUNTAS/TIDAK TUNTAS -->
+                                    <?php $nisn = $Siswa->where('nama', $data['nama'])->first() ?>
                                     <td>
-                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
+                                        <a href="<?= base_url('/admin/input_nilai' . '?nisn=' . $nisn['nisn'] . '&id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>
@@ -556,8 +559,9 @@
                                         </td>
                                     <?php endif; ?>
                                     <!-- END KET. TUNTAS/TIDAK TUNTAS -->
+                                    <?php $nisn = $Siswa->where('nama', $data['nama'])->first() ?>
                                     <td>
-                                        <a href="<?= base_url('/admin/input_nilai' . '?id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
+                                        <a href="<?= base_url('/admin/input_nilai' . '?nisn=' . $nisn['nisn'] . '&id_kelas=' . $IDKELAS['id_kelas'] . '&' . 'id_mapel=' . $tempIDMAPEL['id_mapel'] . '&' . 'id_tahun_ajaran=' . $IDTAHUNAJARAN['id_tahun_ajaran']) ?>" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>

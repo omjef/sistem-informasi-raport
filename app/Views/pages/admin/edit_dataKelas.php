@@ -3,7 +3,7 @@
 <?= $this->Section('content') ?>
 <div class="card">
     <div class="card-header">
-        <h5 class="text-primary font-weight-bold m-0">EDIT TAHUN AJARAN</h5>
+        <h5 class="text-primary font-weight-bold m-0">EDIT DATA KELAS</h5>
     </div>
     <div class="card-body">
         <form action="<?= base_url('/admin/val_edit_datakelas') ?>" method="post">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="aspek">ASPEK</label>
+                        <label for="aspek">GURU KELAS</label>
                         <select class="form-control" name="nip" id="nip">
                             <?php foreach ($guru->find() as $data) : ?>
                                 <option value="<?= $data['nip'] ?>" <?= ($data['nip'] == $dataKelas['nip']) ? 'selected' : ''; ?>><?= $data['nip'] . ' - ' . $data['nama'] ?></option>

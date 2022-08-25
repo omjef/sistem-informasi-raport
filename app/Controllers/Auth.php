@@ -30,25 +30,14 @@ class Auth extends BaseController
             return redirect()->to('/user');
         } else {
             if (!$this->validate([
-                'username' => [
-                    'rules' => 'required|',
-                    'errors' => [
-                        'required' => '{field} harus di isi'
-                    ]
-                ],
-                'password' => [
-                    'rules' => 'required|',
-                    'errors' => [
-                        'required' => '{field} harus di isi'
-                    ]
-                ],
+                'username' => ['rules' => 'required|', 'errors' => ['required' => '{field} harus di isi']],
+                'password' => ['rules' => 'required|', 'errors' => ['required' => '{field} harus di isi']],
             ])) {
                 $validation = \Config\Services::validation();
                 return redirect()->to('/auth')->withInput()->withInput('validation', $validation);
             }
             $username = $this->request->getVar('username');
             $password = $this->request->getVar('password');
-
             $user = $this->AkunSiswaModel->where('username', $username)->first();
             if ($user) {
                 if ($user['status_akun'] == 'Aktif') {
@@ -98,18 +87,8 @@ class Auth extends BaseController
             return redirect()->to('/user');
         } else {
             if (!$this->validate([
-                'username' => [
-                    'rules' => 'required|',
-                    'errors' => [
-                        'required' => '{field} harus di isi'
-                    ]
-                ],
-                'password' => [
-                    'rules' => 'required|',
-                    'errors' => [
-                        'required' => '{field} harus di isi'
-                    ]
-                ],
+                'username' => ['rules' => 'required|', 'errors' => ['required' => '{field} harus di isi']],
+                'password' => ['rules' => 'required|', 'errors' => ['required' => '{field} harus di isi']],
             ])) {
                 $validation = \Config\Services::validation();
                 return redirect()->to('/auth/admin')->withInput()->withInput('validation', $validation);

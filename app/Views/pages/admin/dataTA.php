@@ -35,7 +35,6 @@
                         <th>ID KELAS</th>
                         <th>KELAS DAN SEMESTER</th>
                         <th>SEMESTER</th>
-                        <th>#</th>
                     </tr>
                 </thead>
                 <tfoot class="text-center">
@@ -43,7 +42,6 @@
                         <th>ID KELAS</th>
                         <th>KELAS DAN SEMESTER</th>
                         <th>SEMESTER</th>
-                        <th>#</th>
                     </tr>
                 </tfoot>
 
@@ -53,7 +51,6 @@
                             <td><?= $data['id_tahun_ajaran'] ?></td>
                             <td><?= $data['kelas'] . '-' . $data['semester'] ?></td>
                             <td><?= $data['tahun_ajaran'] ?></td>
-                            <td class="text-center"><a href="<?= base_url('admin/edit_datakelas?id_tahun_ajaran=' . $data['id_tahun_ajaran']) ?>" class="fa fa-edit"></a></td>
                         </tr>
                     <?php endforeach; ?>
                 </body>

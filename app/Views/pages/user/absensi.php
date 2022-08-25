@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <input class="btn btn-primary btn-user btn-block" type="Submit" name="lihat_nilai" value="Lihat Nilai">
+            <input class="btn btn-primary btn-user btn-block" type="Submit" name="lihat_nilai" value="Lihat Absensi">
         </form>
     </div>
 </div>
