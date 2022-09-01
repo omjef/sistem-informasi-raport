@@ -24,18 +24,18 @@
         <?php $data = $akunGuru->where('nip', $_GET['nip'])->first(); ?>
         <form action="<?= base_url('/admin/val_edit_akunguru') ?>" method="post">
             <!-- Id -->
-            <input type="text" class="form-control" name="id" id="id" placeholder="Masukan nip" value="<?= $data['id'] ?>" hidden>
+            <input type="text" class="form-control" name="id" id="id" value="<?= $data['id'] ?>" hidden>
 
             <!-- Nip -->
             <div class="form-group">
                 <label for="nip">NIP</label>
-                <input type="text" class="form-control" name="nip" id="nip" placeholder="Masukan nip" value="<?= $data['nip'] ?>" readonly>
+                <input type="text" class="form-control" name="nip" id="nip" value="<?= $data['nip'] ?>" readonly>
             </div>
 
             <!-- Username -->
             <div class="form-group">
                 <label for="username">USERNAME</label>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Masukan username" value="<?= $data['username'] ?>">
+                <input type="text" class="form-control" name="username" id="username" value="<?= $data['username'] ?>">
             </div>
 
             <!-- Password -->
@@ -43,12 +43,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="password">PASSWORD</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password">
+                        <input type="password" class="form-control" name="password" id="password">
                         <small class="form-text text-muted">Jika password tidak akan diganti, kosongkan aja!</small>
                     </div>
                     <div class="col-md-6">
                         <label for="password">KONFIRMASI PASSWORD</label>
-                        <input type="password" class="form-control" name="konfirmasi_password" id="konfirmasi_password" placeholder="Masukan konfirmasi password">
+                        <input type="password" class="form-control" name="konfirmasi_password" id="konfirmasi_password">
                     </div>
                 </div>
             </div>

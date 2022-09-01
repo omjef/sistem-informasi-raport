@@ -9,18 +9,15 @@ class Admin extends BaseController
     public function index()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where(
-                'nip',
-                session()->get('nip')
-            )->first();
+            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
 
             $data = [
-                'title' => 'Dashboard', 'nama' => $guru['nama'], 'dataGuru' => $this->GuruModel, 'dataSiswa' => $this->SiswaModel
+                'title' => 'Dashboard',
+                'nama' => $guru['nama'],
+                'dataGuru' => $this->GuruModel,
+                'dataSiswa' => $this->SiswaModel
             ];
-            return view(
-                'pages/admin/dashboard',
-                $data
-            );
+            return view('pages/admin/dashboard', $data);
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -30,21 +27,19 @@ class Admin extends BaseController
     public function akun_guru()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where(
-                'nip',
-                session()->get('nip')
-            )->first();
+            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
+
             $akunGuru = $this->AkunGuruModel;
             $dataGuru = $this->GuruModel;
 
             $data = [
-                'title' => 'Kelola Akun Guru', 'nama' => $guru['nama'], 'akunGuru' => $akunGuru, 'dataGuru' => $dataGuru
+                'title' => 'Kelola Akun Guru',
+                'nama' => $guru['nama'],
+                'akunGuru' => $akunGuru,
+                'dataGuru' => $dataGuru
             ];
 
-            return view(
-                'pages/admin/akunGuru',
-                $data
-            );
+            return view('pages/admin/akunGuru', $data);
         } else {
             return redirect()->to('/auth/admin');
         }
@@ -66,7 +61,13 @@ class Admin extends BaseController
                 return redirect()->to('/admin/akun_guru');
             } else {
                 if ($password == $konfirmasi_password) {
-                    $data = ['nip' => $nip, 'username' => $username, 'password' => password_hash($password,    PASSWORD_DEFAULT), 'jenis_akun' => $jenis_akun, 'status_akun' => $status_akun];
+                    $data = [
+                        'nip' => $nip,
+                        'username' => $username,
+                        'password' => password_hash($password, PASSWORD_DEFAULT),
+                        'jenis_akun' => $jenis_akun,
+                        'status_akun' => $status_akun
+                    ];
                     $this->AkunGuruModel->insert($data);
                     session()->setFlashdata('berhasil', 'Akun guru berhasil ditambah!');
                     return redirect()->to('/admin/akun_guru');
@@ -199,14 +200,15 @@ class Admin extends BaseController
     public function edit_akunsiswa()
     {
         if (session()->get('logged_in') == 'admin') {
-            $guru = $this->GuruModel->where(
-                'nip',
-                session()->get('nip')
-            )->first();
+            $guru = $this->GuruModel->where('nip', session()->get('nip'))->first();
             $dataSiswa = $this->SiswaModel;
             $akunSiswa = $this->AkunSiswaModel;
             $data = [
-                'title' => 'Kelola Akun Siswa', 'nama' => $guru['nama'], 'dataSiswa' => $dataSiswa, 'akunSiswa' => $akunSiswa, 'nisn' => $this->request->getVar('nisn')
+                'title' => 'Kelola Akun Siswa',
+                'nama' => $guru['nama'],
+                'dataSiswa' => $dataSiswa,
+                'akunSiswa' => $akunSiswa,
+                'nisn' => $this->request->getVar('nisn')
             ];
             return view(
                 'pages/admin/edit_akunSiswa',
@@ -253,14 +255,8 @@ class Admin extends BaseController
     {
         if (session()->get('logged_in') == 'admin') {
             $nisn = $this->request->getVar('nisn');
-            $this->AkunSiswaModel->where(
-                'nisn',
-                $nisn
-            )->delete();
-            session()->setFlashdata(
-                'berhasil',
-                'Akun Berhasil dihapus!'
-            );
+            $this->AkunSiswaModel->where('nisn', $nisn)->delete();
+            session()->setFlashdata('berhasil', 'Akun Berhasil dihapus!');
             return redirect()->to('/admin/akun_siswa');
         } else {
             return redirect()->to('/auth/admin');
@@ -624,9 +620,6 @@ class Admin extends BaseController
             if ($foto_siswa->getError() == 4) {
                 $nama_foto = 'Default.jpg';
             } else {
-                if (!hash_equals($tempSiswa['foto_siswa'], 'Default.jpg')) {
-                    unlink('./img/' . $tempSiswa['foto_siswa']);
-                }
                 $nama_foto = $nisn . '.' . $foto_siswa->getClientExtension();
                 $foto_siswa->move('img', $nama_foto);
             }
@@ -917,9 +910,9 @@ class Admin extends BaseController
             for ($i = 0; $i < sizeof($nisn); $i++) : for ($k = 1; $k <= (sizeof($mapel) / 2); $k++) : $cek = $this->NilaiModel->where(['id_kelas' => $dataKelas['id_kelas'], 'id_mapel' => 'K' . $k, 'nisn' => $nisn[$i], 'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran']])->first();
                     if ($cek) {
                     } else {
-                        $data = ['id_kelas' => $dataKelas['id_kelas'],    'id_mapel' => 'K' . $k,    'nisn' => $nisn[$i],    'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran'],    'nilai_1' => 0,    'nilai_2' => 0,    'nilai_3' => 0,    'nilai_4' => 0,    'nilai_5' => 0,    'nilai_6' => 0,    'nilai_7' => 0,    'nilai_8' => 0,    'nilai_9' => 0,    'nilai_10' => 0,    'nilai_11' => 0,    'nilai_12' => 0,    'nilai_13' => 0,    'nilai_14' => 0,    'nilai_15' => 0,    'nilai_16' => 0,    'pts' => 0,    'pta' => 0];
+                        $data = ['id_kelas' => $dataKelas['id_kelas'],    'id_mapel' => 'K' . $k,    'nisn' => $nisn[$i],    'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran'],    'nilai_1' => 0,    'nilai_2' => 0,    'nilai_3' => 0,    'nilai_4' => 0,    'nilai_5' => 0,    'nilai_6' => 0,    'nilai_7' => 0,    'nilai_8' => 0,    'nilai_9' => 0,    'nilai_10' => 0,    'nilai_11' => 0,    'nilai_12' => 0,    'nilai_13' => 0,    'nilai_14' => 0,    'nilai_15' => 0,    'nilai_16' => 0,    'pts' => 0,    'pta' => 0, 'deskripsi' => '-'];
                         $this->NilaiModel->insert($data);
-                        $data = ['id_kelas' => $dataKelas['id_kelas'],    'id_mapel' => 'P' . $k,    'nisn' => $nisn[$i],    'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran'],    'nilai_1' => 0,    'nilai_2' => 0,    'nilai_3' => 0,    'nilai_4' => 0,    'nilai_5' => 0,    'nilai_6' => 0,    'nilai_7' => 0,    'nilai_8' => 0,    'nilai_9' => 0,    'nilai_10' => 0,    'nilai_11' => 0,    'nilai_12' => 0,    'nilai_13' => 0,    'nilai_14' => 0,    'nilai_15' => 0,    'nilai_16' => 0,    'pts' => 0,    'pta' => 0];
+                        $data = ['id_kelas' => $dataKelas['id_kelas'],    'id_mapel' => 'P' . $k,    'nisn' => $nisn[$i],    'id_tahun_ajaran' => $tahunAjaran['id_tahun_ajaran'],    'nilai_1' => 0,    'nilai_2' => 0,    'nilai_3' => 0,    'nilai_4' => 0,    'nilai_5' => 0,    'nilai_6' => 0,    'nilai_7' => 0,    'nilai_8' => 0,    'nilai_9' => 0,    'nilai_10' => 0,    'nilai_11' => 0,    'nilai_12' => 0,    'nilai_13' => 0,    'nilai_14' => 0,    'nilai_15' => 0,    'nilai_16' => 0,    'pts' => 0,    'pta' => 0, 'deskripsi' => '-'];
                         $this->NilaiModel->insert($data);
                     }
                 endfor;
@@ -1103,13 +1096,14 @@ class Admin extends BaseController
                 $nilai_16 = $this->request->getVar('nilai_16');
                 $pts = $this->request->getVar('pts');
                 $pas = $this->request->getVar('pas');
+                $deskripsi = $this->request->getVar('deskripsi');
                 $where = ['id_kelas' => $id_kelas, 'id_mapel' => $id_mapel, 'nisn' => $nisn, 'id_tahun_ajaran' => $id_tahun_ajaran];
                 $id = $this->NilaiModel->where($where)->first();
                 $data = [
                     'id_kelas' => $id_kelas, 'id_mapel' => $id_mapel, 'nisn' => $nisn,
                     'id_tahun_ajaran' => $id_tahun_ajaran, 'nilai_1' => $nilai_1, 'nilai_2' => $nilai_2, 'nilai_3' => $nilai_3, 'nilai_4' => $nilai_4, 'nilai_5' => $nilai_5,
                     'nilai_6' => $nilai_6, 'nilai_7' => $nilai_7, 'nilai_8' => $nilai_8, 'nilai_9' => $nilai_9, 'nilai_10' => $nilai_10, 'nilai_11' => $nilai_11,
-                    'nilai_12' => $nilai_12, 'nilai_13' => $nilai_13, 'nilai_14' => $nilai_14, 'nilai_15' => $nilai_15, 'nilai_16' => $nilai_16, 'pts' => $pts, 'pas' => $pas
+                    'nilai_12' => $nilai_12, 'nilai_13' => $nilai_13, 'nilai_14' => $nilai_14, 'nilai_15' => $nilai_15, 'nilai_16' => $nilai_16, 'pts' => $pts, 'pas' => $pas, 'deskripsi' => $deskripsi
                 ];
             elseif ($id_kelas == 'K41' or $id_kelas == 'K51' or $id_kelas == 'K61' or $id_kelas == 'P41' or $id_kelas == 'P51' or $id_kelas == 'P61') :
                 $nilai_1 = $this->request->getVar('nilai_1');
@@ -1129,6 +1123,7 @@ class Admin extends BaseController
                 $nilai_15 = $this->request->getVar('nilai_15');
                 $pts = $this->request->getVar('pts');
                 $pas = $this->request->getVar('pas');
+                $deskripsi = $this->request->getVar('deskripsi');
                 $where = ['id_kelas' => $id_kelas, 'id_mapel' => $id_mapel, 'nisn' => $nisn, 'id_tahun_ajaran' => $id_tahun_ajaran];
                 $id = $this->NilaiModel->where($where)->first();
                 $data = [
@@ -1136,7 +1131,7 @@ class Admin extends BaseController
                     'nilai_1' => $nilai_1, 'nilai_2' => $nilai_2, 'nilai_3' => $nilai_3, 'nilai_4' => $nilai_4, 'nilai_5' => $nilai_5,
                     'nilai_6' => $nilai_6, 'nilai_7' => $nilai_7, 'nilai_8' => $nilai_8, 'nilai_9' => $nilai_9, 'nilai_10' => $nilai_10,
                     'nilai_11' => $nilai_11, 'nilai_12' => $nilai_12, 'nilai_13' => $nilai_13, 'nilai_14' => $nilai_14, 'nilai_15' => $nilai_15,
-                    'nilai_16' => 0, 'pts' => $pts, 'pas' => $pas
+                    'nilai_16' => 0, 'pts' => $pts, 'pas' => $pas, 'deskripsi' => $deskripsi
                 ];
 
             elseif ($id_kelas == 'K42' or $id_kelas == 'K52' or $id_kelas == 'K62' or $id_kelas == 'P42' or $id_kelas == 'P52' or $id_kelas == 'P62') :
@@ -1154,6 +1149,7 @@ class Admin extends BaseController
                 $nilai_12 = $this->request->getVar('nilai_12');
                 $pts = $this->request->getVar('pts');
                 $pas = $this->request->getVar('pas');
+                $deskripsi = $this->request->getVar('deskripsi');
                 $where = ['id_kelas' => $id_kelas, 'id_mapel' => $id_mapel, 'nisn' => $nisn, 'id_tahun_ajaran' => $id_tahun_ajaran];
                 $id = $this->NilaiModel->where($where)->first();
                 $data = [
@@ -1161,7 +1157,7 @@ class Admin extends BaseController
                     'nilai_1' => $nilai_1, 'nilai_2' => $nilai_2, 'nilai_3' => $nilai_3, 'nilai_4' => $nilai_4, 'nilai_5' => $nilai_5,
                     'nilai_6' => $nilai_6, 'nilai_7' => $nilai_7, 'nilai_8' => $nilai_8, 'nilai_9' => $nilai_9, 'nilai_10' => $nilai_10,
                     'nilai_11' => $nilai_11, 'nilai_12' => $nilai_12, 'nilai_13' => 0, 'nilai_14' => 0, 'nilai_15' => 0,
-                    'nilai_16' => 0, 'pts' => $pts, 'pas' => $pas
+                    'nilai_16' => 0, 'pts' => $pts, 'pas' => $pas, 'deskripsi' => $deskripsi
                 ];
             endif;
             $this->NilaiModel->update($id['id'], $data);
@@ -1299,7 +1295,8 @@ class Admin extends BaseController
             'tahun_ajaran' => $this->TahunAjaranModel,
             'nilai' => $this->NilaiModel,
             'nilai_eskul' => $this->NilaiEskulModel,
-            'absensi' => $this->AbsensiModel
+            'absensi' => $this->AbsensiModel,
+            'guru' => $this->GuruModel
         ];
         return view('pages/admin/pdf', $data);
     }

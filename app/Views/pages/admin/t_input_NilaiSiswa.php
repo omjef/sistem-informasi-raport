@@ -154,7 +154,10 @@
                     <label>PAS</label>
                     <input type="text" class="form-control" name="pas" id="pas" value="<?= $Nilai['pas'] ?>">
                 </div>
-
+                <div class="form-group">
+                    <label>DESKRIPSI</label>
+                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="3"><?= $Nilai['deskripsi'] ?></textarea>
+                </div>
                 <input type="submit" class="btn btn-primary" value="SIMPAN">
                 <a href="<?= base_url('/admin/input_nilai_siswa') ?>" class="btn btn-danger">KEMBALI</a>
             </form>
@@ -296,7 +299,10 @@
                     <label>PAS</label>
                     <input type="text" class="form-control" name="pas" id="pas" value="<?= $Nilai['pas'] ?>">
                 </div>
-
+                <div class="form-group">
+                    <label>DESKRIPSI</label>
+                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="3"><?= $Nilai['deskripsi'] ?></textarea>
+                </div>
                 <input type="submit" class="btn btn-primary" value="SIMPAN">
                 <a href="<?= base_url('/admin/input_nilai_siswa') ?>" class="btn btn-danger">KEMBALI</a>
             </form>
@@ -436,7 +442,10 @@
                     <label>PAS</label>
                     <input type="text" class="form-control" name="pas" id="pas" value="<?= $Nilai['pas'] ?>">
                 </div>
-
+                <div class="form-group">
+                    <label>DESKRIPSI</label>
+                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="3"><?= $Nilai['deskripsi'] ?></textarea>
+                </div>
                 <input type="submit" class="btn btn-primary" value="SIMPAN">
                 <a href="<?= base_url('/admin/input_nilai_siswa') ?>" class="btn btn-danger">KEMBALI</a>
             </form>
@@ -554,7 +563,10 @@
                     <label>PAS</label>
                     <input type="text" class="form-control" name="pas" id="pas" value="<?= $Nilai['pas'] ?>">
                 </div>
-
+                <div class="form-group">
+                    <label>DESKRIPSI</label>
+                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="3"><?= $Nilai['deskripsi'] ?></textarea>
+                </div>
                 <input type="submit" class="btn btn-primary" value="SIMPAN">
                 <a href="<?= base_url('/admin/input_nilai_siswa') ?>" class="btn btn-danger">KEMBALI</a>
             </form>

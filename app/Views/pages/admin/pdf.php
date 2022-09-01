@@ -156,108 +156,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                                 <?php
                                 if ($getID_KELAS == 'K11' or $getID_KELAS == 'K21' or $getID_KELAS == 'K31' or $getID_KELAS == 'K12' or $getID_KELAS == 'K22' or $getID_KELAS == 'K32') :
                                     $nilai_p = $nilai->where(['nisn' => $getNISN, 'id_kelas' => $getID_KELAS, 'id_mapel' => 'K7', 'id_tahun_ajaran' => $getID_TAHUN_AJARAN])->first();
@@ -280,108 +192,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                             </tr>
                             <tr>
                                 <td>2.</td>
@@ -408,108 +232,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                                 <?php
                                 if ($getID_KELAS == 'K11' or $getID_KELAS == 'K21' or $getID_KELAS == 'K31' or $getID_KELAS == 'K12' or $getID_KELAS == 'K22' or $getID_KELAS == 'K32') :
                                     $nilai_p = $nilai->where(['nisn' => $getNISN, 'id_kelas' => $getID_KELAS, 'id_mapel' => 'K1', 'id_tahun_ajaran' => $getID_TAHUN_AJARAN])->first();
@@ -532,108 +268,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 60 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                             </tr>
                             <tr>
                                 <td>3.</td>
@@ -660,108 +308,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                                 <?php
                                 if ($getID_KELAS == 'K11' or $getID_KELAS == 'K21' or $getID_KELAS == 'K31' or $getID_KELAS == 'K12' or $getID_KELAS == 'K22' or $getID_KELAS == 'K32') :
                                     $nilai_p = $nilai->where(['nisn' => $getNISN, 'id_kelas' => $getID_KELAS, 'id_mapel' => 'K2', 'id_tahun_ajaran' => $getID_TAHUN_AJARAN])->first();
@@ -784,108 +344,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                             </tr>
                             <tr>
                                 <td>4.</td>
@@ -912,108 +384,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                                 <?php
                                 if ($getID_KELAS == 'K11' or $getID_KELAS == 'K21' or $getID_KELAS == 'K31' or $getID_KELAS == 'K12' or $getID_KELAS == 'K22' or $getID_KELAS == 'K32') :
                                     $nilai_p = $nilai->where(['nisn' => $getNISN, 'id_kelas' => $getID_KELAS, 'id_mapel' => 'K3', 'id_tahun_ajaran' => $getID_TAHUN_AJARAN])->first();
@@ -1036,108 +420,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                             </tr>
                             <tr>
                                 <td>5.</td>
@@ -1164,108 +460,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                                 <?php
                                 if ($getID_KELAS == 'K11' or $getID_KELAS == 'K21' or $getID_KELAS == 'K31' or $getID_KELAS == 'K12' or $getID_KELAS == 'K22' or $getID_KELAS == 'K32') :
                                     $nilai_p = $nilai->where(['nisn' => $getNISN, 'id_kelas' => $getID_KELAS, 'id_mapel' => 'K4', 'id_tahun_ajaran' => $getID_TAHUN_AJARAN])->first();
@@ -1288,108 +496,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                             </tr>
                             <tr>
                                 <td>6.</td>
@@ -1416,108 +536,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                                 <?php
                                 if ($getID_KELAS == 'K11' or $getID_KELAS == 'K21' or $getID_KELAS == 'K31' or $getID_KELAS == 'K12' or $getID_KELAS == 'K22' or $getID_KELAS == 'K32') :
                                     $nilai_p = $nilai->where(['nisn' => $getNISN, 'id_kelas' => $getID_KELAS, 'id_mapel' => 'K5', 'id_tahun_ajaran' => $getID_TAHUN_AJARAN])->first();
@@ -1540,108 +572,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                             </tr>
                             <tr>
                                 <td>7.</td>
@@ -1672,108 +616,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                                 <?php
                                 if ($getID_KELAS == 'K11' or $getID_KELAS == 'K21' or $getID_KELAS == 'K31' or $getID_KELAS == 'K12' or $getID_KELAS == 'K22' or $getID_KELAS == 'K32') :
                                     $nilai_p = $nilai->where(['nisn' => $getNISN, 'id_kelas' => $getID_KELAS, 'id_mapel' => 'K6', 'id_tahun_ajaran' => $getID_TAHUN_AJARAN])->first();
@@ -1796,108 +652,20 @@
                                 endif;
                                 ?>
                                 <td><?= number_format($hasil_akhir, 0) ?></td>
-                                <td>A</td>
-                                <td>
-                                    <?php
-                                    if ($getID_KELAS == 'K11') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K12') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K21') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K22') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K31') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K32') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K41') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K42') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K51') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K52') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K61') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
-                                    elseif ($getID_KELAS == 'K62') :
-                                        if ($hasil_akhir > 90) :
-                                            echo "Sangat baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        elseif ($hasil_akhir >= 81 && $hasil_akhir <= 90) :
-                                            echo "Baik dalam menggunakan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4 ) yang disajikan pada garis bilangan. Baik dalam menyelesaikan masalah yang berkaitan dengan hubungan antarsatuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.";
-                                        else :
-                                            echo "Cukup dalam menjelaskan bilangan cacah dan pecahan sederhana (seperti 1/2, 1/3 , dan 1/4) yang disajikan pada garis bilangan.    Cukup dalam mendeskripsikan dan menentukan hubungan antar satuan baku untuk panjang, berat, dan waktu yang umumnya digunakan dalam kehidupan sehari-hari.    ";
-                                        endif;
+                                <td><?php
+                                    if ($hasil_akhir > 90) :
+                                        echo "A";
+                                    elseif ($hasil_akhir > 80 and $hasil_akhir <= 90) :
+                                        echo "B";
+                                    elseif ($hasil_akhir > 75  and $hasil_akhir <= 80) :
+                                        echo "C";
+                                    elseif ($hasil_akhir > 70 and $hasil_akhir <= 75) :
+                                        echo "D";
+                                    else :
+                                        echo "E";
                                     endif;
-                                    ?>
-                                </td>
+                                    ?></td>
+                                <td><?= $nilai_p['deskripsi'] ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1961,16 +729,24 @@
 
                 <div style="page-break-after: always;" class="table-responsive mt-4">
                     <table width="100%" cellspacing="0">
+                        <?php
+                        $kepala_sekolah = $guru->where('jenis_guru', 'Kepala Sekolah')->first();
+                        $kelas_tampil = $kelas->where('id_kelas', $nilai_p['id_kelas'])->first();
+                        $sekolah = $guru->where('nip', $kelas_tampil['nip'])->first();
+                        ?>
                         <thead class="text-center">
                             <tr>
-                                <td class="w-25 ">Mengetahui<br>Orang Tua/Wali <br><br><br><br>
+                                <td class="w-25">Mengetahui<br>Orang Tua/Wali <br><br><br><br>
                                     <hr class="w-50">
+
                                 </td>
                                 <td class="text-center"><br><br><br><br>Mengetahui,<br>Kepala Sekolah<br><br><br><br>
-                                    <hr class="w-50">
+                                    <hr class="w-25">
+                                    <?= $kepala_sekolah['nama']; ?>
                                 </td>
                                 <td class="w-25">Tasikmalaya, <?= date("d-m-Y") ?><br>Guru Kelas,<br><br><br><br>
                                     <hr class="w-50">
+                                    <?= $sekolah['nama'] ?>
                                 </td>
                             </tr>
                         </thead>
@@ -1981,6 +757,9 @@
                 </div>
             </div>
         </div>
+        <script>
+            window.print();
+        </script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 <?= $this->Section('content') ?>
 <div class="card">
     <div class="card-header">
-        <h5 class="text-primary font-weight-bold m-0">EDIT DATA MATA PELAJARAN</h5>
+        <h5 class="text-primary font-weight-bold m-0">EDIT DATA EKSTRAKULIKULER</h5>
     </div>
     <div class="card-body">
         <form action="<?= base_url('/admin/val_edit_dataeskul') ?>" method="post">

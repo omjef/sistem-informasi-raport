@@ -92,18 +92,18 @@
 
                     <div class="form-group">
                         <label for="username">USERNAME</label>
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Masukan username">
+                        <input type="text" class="form-control" name="username" id="username">
                     </div>
 
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="password">PASSWORD</label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password">
+                                <input type="password" class="form-control" name="password" id="password">
                             </div>
                             <div class="col-md-6">
                                 <label for="password">KONFIRMASI PASSWORD</label>
-                                <input type="password" class="form-control" name="konfirmasi_password" id="konfirmasi_password" placeholder="Masukan konfirmasi password">
+                                <input type="password" class="form-control" name="konfirmasi_password" id="konfirmasi_password">
                             </div>
                         </div>
                     </div>

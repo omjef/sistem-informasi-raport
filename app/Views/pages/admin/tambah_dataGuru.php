@@ -14,14 +14,14 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nip">NIP</label>
-                                <input type="text" class="form-control <?= ($validation->hasError('nip')) ? 'is-invalid' : ''; ?>" name="nip" id="nip" placeholder="Masukan nuptk" value="<?= old('nip') ?>">
+                                <input type="text" class="form-control <?= ($validation->hasError('nip')) ? 'is-invalid' : ''; ?>" name="nip" id="nip" value="<?= old('nip') ?>">
                                 <small class=" form-text text-danger"><?= $validation->getError('nip'); ?></small>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nuptk">NUPTK</label>
-                                <input type="text" class="form-control <?= ($validation->hasError('nuptk')) ? 'is-invalid' : ''; ?>" name="nuptk" id="nuptk" placeholder="Masukan nuptk" value="<?= old('nuptk') ?>">
+                                <input type="text" class="form-control <?= ($validation->hasError('nuptk')) ? 'is-invalid' : ''; ?>" name="nuptk" id="nuptk" value="<?= old('nuptk') ?>">
                                 <small class=" form-text text-danger"><?= $validation->getError('nuptk'); ?></small>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                     <!-- NAMA -->
                     <div class="form-group">
                         <label for="nama">NAMA</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" name="nama" id="nama" placeholder="Masukan nama guru" value="<?= old('nama') ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" name="nama" id="nama" value="<?= old('nama') ?>">
                         <small class=" form-text text-danger"><?= $validation->getError('nama'); ?></small>
                     </div>
 
@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="tempat_lahir">TEMPAT LAHIR</label>
-                                <input type="text" class="form-control <?= ($validation->hasError('tempat_lahir')) ? 'is-invalid' : ''; ?>" name="tempat_lahir" id="tempat_lahir" placeholder="Masukan tempat lahir" value="<?= old('tempat_lahir') ?>">
+                                <input type="text" class="form-control <?= ($validation->hasError('tempat_lahir')) ? 'is-invalid' : ''; ?>" name="tempat_lahir" id="tempat_lahir" value="<?= old('tempat_lahir') ?>">
                                 <small class=" form-text text-danger"><?= $validation->getError('tempat_lahir'); ?></small>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                             <div class="form-group">
                                 <label for="jenis_kelamin">JENIS KELAMIN</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki-laki" value="Laki-laki">
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki-laki" value="Laki-laki" checked>
                                     <label class="form-check-label" for="laki-laki">
                                         Laki-laki
                                     </label>
@@ -73,7 +73,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="agama">AGAMA</label>
-                                <input type="text" class="form-control <?= ($validation->hasError('agama')) ? 'is-invalid' : ''; ?>" name="agama" id="agama" placeholder="Masukan agama" value="<?= old('agama') ?>">
+                                <input type="text" class="form-control <?= ($validation->hasError('agama')) ? 'is-invalid' : ''; ?>" name="agama" id="agama" value="<?= old('agama') ?>">
                                 <small class=" form-text text-danger"><?= $validation->getError('agama'); ?></small>
                             </div>
                         </div>
@@ -83,14 +83,14 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="ijazah">IJAZAH</label>
-                                <input type="text" class="form-control <?= ($validation->hasError('ijazah')) ? 'is-invalid' : ''; ?>" name="ijazah" id="ijazah" placeholder="Masukan ijazah" value="<?= old('ijazah') ?>">
+                                <input type="text" class="form-control <?= ($validation->hasError('ijazah')) ? 'is-invalid' : ''; ?>" name="ijazah" id="ijazah" value="<?= old('ijazah') ?>">
                                 <small class=" form-text text-danger"><?= $validation->getError('ijazah'); ?></small>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="tahun_ijazah">TAHUN IJAZAH</label>
-                                <input type="text" class="form-control <?= ($validation->hasError('tahun_ijazah')) ? 'is-invalid' : ''; ?>" name="tahun_ijazah" id="tahun_ijazah" placeholder="Masukan tahun ijazah" value="<?= old('tahun_ijazah') ?>">
+                                <input type="text" class="form-control <?= ($validation->hasError('tahun_ijazah')) ? 'is-invalid' : ''; ?>" name="tahun_ijazah" id="tahun_ijazah" value="<?= old('tahun_ijazah') ?>">
                                 <small class=" form-text text-danger"><?= $validation->getError('tahun_ijazah'); ?></small>
                             </div>
                         </div>
@@ -133,6 +133,7 @@
                     <div class="form-group">
                         <label for="mengajar_dikelas">MENGAMPU KELAS</label>
                         <select class="form-control" name="kelas_diampu" id="kelas_diampu">
+                            <option value="-">-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -146,7 +147,7 @@
                     <!-- JUMLAH JAM MENGAJAR -->
                     <div class="form-group">
                         <label for="nama">JUMLAH JAM MENGAJAR</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('jam_mengajar')) ? 'is-invalid' : ''; ?>" name="jam_mengajar" id="jam_mengajar" placeholder="Masukan jumlah jam mengajar" value="<?= old('jam_mengajar') ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('jam_mengajar')) ? 'is-invalid' : ''; ?>" name="jam_mengajar" id="jam_mengajar" value="<?= old('jam_mengajar') ?>">
                         <small class=" form-text text-danger"><?= $validation->getError('jam_mengajar'); ?></small>
                     </div>
 

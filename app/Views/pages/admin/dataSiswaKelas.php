@@ -155,7 +155,7 @@
                                 <td><?= $data['nisn'] ?></td>
                                 <td><?= $data['nama'] ?></td>
                                 <td class="text-center">
-                                    <a href="#" class="btn btn-primary btn-icon-split">
+                                    <a target="_blank" href="<?= base_url('/admin/pdf' . '?nisn=' . $data['nisn'] . '&id_kelas=' . $data['id_kelas'] . '&id_tahun_ajaran=' . $data['id_tahun_ajaran']) ?>" class="btn btn-primary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-print"></i>
                                         </span>
